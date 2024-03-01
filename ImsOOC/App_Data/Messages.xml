@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfMessage>
+  <Message>
+    <Id>1</Id>
+    <Text>Incident Successfully Saved</Text>
+  </Message>
+  <Message>
+    <Id>2</Id>
+    <Text>Incident is not assigned to you, you cannot edit it.</Text>
+  </Message>
+  <Message>
+    <Id>3</Id>
+    <Text>You cannot work on this incident as you are not added as a user to the process.</Text>
+  </Message>
+</ArrayOfMessage>

@@ -1,0 +1,47 @@
+﻿ body {
+        margin: 0;
+        padding: 0;
+        background-color: #FAFAFA;
+        font: 12pt "Tahoma";
+    }
+    * {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+         -webkit-print-color-adjust: exact; 
+         print-color-adjust: exact;
+    }
+    /*.page {
+        width: 21cm;
+        height: 25.7cm;
+       /* 
+        padding: 2cm;
+          
+       border: 1px black solid; 
+            border-radius: 5px;
+        margin: 1cm auto;
+        background: white;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }*/
+  input {
+      border: none;
+       font: 10pt "verdana";
+  }
+    textarea {
+        border: none;
+        overflow: hidden;
+        background-color: #FAFAFA;
+        font: 10pt "verdana";
+  
+    }
+    /*/*@page {
+        size: A4;
+        margin: 2cm;
+    }
+
+   
+    @media print {
+        .page {
+            page-break-after: always;
+        }
+
+    }*/

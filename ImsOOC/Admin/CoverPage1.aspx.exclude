@@ -1,0 +1,314 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="CoverPage1.aspx.cs" Inherits="Admin_CoverPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../Styles/toolBars.css" rel="stylesheet" type="text/css" />
+    <script language="javascript">
+        function printing() {
+            window.print();
+        }
+    </script>
+
+    <script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.1.min.js"> </script>
+    <link href="../Styles/CoverPagePrinter.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <SCS:Toolbar ID="Toolbar1" runat="server" OnButtonClicked="Toolbar1_ButtonClicked" EnableClientApi="False" CssClass="toolbar" Width="99.3%">
+            <Items>
+                <SCS:ToolbarButton CausesValidation="True" CommandName="Back" Text="Close" Visible="true" />
+                <SCS:ToolbarButton CausesValidation="True" CommandName="Print" Text="Print" />
+
+            </Items>
+            <ButtonCssClasses CssClass="button" CssClassEnabled="button_enabled" CssClassSelected="" CssClassDisabled="button_disabled"></ButtonCssClasses>
+        </SCS:Toolbar>
+        <br />
+
+
+        <table width="100%" border="0" bgcolor="white">
+
+
+            <tr>
+                <th>Document Type 
+            <asp:DropDownList runat="server" ID="drpDocumentType" AutoPostBack="True" OnSelectedIndexChanged="drpDocumentType_SelectedIndexChanged">
+                <asp:ListItem>Select One..</asp:ListItem>
+                <asp:ListItem Value="Blue">Information </asp:ListItem>
+                <asp:ListItem Value="Green">Discussion </asp:ListItem>
+                <asp:ListItem Value="Red">Urgent  </asp:ListItem>
+                <asp:ListItem Value="Yellow">Signature  </asp:ListItem>
+                <asp:ListItem Value="Orange">Correspondence  </asp:ListItem>
+
+
+            </asp:DropDownList>
+                </th>
+                <th>Pages to Print
+                    <asp:DropDownList runat="server" ID="drpPageToPrint">
+                        <asp:ListItem Value="0">All..</asp:ListItem>
+                        <asp:ListItem Value="1">1 </asp:ListItem>
+                        <asp:ListItem Value="2">2 </asp:ListItem>
+                        <asp:ListItem Value="3">3  </asp:ListItem>
+
+
+
+                    </asp:DropDownList></th>
+            </tr>
+            <tr>
+                <td colspan="2" style="background-color: white">
+                    <div id="dvMain">
+                        <div id="dvFirst">
+                            <div class="page">
+                                <table width="100%">
+                                    <tr>
+                                        <td colspan="2">
+
+                                            <div id="dvheader" runat="server" style="width: 100%; background-color: #4B6C9E; height: 100px">
+                                                <div style="float: left">
+                                                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">
+                                                        <asp:Image runat="server" Width="250px" ID="logo" ImageUrl="~/Images/logo-sars.png" BorderStyle="None"
+                                                            ImageAlign="Left" />
+                                                    </asp:HyperLink>
+                                                </div>
+                                                <div style="float: right">
+                                                    <div class="panel-heading">
+                                                        <%= CurrentProcess != null ? string.Format("{0} v{1} ",CurrentProcess.Description, CurrentProcess.Version)   : string.Empty %> 
+            -
+            <%= CurrentIncidentDetails.IncidentNumber %>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="30%">Reference Number</td>
+                                        <td>
+                                            <asp:Label runat="server" ID="lblReferenceNumber"></asp:Label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Date Recieved</td>
+                                        <td>
+                                            <asp:Label runat="server" ID="lblDateRecieved"></asp:Label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Subject</td>
+                                        <td>
+                                            <asp:Label runat="server" ID="lblSubject"></asp:Label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Delivered</td>
+                                        <td>
+                                            <asp:CheckBox runat="server" ID="chkDelivered"></asp:CheckBox></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Document Content</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <asp:TextBox runat="server" ID="txtDocContent" TextMode="MultiLine" Height="150px" Width="100%"></asp:TextBox></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td colspan="2">
+                                            <asp:CheckBox runat="server" Text="All SARS Numbers have been reviewed and signed off" ID="chkSigneOff"></asp:CheckBox></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td colspan="2">
+                                            <asp:CheckBox runat="server" ID="chkGrammer" Text="Document has been checked for grammar and spelling errors"></asp:CheckBox></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td colspan="2">
+                                            <asp:CheckBox runat="server" ID="chkConflictMessages" Text="Document has been checked for conflicting messages"></asp:CheckBox></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td colspan="2">
+                                            <asp:CheckBox runat="server" ID="chkInfoRequested" Text="Document addresses the information requested"></asp:CheckBox></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td colspan="2">
+                                            <asp:CheckBox runat="server" ID="chkDisclose" Text="Document does not disclose inappropriate / unsubstantiated facts"></asp:CheckBox></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td colspan="2">
+                                            <asp:CheckBox runat="server" ID="chkDocSarsSTD" Text="Document is presented in a SARS standard template being neat coherent and protraing the image SARS wants to present"></asp:CheckBox></td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                        <div id="dvSecond">
+                            <div class="page">
+                                <table width="100%">
+                                    <tr>
+                                        <td colspan="2">
+                                            <div id="Div1" runat="server" style="width: 100%; background-color: #4B6C9E; height: 100px">
+                                                <div style="float: left">
+                                                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Default.aspx">
+                                                        <asp:Image runat="server" Width="250px" ID="Image1" ImageUrl="~/Images/logo-sars.png" BorderStyle="None"
+                                                            ImageAlign="Left" />
+                                                    </asp:HyperLink>
+                                                </div>
+                                                <div style="float: right">
+                                                    <div class="panel-heading">
+                                                        <%= CurrentProcess != null ? string.Format("{0} v{1} ",CurrentProcess.Description, CurrentProcess.Version)   : string.Empty %> 
+            -
+            <%= CurrentIncidentDetails.IncidentNumber %>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="font-size: large">
+                                            <strong>Internal Memo to Commissioner</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reference Number</td>
+                                        <td>
+                                            <asp:Label runat="server" ID="lblComReferenceNo"></asp:Label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Subject</td>
+                                        <td>
+                                            <asp:Label runat="server" ID="lblComSubject"></asp:Label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nature</td>
+                                        <td>
+                                            <asp:DropDownList runat="server" ID="drpNature">
+                                                <asp:ListItem Value="0">Travel - Local</asp:ListItem>
+                                                <asp:ListItem Value="1">Travel - International</asp:ListItem>
+                                                <asp:ListItem Value="2">Appointment</asp:ListItem>
+                                                <asp:ListItem Value="3">Dismissals</asp:ListItem>
+                                                <asp:ListItem Value="4">Request to use an external venue</asp:ListItem>
+                                                <asp:ListItem Value="5">Information Only</asp:ListItem>
+                                                <asp:ListItem Value="6">Decision required</asp:ListItem>
+                                                <asp:ListItem Value="7">Commissioner approval required</asp:ListItem>
+                                                <asp:ListItem Value="8">Request to attend</asp:ListItem>
+                                                <asp:ListItem Value="9">Deputy Minister approval required</asp:ListItem>
+                                                <asp:ListItem Value="10">Briefing document</asp:ListItem>
+                                                <asp:ListItem Value="11">Minister approval required</asp:ListItem>
+                                                <asp:ListItem Value="12">Rule amendments and legislation related</asp:ListItem>
+                                                <asp:ListItem Value="13">Comittee documentation</asp:ListItem>
+                                                <asp:ListItem Value="14">Other</asp:ListItem>
+                                            </asp:DropDownList></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Priority</td>
+                                        <td>
+                                            <asp:Label runat="server" ID="lblPriority"></asp:Label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Action Person</td>
+                                        <td>
+                                            <asp:Label runat="server" ID="lblActionPerson"></asp:Label></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="font-size: large"><strong>Commissioner's Comments</strong></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <asp:TextBox runat="server" ID="txtCommissionersComment" TextMode="MultiLine" Height="150px" Width="100%"></asp:TextBox></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><strong>Comments</strong></td>
+                                        <td>
+                                            <asp:TextBox runat="server" ID="txtComment" TextMode="MultiLine" Height="150px" Width="100%"></asp:TextBox></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sign-off for release</td>
+                                        <td>
+                                            <asp:Label runat="server" ID="lblSignOff"></asp:Label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Notes</td>
+                                        <td>
+                                            <asp:Label runat="server" ID="lblNotes"></asp:Label></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="dvThird">
+                            <div class="page">
+                                <table width="100%">
+                                    <tr>
+                                        <td colspan="2">
+                                            <div id="Div2" runat="server" style="width: 100%; background-color: #4B6C9E; height: 100px">
+                                                <div style="float: left">
+                                                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Default.aspx">
+                                                        <asp:Image runat="server" Width="250px" ID="Image2" ImageUrl="~/Images/logo-sars.png" BorderStyle="None"
+                                                            ImageAlign="Left" />
+                                                    </asp:HyperLink>
+                                                </div>
+                                                <div style="float: right">
+                                                    <div class="panel-heading">
+                                                        <%= CurrentProcess != null ? string.Format("{0} v{1} ",CurrentProcess.Description, CurrentProcess.Version)   : string.Empty %> 
+            -
+            <%= CurrentIncidentDetails.IncidentNumber %>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="font-size: large">
+                                            <strong>Memo to Minister</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="30%">Reference Number</td>
+                                        <td>
+                                            <asp:Label runat="server" ID="lblMinReferenceNo"></asp:Label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Subject</td>
+                                        <td>
+                                            <asp:Label runat="server" ID="lblMinSubject"></asp:Label></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <asp:CheckBox runat="server" ID="chkApprovalFromDG" Text="Approval Required from DG: NT" /></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <asp:CheckBox runat="server" ID="ckApprovalFromDeputyMinister" Text="Approval Required from Deputy Minister" /></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <asp:CheckBox runat="server" ID="chkApprovalFromMinister" Text="Approval Required from Minister" /></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <asp:CheckBox runat="server" ID="chkAdditionalInformation" Text="Additional Information" /></td>
+
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+
+
+
+
+        </table>
+    </form>
+</body>
+</html>

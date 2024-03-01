@@ -1,0 +1,154 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="SiteNoUpdatePanel.master.cs" Inherits="SiteNoUpdatePanel" %>
+
+<!DOCTYPE>
+<html lang="en-US">
+<head id="Head1" runat="server">
+    <title></title>
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/survey.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/toolBars.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/bootstrap.css" rel="stylesheet" type="text/css" />
+    <script src="Scripts/boxover.js"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1 {
+            width: 8px;
+            height: 8px;
+        }
+
+        .style2 {
+            height: 8px;
+        }
+    </style>
+    <script src="Scripts/webservices.js"></script>
+    <script src="Scripts/jquery-1.9.1.js"></script>
+</head>
+<body>
+    <form id="Form1" runat="server" autocomplete="off">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="550" EnablePartialRendering="true" AllowCustomErrorsRedirect="True">
+            <Services>
+                <asp:ServiceReference Path="Services/IncidentTrackingService.asmx" />
+            </Services>
+        </asp:ScriptManager>
+        <table class="page">
+            <tr class="header">
+                <td>
+                    <table width="100%" style="text-align: right; font-size: 12px; color: #FFFFFF; vertical-align: top;">
+                        <tr>
+                            <td align="left">
+                                <asp:HyperLink runat="server" NavigateUrl="~/Default.aspx">
+                                
+                                    <asp:Image runat="server" ID="logo" ImageUrl="~/Images/logo-sars.png" BorderStyle="None"
+                                        ImageAlign="Left" />
+                                   </asp:HyperLink>
+                            </td>
+                            <td align="center" style="padding-right: 10px;">
+                                <span style="float: right; font-size: x-large; font-family: Century;"><%=ConfigurationManager.AppSettings["version"] %></span>
+                                <br />
+                                <br />
+                                <span runat="server" id="welcome" style="font-size: small; float: right; padding-top: 20px; text-align: right;"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                       
+                                <table cellpadding="0" cellspacing="0" width="100%">
+                                    <tr>
+                                        <td style="background-image: url('./images/bubblecorner1.gif');" class="style1"></td>
+                                        <td style="background-image: url('./images/bubbletop.gif'); background-repeat: repeat-x;"
+                                            class="style2"></td>
+                                        <td style="background-image: url('./images/bubblecorner2.gif');" class="style1"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="background-image: url('./images/bubblecorner4.gif'); background-repeat: no-repeat; background-position: bottom; height: 70px;"></td>
+                                        <td style="background-image: url('./images/bubblebottom.gif'); background-repeat: repeat-x; background-position: bottom; height: 70px;">
+                                            <table style="width: 100%; height: auto;">
+                                                <tr align="left">
+                                                    <td valign="top">
+                                                        <table style="width: 100%;">
+                                                            <tr>
+                                                                <td valign="top" style="width: 10%;">
+                                                                    <table style="width: 100%">
+                                                                        <tr>
+                                                                            <td valign="top" style="width: 100%;">
+                                                                                
+                                                                                <div class="panel panel-primary">
+                                                                                    <div class="panel-heading">
+                                                                                        MAIN MENU</div>
+                                                                                    <div class="panel-body">
+
+                                                                                        <asp:TreeView ID="TreeView1" runat="server" LineImagesFolder="~/TreeLineImages" Width="100%"
+                                                                                            ExpandImageUrl="~/Images/112_Plus_Green_16x16_72.png" CollapseImageUrl="~/Images/112_Minus_Green_16x16_72.png"
+                                                                                            ImageSet="Arrows" Style="font-size: small" Font-Names="Tahoma" Font-Size="5pt" ForeColor="#0000CC">
+                                                                                            <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
+                                                                                            <Nodes>
+                                                                                                <asp:TreeNode Text="Process Administration" Value="Survey Administration" NavigateUrl="~/Admin/Admin.aspx">
+                                                                                                    <asp:TreeNode NavigateUrl="~/Default.aspx" Text="HOME" Value="HOME"></asp:TreeNode>
+                                                                                                    <asp:TreeNode NavigateUrl="~/Admin/CreateNewProcess.aspx" Text="Add New Process"
+                                                                                                        Value="Add Survey"></asp:TreeNode>
+                                                                                                    <asp:TreeNode NavigateUrl="~/Admin/ModifyProcess.aspx" Text="Modify  Processes" Value="Modify Survey"></asp:TreeNode>
+                                                                                                </asp:TreeNode>
+                                                                                                <asp:TreeNode Text="Incident Administration" Value="Incident Administration">
+                                                                                                    <asp:TreeNode Text="Register Incident" Value="Add New Incident" NavigateUrl="~/Admin/ListMyProcesses.aspx"></asp:TreeNode>
+                                                                                                    <asp:TreeNode Text="Assigned To Me" Value="Assigned To Me" NavigateUrl="~/SurveyWizard/ViewMyIncidents.aspx"></asp:TreeNode>
+                                                                                                    <asp:TreeNode Text="Search Incident" Value="Search Incident" NavigateUrl="~/Admin/SelectNormalUserProcess.aspx"></asp:TreeNode>
+                                                                                                </asp:TreeNode>
+                                                                                                <asp:TreeNode Text="System Admin" Value="System Admin">
+                                                                                                    <asp:TreeNode NavigateUrl="~/Admin/ManageQuestionTypes.aspx" Text="Manage Question Types" Value="Manage Question Types"></asp:TreeNode>
+                                                                                                    <asp:TreeNode Text="Lookup Management" Value="Lookup Management">
+                                                                                                        <asp:TreeNode NavigateUrl="~/SystemAdmins/LookupdataManager.aspx" Text="Add New Lookups" Value="Add New Lookups"></asp:TreeNode>
+                                                                                                        <asp:TreeNode NavigateUrl="~/SystemAdmins/ModifyLookups.aspx" Text="View Lookups" Value="Modify Lookups"></asp:TreeNode>
+                                                                                                        <asp:TreeNode NavigateUrl="~/SystemAdmins/HierarchyLookupdataManager.aspx" Text="Add New Hierarchical Lookups" Value="Add New Hierarchical Lookups"></asp:TreeNode>
+                                                                                                        <asp:TreeNode NavigateUrl="~/SystemAdmins/ModifyHierarchyLookups.aspx" Text="View Hierarchical Lookups" Value="View Hierarchical Lookups"></asp:TreeNode>
+                                                                                                    </asp:TreeNode>
+                                                                                                    <asp:TreeNode NavigateUrl="~/SystemAdmins/ManageMimeTypes.aspx" Text="Manage File Types" Value="Manage File Types"></asp:TreeNode>
+                                                                                                    <asp:TreeNode NavigateUrl="~/SystemAdmins/PowerUsers.aspx" Text="System Administrators" Value="System Administrators"></asp:TreeNode>
+                                                                                                </asp:TreeNode>
+                                                                                            </Nodes>
+                                                                                            <NodeStyle Font-Names="Tahoma" Font-Size="11pt" ForeColor="#006666" HorizontalPadding="5px"
+                                                                                                NodeSpacing="0px" VerticalPadding="0px" />
+                                                                                            <ParentNodeStyle Font-Bold="False" />
+                                                                                            <SelectedNodeStyle Font-Underline="True" HorizontalPadding="0px" VerticalPadding="0px"
+                                                                                                ForeColor="#5555DD" />
+                                                                                        </asp:TreeView>
+                                                                                    </div>
+                                                                                </div>
+                                                                               
+                                                                                
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                                <td valign="top">
+                                                                    <table width="100%">
+                                                                        <tr>
+                                                                            <td valign="top" style="border-left: 2px solid silver; padding-left: 10px;">
+                                                                                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                                                                                </asp:ContentPlaceHolder>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td style="background-image: url('./images/bubblecorner3.gif'); background-repeat: no-repeat; background-position: bottom; height: 70px;"></td>
+                                    </tr>
+                                </table>
+                       
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
