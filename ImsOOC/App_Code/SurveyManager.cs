@@ -2399,8 +2399,8 @@ public static class IncidentTrackingManager
     {
         return new RecordSet("usp_RPT_IncidentsByStatus", QueryType.StoredProcedure, new DBParamCollection
                                                                                          {
-                                                                                             {"@ProcessId", processId},
-                                                                                             {"@Status", statusId}
+                                                                                             {"@ProcessId", processId}
+                                                                                             
                                                                                          }, db.ConnectionString);
     }
 

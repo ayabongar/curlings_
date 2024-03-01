@@ -3,29 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ims", "http://localhost/ims", "{309CF3BB-5243-47F9-8974-33F1BFC4857F}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ims", "http://localhost/ims", "{B8180EBC-5205-4549-9E81-079528BF450C}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "false"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		ProjectReferences = "{b2041bad-5b8a-43a7-a7e9-13b775f8a4fc}|Sars.Systems.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/ims"
-		Debug.AspNetCompiler.PhysicalPath = "..\Dev\"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\IncidentTrackingSystem\Dev\ImsApplication\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\ims\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/ims"
-		Release.AspNetCompiler.PhysicalPath = "..\Dev\"
+		Release.AspNetCompiler.PhysicalPath = "..\..\IncidentTrackingSystem\Dev\ImsApplication\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\ims\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "..\Dev\"
+		SlnRelativePath = "..\..\IncidentTrackingSystem\Dev\ImsApplication\"
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SARS.Systems", "..\..\..\SARS_Systems_Library\Staging\Sars.Systems\SARS.Systems.csproj", "{B2041BAD-5B8A-43A7-A7E9-13B775F8A4FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,22 +33,14 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{309CF3BB-5243-47F9-8974-33F1BFC4857F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{309CF3BB-5243-47F9-8974-33F1BFC4857F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{309CF3BB-5243-47F9-8974-33F1BFC4857F}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{309CF3BB-5243-47F9-8974-33F1BFC4857F}.Debug|x64.Build.0 = Debug|Any CPU
-		{309CF3BB-5243-47F9-8974-33F1BFC4857F}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{309CF3BB-5243-47F9-8974-33F1BFC4857F}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{309CF3BB-5243-47F9-8974-33F1BFC4857F}.Release|x64.ActiveCfg = Debug|Any CPU
-		{309CF3BB-5243-47F9-8974-33F1BFC4857F}.Release|x64.Build.0 = Debug|Any CPU
-		{B2041BAD-5B8A-43A7-A7E9-13B775F8A4FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B2041BAD-5B8A-43A7-A7E9-13B775F8A4FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B2041BAD-5B8A-43A7-A7E9-13B775F8A4FC}.Debug|x64.ActiveCfg = Debug|x64
-		{B2041BAD-5B8A-43A7-A7E9-13B775F8A4FC}.Debug|x64.Build.0 = Debug|x64
-		{B2041BAD-5B8A-43A7-A7E9-13B775F8A4FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B2041BAD-5B8A-43A7-A7E9-13B775F8A4FC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B2041BAD-5B8A-43A7-A7E9-13B775F8A4FC}.Release|x64.ActiveCfg = Release|x64
-		{B2041BAD-5B8A-43A7-A7E9-13B775F8A4FC}.Release|x64.Build.0 = Release|x64
+		{B8180EBC-5205-4549-9E81-079528BF450C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8180EBC-5205-4549-9E81-079528BF450C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8180EBC-5205-4549-9E81-079528BF450C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B8180EBC-5205-4549-9E81-079528BF450C}.Debug|x64.Build.0 = Debug|Any CPU
+		{B8180EBC-5205-4549-9E81-079528BF450C}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8180EBC-5205-4549-9E81-079528BF450C}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{B8180EBC-5205-4549-9E81-079528BF450C}.Release|x64.ActiveCfg = Debug|Any CPU
+		{B8180EBC-5205-4549-9E81-079528BF450C}.Release|x64.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
