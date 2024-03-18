@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Sars.Systems.Data;
+using Sars.Systems.Security;
+using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web.UI.WebControls;
 
@@ -37,14 +41,35 @@ public partial class Admin_AddProcessUsers : IncidentTrackingPage
             {
                 Response.Redirect("~/InvalidProcessOrIncident.aspx");
             }
-            var roles = new ProcessRole("[dbo].[uspREAD_ProcessRoles]", null).GetRecords<ProcessRole>();
-            if (roles != null && roles.Any())
-            {
-                ddlRole.Bind(roles, "Description", "RoleID");
-            }
-        
+            //var roles = new ProcessRole("[dbo].[uspREAD_ProcessRoles]", null).GetRecords<ProcessRole>();
+            //if (roles != null && roles.Any())
+            //{
+            //    ddlRole.Bind(roles, "Description", "RoleID");
+            //}
+             var userRoles = GetActiveRoles();
+        if (userRoles != null)
+        {
+            drpOocRoles.Bind(userRoles, "Description", "Description");
+        }
     }
 
+    public static RecordSet GetActiveRoles()
+    {
+        var oParams = new DBParamCollection
+                {
+                    {"@SystemName", SARSDataSettings.Settings.ApplicationName}
+                };
+        var roles = new RecordSet();
+        using (var data = new RecordSet("[secure].spGetActiveRoles", QueryType.StoredProcedure, oParams))
+        {
+            if (data.HasRows)
+            {
+                roles = data;
+            }
+            
+        }
+        return roles;
+    }
     protected void RemoveUser(object sender, EventArgs e)
     {
         var btn = sender as LinkButton;
@@ -74,9 +99,27 @@ public partial class Admin_AddProcessUsers : IncidentTrackingPage
 
     protected void Save(object sender, EventArgs e)
     {
-        var sid =UserSelector1.SelectedAdUserDetails.SID;
+        if (drpOocRoles.SelectedIndex <= 0) return;
+        //if (ddlRole.SelectedIndex <= 0) return;
+        var sid = UserSelector1.SelectedAdUserDetails.SID;
+        if (string.IsNullOrEmpty(sid))
+        {
+            MessageBox.Show("Enter user sid");
+            return;
+        }
+        try
+        {
+            Roles.AddUserToRole(drpOocRoles.SelectedValue, string.Format("SARSGOV\\{0}", sid));
+        }
+        catch (Exception)
+        {
+
+            //throw;
+        }
+        var saved = IncidentTrackingManager.SavePowerUser(sid);
+
         SarsUser.SaveUser(sid);
-        var recordsAffected =IncidentTrackingManager.AddUserToAProcess(sid, this.ProcessID, ddlRole.SelectedValue);
+        var recordsAffected =IncidentTrackingManager.AddUserToAProcess(sid, this.ProcessID, "1");
         if(recordsAffected > 0)
         {
             
@@ -86,7 +129,7 @@ public partial class Admin_AddProcessUsers : IncidentTrackingPage
         }
         else
         {
-            MessageBox.Show("Could not add user!");
+            MessageBox.Show("User Added to the process");
         }
     }
     protected void gvUsers_PageIndexChanging(object sender, GridViewPageEventArgs e)

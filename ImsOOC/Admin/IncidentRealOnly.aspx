@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/NormalUserNoUpdatePanel.master" AutoEventWireup="true"
     CodeFile="IncidentRealOnly.aspx.cs" Inherits="Admin_IncidentRealOnly" %>
 
-<%@ Register TagPrefix="cc1" Namespace="AjaxControlToolkit" Assembly="AjaxControlToolkit, Version=4.1.51116.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e" %>
 <%@ Register Src="~/Admin/UserSelector.ascx" TagPrefix="uc1" TagName="UserSelector" %>
 <%@ Register Src="~/SurveyWizard/HierarchicalLookup.ascx" TagPrefix="uc1" TagName="HierarchicalLookup" %>
 <%@ Register Src="~/SurveyWizard/MatrixQuestion.ascx" TagPrefix="uc1" TagName="MatrixQuestion" %>
@@ -91,13 +90,22 @@
                                         <input type="text" value="<%=CurrentIncidentDetails.IncidentStatus %>" disabled="disabled" /></td>
                                 </tr>
                                 <tr>
+                                    <td class="inc-details-label">Incident Type:
+                                    </td>
+                                    <td style="padding-left: 4px;">
+
+                                        <asp:DropDownList runat="server" ID="drpRoles" Width="100px">
+                                        </asp:DropDownList>
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td class="inc-details-label">Primary Actioned Person: </td>
                                     <td>
                                         <uc1:UserSelector ID="UserSelector1" runat="server" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="inc-details-label" >Secondary Actioned Person:
+                                    <td class="inc-details-label">Secondary Actioned Person:
                                     </td>
                                     <td>
                                         <uc1:UserSelector ID="SecAssignedToSID" runat="server" />
@@ -113,17 +121,16 @@
                                     </td>
                                 </tr>
                             </table>
-                        </div>
-                        <div class="pageBody">
-                            <table width="100%">
+                            <table  class="inc-details" border="0" style="width: 100%">
                                 <tr>
-                                    <td style="padding-left: 4px;">
+                                    <td class="inc-details-label" style="padding-left: 4px;">
                                         <asp:DisplaySurvey ID="DisplaySurvey2" runat="server" />
                                     </td>
                                 </tr>
 
                             </table>
                         </div>
+                        
                     </ContentTemplate>
                 </asp:UpdatePanel>
 

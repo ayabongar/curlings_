@@ -1,7 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="QuestionDisplay.ascx.cs" Inherits="NTQR_SurveyWizard_QuestionDisplay" %>
 <%@ Register Src="MatrixQuestion.ascx" TagName="MatrixQuestion" TagPrefix="uc1" %>
 <%@ Register Src="HierarchicalLookup.ascx" TagName="HierarchicalLookup" TagPrefix="uc1" %>
-<%@ Register TagPrefix="cc1" Namespace="AjaxControlToolkit" Assembly="AjaxControlToolkit, Version=4.1.51116.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e" %>
 <%@ Register Assembly="Sars.Systems.Controls" Namespace="Sars.Systems.Controls" TagPrefix="sars" %>
 <%@ Register Src="../../Admin/UserSelector.ascx" TagName="UserSelector" TagPrefix="uc2" %>
 
@@ -167,9 +166,9 @@
         <div class="input-group">
             <asp:TextBox ID="txtDate" runat="server" MaxLength="10"
                 ForeColor="black" CssClass="form-control date-picker" />
-            <cc1:CalendarExtender ID="txtDate_CalendarExtender" runat="server" Format="yyyy-MM-dd"
+            <asp:CalendarExtender ID="txtDate_CalendarExtender" runat="server" Format="yyyy-MM-dd"
                 Enabled="True" TargetControlID="txtDate">
-            </cc1:CalendarExtender>
+            </asp:CalendarExtender>
            <%-- <span class="input-group-addon">
                 <i class="fa fa-calendar bigger-110"></i>
             </span>--%>

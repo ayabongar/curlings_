@@ -1,0 +1,9 @@
+......LOGGING STARTED......ON....... 2013-07-22 15:54
+________________________________________________________
+
+
+
+
+ERROR AT 03:54 PM 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Sars.Systems.Logger.ErrorLogger.context_Error(Object sender, EventArgs e)

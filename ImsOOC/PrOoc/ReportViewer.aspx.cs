@@ -1,42 +1,82 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.Reporting.WebForms;
+using Sars.Systems.Security;
 
 public partial class PrOoc_ReportViewer : System.Web.UI.Page
 {
+    public string _DateFrom = null;
+    public string _DateTo = null;
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
-            var reportName = Request["description"];
-            var reportType = Request["type"];
-            lblReferenceNumber.Text = reportName;
-            //dvOneDate.Visible = reportType.ToLower().Equals("internal") || reportType.ToLower().Equals("external")
-            //    ? true
-            //    : false;
-            //dvTwoDates.Visible = reportType.ToLower().Equals("inflow") 
-            //  ? true
-            //  : false;
-           trType.Visible =  reportType.ToLower().Equals("inflow") 
-            ? true
-              : false;
-            List<string> year = new List<string>();
-            year.Add("Select One..");
-            for (int i = 2016; i <= DateTime.Today.Year; i++)
-            {
-                year.Add(i.ToString());
-            }
-            drpYear.DataSource = year;
-            drpYear.DataBind();
-            drpMonth.Enabled = false;
-            drDate.Enabled = false;
+            LoadDashBoard(Request["reportname"]);
         }
     }
+
+    private void LoadDashBoard(string reportName)
+    {
+
+        try
+        {
+
+            var userRole = this.Page.User.GetRole();
+            var roleId = new Guid();
+            switch (userRole)
+            {
+                case "Administrator Head - Top Secret":
+                    roleId = new Guid(ConfigurationManager.AppSettings["AdministratorHeadTopSecret"]);
+                    break;
+                case "Administrator Manager - Secret":
+                    roleId = new Guid(ConfigurationManager.AppSettings["AdministratorManagerSecret"]);
+                    break;
+                case "Administrator - confidential":
+                    roleId = new Guid(ConfigurationManager.AppSettings["AdministratorConfidential"]);
+                    break;
+                case "System User":
+                    roleId = new Guid(ConfigurationManager.AppSettings["SystemUser"]);
+                    break;
+                case "Developer":
+                    roleId = new Guid(ConfigurationManager.AppSettings["SystemUser"]);
+                    break;
+            }
+
+             string path = "/IMS/" + reportName;
+
+            ReportViewer1.ServerReport.ReportServerUrl =
+                new Uri(System.Configuration.ConfigurationManager.AppSettings["reports-url"]);
+            ReportViewer1.ServerReport.ReportPath = path;
+            DateTime date = DateTime.Today;
+            var firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
+            var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
+            _DateFrom = firstDayOfMonth.ToString("dd-MMM-yyyy");
+            _DateTo = DateTime.Now.ToString("dd-MMM-yyyy");
+            ReportParameter[] reportParam = new ReportParameter[4];
+            //reportParam[0] = new ReportParameter("ProcessId", "96");
+            reportParam[0] = new ReportParameter("startDate", firstDayOfMonth.ToString());
+            reportParam[1] = new ReportParameter("EndDate", _DateTo.ToString());
+            reportParam[2] = new ReportParameter("roleId", roleId.ToString());
+            reportParam[3] = new ReportParameter("SID", SarsUser.SID);
+
+            ReportViewer1.ServerReport.SetParameters(reportParam);
+            ReportViewer1.ServerReport.Refresh();
+            ReportViewer1.Visible = true;
+        }
+        catch (Exception)
+        {
+
+            // throw;
+        }
+    }
+
+
     protected void drpMonth_SelectedIndexChanged(object sender, EventArgs e)
     {
         List<string> day = new List<string>();
@@ -63,133 +103,133 @@ public partial class PrOoc_ReportViewer : System.Web.UI.Page
         switch (e.CommandName)
         {
             case "Submit":
-                try
-                {
-                    var type = Request["type"];
-                    if (type.ToLower() != "inflow")
-                    {
+                //try
+                //{
+                //    var type = Request["type"];
+                //    if (type.ToLower() != "inflow")
+                //    {
 
-                        if (!string.IsNullOrEmpty(txtStartDate.Text) && !string.IsNullOrEmpty(txtEndDate.Text))
-                        {
-                            dvReportViewer.Visible = true;
-                            DateTime firstDate = DateTime.Parse(txtStartDate.Text);
-                            DateTime lastDate = DateTime.Parse(txtEndDate.Text);
-                            var processId = Request["processid"];
-                            string path = "/IMS/" + Request["reportName"];
-                            ReportViewer1.ServerReport.ReportServerUrl =
-                                new Uri(System.Configuration.ConfigurationManager.AppSettings["reports-url"]);
-                            ReportViewer1.ServerReport.ReportPath = path;
+                //        if (!string.IsNullOrEmpty(txtStartDate.Text) && !string.IsNullOrEmpty(txtEndDate.Text))
+                //        {
+                //            dvReportViewer.Visible = true;
+                //            DateTime firstDate = DateTime.Parse(txtStartDate.Text);
+                //            DateTime lastDate = DateTime.Parse(txtEndDate.Text);
+                //            var processId = Request["processid"];
+                //            string path = "/IMS/" + Request["reportName"];
+                //            ReportViewer1.ServerReport.ReportServerUrl =
+                //                new Uri(System.Configuration.ConfigurationManager.AppSettings["reports-url"]);
+                //            ReportViewer1.ServerReport.ReportPath = path;
 
-                            ReportParameter[] parameters = new ReportParameter[3];
-                            parameters[0] = new ReportParameter("startDate", firstDate.ToShortDateString());
-                            parameters[1] = new ReportParameter("ProcessId", processId);
-                            parameters[2] = new ReportParameter("Date", lastDate.ToShortDateString());
-                            ReportViewer1.ServerReport.SetParameters(parameters);
-                            ReportViewer1.ServerReport.Refresh();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Please select your filter.");
-                        }
-                    }
-                    else
-                    {
-                        if (!string.IsNullOrEmpty(txtStartDate.Text) && !string.IsNullOrEmpty(txtEndDate.Text))
-                        {
-                            dvReportViewer.Visible = true;
-                            DateTime firstDate = DateTime.Parse(txtStartDate.Text);
-                            DateTime lastDate = DateTime.Parse(txtEndDate.Text);
-                            var processId = Request["processid"];
-                            string path = "/IMS/" + Request["reportName"];
-                            ReportViewer1.ServerReport.ReportServerUrl =
-                                new Uri(System.Configuration.ConfigurationManager.AppSettings["reports-url"]);
-                            ReportViewer1.ServerReport.ReportPath = path;
+                //            ReportParameter[] parameters = new ReportParameter[3];
+                //            parameters[0] = new ReportParameter("startDate", firstDate.ToShortDateString());
+                //            parameters[1] = new ReportParameter("ProcessId", processId);
+                //            parameters[2] = new ReportParameter("Date", lastDate.ToShortDateString());
+                //            ReportViewer1.ServerReport.SetParameters(parameters);
+                //            ReportViewer1.ServerReport.Refresh();
+                //        }
+                //        else
+                //        {
+                //            MessageBox.Show("Please select your filter.");
+                //        }
+                //    }
+                //    else
+                //    {
+                //        if (!string.IsNullOrEmpty(txtStartDate.Text) && !string.IsNullOrEmpty(txtEndDate.Text))
+                //        {
+                //            dvReportViewer.Visible = true;
+                //            DateTime firstDate = DateTime.Parse(txtStartDate.Text);
+                //            DateTime lastDate = DateTime.Parse(txtEndDate.Text);
+                //            var processId = Request["processid"];
+                //            string path = "/IMS/" + Request["reportName"];
+                //            ReportViewer1.ServerReport.ReportServerUrl =
+                //                new Uri(System.Configuration.ConfigurationManager.AppSettings["reports-url"]);
+                //            ReportViewer1.ServerReport.ReportPath = path;
 
-                            ReportParameter[] parameters = new ReportParameter[3];
-                            parameters[0] = new ReportParameter("StartDate", firstDate.ToShortDateString());
-                            parameters[1] = new ReportParameter("ProcessId", processId);
-                            parameters[2] = new ReportParameter("EndDate", lastDate.ToShortDateString());
-                            ReportViewer1.ServerReport.SetParameters(parameters);
-                            ReportViewer1.ServerReport.Refresh();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Please select your filter.");
-                        }
-                    }
+                //            ReportParameter[] parameters = new ReportParameter[3];
+                //            parameters[0] = new ReportParameter("StartDate", firstDate.ToShortDateString());
+                //            parameters[1] = new ReportParameter("ProcessId", processId);
+                //            parameters[2] = new ReportParameter("EndDate", lastDate.ToShortDateString());
+                //            ReportViewer1.ServerReport.SetParameters(parameters);
+                //            ReportViewer1.ServerReport.Refresh();
+                //        }
+                //        else
+                //        {
+                //            MessageBox.Show("Please select your filter.");
+                //        }
+                //    }
 
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show(ex.Message);
+                //}
                 break;
             case "Export":
             {
-                try
-                {
-                    var type = Request["type"];
-                    if (type.ToLower() != "inflow")
-                    {
-                        if (drpMonth.SelectedIndex > 0 && drpYear.SelectedIndex > 0 && drDate.SelectedIndex > 0)
-                        {
-                            dvReportViewer.Visible = true;
-                            DateTime firstDate =
-                                DateTime.Parse(string.Format("{0}/{1}/1", drpYear.SelectedItem.Text,
-                                    drpMonth.SelectedItem.Text));
-                            DateTime lastDate =
-                                DateTime.Parse(string.Format("{0}/{1}/{2}", drpYear.SelectedItem.Text,
-                                    drpMonth.SelectedItem.Text, drDate.SelectedItem.Text));
-                            var processId = Request["processid"];
-                            string path = "/IMS/" + Request["reportName"];
-                            ReportViewer1.ServerReport.ReportServerUrl =
-                                new Uri(System.Configuration.ConfigurationManager.AppSettings["reports-url"]);
-                            ReportViewer1.ServerReport.ReportPath = path;
+                //try
+                //{
+                //    var type = Request["type"];
+                //    if (type.ToLower() != "inflow")
+                //    {
+                //        if (drpMonth.SelectedIndex > 0 && drpYear.SelectedIndex > 0 && drDate.SelectedIndex > 0)
+                //        {
+                //            dvReportViewer.Visible = true;
+                //            DateTime firstDate =
+                //                DateTime.Parse(string.Format("{0}/{1}/1", drpYear.SelectedItem.Text,
+                //                    drpMonth.SelectedItem.Text));
+                //            DateTime lastDate =
+                //                DateTime.Parse(string.Format("{0}/{1}/{2}", drpYear.SelectedItem.Text,
+                //                    drpMonth.SelectedItem.Text, drDate.SelectedItem.Text));
+                //            var processId = Request["processid"];
+                //            string path = "/IMS/" + Request["reportName"];
+                //            ReportViewer1.ServerReport.ReportServerUrl =
+                //                new Uri(System.Configuration.ConfigurationManager.AppSettings["reports-url"]);
+                //            ReportViewer1.ServerReport.ReportPath = path;
 
-                            ReportParameter[] parameters = new ReportParameter[3];
-                            parameters[0] = new ReportParameter("startDate", firstDate.ToShortDateString());
-                            parameters[1] = new ReportParameter("ProcessId", processId);
-                            parameters[2] = new ReportParameter("Date", lastDate.ToShortDateString());
-                            ReportViewer1.ServerReport.SetParameters(parameters);
-                            ReportViewer1.ServerReport.Refresh();
-                                saveRptAs(ReportViewer1, "pdf");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Please select your filter.");
-                        }
-                    }
-                    else
-                    {
-                        if (!string.IsNullOrEmpty(txtStartDate.Text) && !string.IsNullOrEmpty(txtEndDate.Text))
-                        {
-                            dvReportViewer.Visible = true;
-                            DateTime firstDate = DateTime.Parse(txtStartDate.Text);
-                            DateTime lastDate = DateTime.Parse(txtEndDate.Text);
-                            var processId = Request["processid"];
-                            string path = "/IMS/" + Request["reportName"];
-                            ReportViewer1.ServerReport.ReportServerUrl =
-                                new Uri(System.Configuration.ConfigurationManager.AppSettings["reports-url"]);
-                            ReportViewer1.ServerReport.ReportPath = path;
+                //            ReportParameter[] parameters = new ReportParameter[3];
+                //            parameters[0] = new ReportParameter("startDate", firstDate.ToShortDateString());
+                //            parameters[1] = new ReportParameter("ProcessId", processId);
+                //            parameters[2] = new ReportParameter("Date", lastDate.ToShortDateString());
+                //            ReportViewer1.ServerReport.SetParameters(parameters);
+                //            ReportViewer1.ServerReport.Refresh();
+                //                saveRptAs(ReportViewer1, "pdf");
+                //        }
+                //        else
+                //        {
+                //            MessageBox.Show("Please select your filter.");
+                //        }
+                //    }
+                //    else
+                //    {
+                //        if (!string.IsNullOrEmpty(txtStartDate.Text) && !string.IsNullOrEmpty(txtEndDate.Text))
+                //        {
+                //            dvReportViewer.Visible = true;
+                //            DateTime firstDate = DateTime.Parse(txtStartDate.Text);
+                //            DateTime lastDate = DateTime.Parse(txtEndDate.Text);
+                //            var processId = Request["processid"];
+                //            string path = "/IMS/" + Request["reportName"];
+                //            ReportViewer1.ServerReport.ReportServerUrl =
+                //                new Uri(System.Configuration.ConfigurationManager.AppSettings["reports-url"]);
+                //            ReportViewer1.ServerReport.ReportPath = path;
 
-                            ReportParameter[] parameters = new ReportParameter[3];
-                            parameters[0] = new ReportParameter("StartDate", firstDate.ToShortDateString());
-                            parameters[1] = new ReportParameter("ProcessId", processId);
-                            parameters[2] = new ReportParameter("EndDate", lastDate.ToShortDateString());
-                            ReportViewer1.ServerReport.SetParameters(parameters);
-                            ReportViewer1.ServerReport.Refresh();
-                            saveRptAs(ReportViewer1, "pdf");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Please select your filter.");
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                //            ReportParameter[] parameters = new ReportParameter[3];
+                //            parameters[0] = new ReportParameter("StartDate", firstDate.ToShortDateString());
+                //            parameters[1] = new ReportParameter("ProcessId", processId);
+                //            parameters[2] = new ReportParameter("EndDate", lastDate.ToShortDateString());
+                //            ReportViewer1.ServerReport.SetParameters(parameters);
+                //            ReportViewer1.ServerReport.Refresh();
+                //            saveRptAs(ReportViewer1, "pdf");
+                //        }
+                //        else
+                //        {
+                //            MessageBox.Show("Please select your filter.");
+                //        }
+                //    }
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show(ex.Message);
+                //}
                 break;
             }
         }

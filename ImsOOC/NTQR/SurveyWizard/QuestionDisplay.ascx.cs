@@ -614,7 +614,7 @@ public partial class NTQR_SurveyWizard_QuestionDisplay : IncidentTrackingControl
                 }
             case 11:
                 {
-                    return string.IsNullOrEmpty(txtDate.Text) ? null : txtDate.Text;
+                    return string.IsNullOrEmpty(txtDate.Text) ? null : Convert.ToDateTime(txtDate.Text).ToString("yyyy-MM-dd");
                 }
             case 13:
                 {

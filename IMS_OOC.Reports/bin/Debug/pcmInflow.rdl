@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition"><Body><ReportItems><Tablix Name="Tablix1"><TablixBody><TablixColumns><TablixColumn><Width>5.78083cm</Width></TablixColumn><TablixColumn><Width>2.5cm</Width></TablixColumn><TablixColumn><Width>2.5cm</Width></TablixColumn><TablixColumn><Width>2.5cm</Width></TablixColumn><TablixColumn><Width>2.5cm</Width></TablixColumn></TablixColumns><TablixRows><TablixRow><Height>0.6cm</Height><TablixCells><TablixCell><CellContents><Textbox Name="Textbox1"><CanGrow>true</CanGrow><KeepTogether>true</KeepTogether><Paragraphs><Paragraph><TextRuns><TextRun><Value>Date</Value><Style><FontWeight>Bold</FontWeight><Color>White</Color></Style></TextRun></TextRuns><Style /></Paragraph></Paragraphs><rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Textbox1</rd:DefaultName><Style><Border><Style>Solid</Style></Border><BackgroundColor>SteelBlue</BackgroundColor><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell><TablixCell><CellContents><Textbox Name="Textbox12"><CanGrow>true</CanGrow><KeepTogether>true</KeepTogether><Paragraphs><Paragraph><TextRuns><TextRun><Value>Balance</Value><Style><FontWeight>Bold</FontWeight><Color>White</Color></Style></TextRun></TextRuns><Style /></Paragraph></Paragraphs><rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Textbox12</rd:DefaultName><Style><Border><Style>Solid</Style></Border><BackgroundColor>SteelBlue</BackgroundColor><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell><TablixCell><CellContents><Textbox Name="Textbox5"><CanGrow>true</CanGrow><KeepTogether>true</KeepTogether><Paragraphs><Paragraph><TextRuns><TextRun><Value>Recieved</Value><Style><FontWeight>Bold</FontWeight><Color>White</Color></Style></TextRun></TextRuns><Style /></Paragraph></Paragraphs><rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Textbox5</rd:DefaultName><Style><Border><Style>Solid</Style></Border><BackgroundColor>SteelBlue</BackgroundColor><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell><TablixCell><CellContents><Textbox Name="Textbox8"><CanGrow>true</CanGrow><KeepTogether>true</KeepTogether><Paragraphs><Paragraph><TextRuns><TextRun><Value>Finalised</Value><Style><FontWeight>Bold</FontWeight><Color>White</Color></Style></TextRun></TextRuns><Style /></Paragraph></Paragraphs><rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Textbox8</rd:DefaultName><Style><Border><Style>Solid</Style></Border><BackgroundColor>SteelBlue</BackgroundColor><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell><TablixCell><CellContents><Textbox Name="Textbox10"><CanGrow>true</CanGrow><KeepTogether>true</KeepTogether><Paragraphs><Paragraph><TextRuns><TextRun><Value>Unresolved</Value><Style><FontWeight>Bold</FontWeight><Color>White</Color></Style></TextRun></TextRuns><Style /></Paragraph></Paragraphs><rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Textbox10</rd:DefaultName><Style><Border><Style>Solid</Style></Border><BackgroundColor>SteelBlue</BackgroundColor><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell></TablixCells></TablixRow><TablixRow><Height>0.6cm</Height><TablixCells><TablixCell><CellContents><Textbox Name="StartDate"><CanGrow>true</CanGrow><KeepTogether>true</KeepTogether><Paragraphs><Paragraph><TextRuns><TextRun><Value>=format(Fields!StartDate.Value,"dd/MM/yyyy") &amp; " - "&amp;format(Fields!EndDate.Value,"dd/MM/yyyy")</Value><Style /></TextRun></TextRuns><Style /></Paragraph></Paragraphs><rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">StartDate</rd:DefaultName><Style><Border><Style>Solid</Style></Border><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell><TablixCell><CellContents><Textbox Name="Textbox13"><CanGrow>true</CanGrow><KeepTogether>true</KeepTogether><Paragraphs><Paragraph><TextRuns><TextRun><Value>=Previous(Fields!Unresolved.Value)</Value><Style /></TextRun></TextRuns><Style /></Paragraph></Paragraphs><rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Textbox13</rd:DefaultName><Style><Border><Style>Solid</Style></Border><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell><TablixCell><CellContents><Textbox Name="Recieved"><CanGrow>true</CanGrow><KeepTogether>true</KeepTogether><Paragraphs><Paragraph><TextRuns><TextRun><Value>=Fields!Recieved.Value</Value><Style /></TextRun></TextRuns><Style /></Paragraph></Paragraphs><rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Recieved</rd:DefaultName><Style><Border><Style>Solid</Style></Border><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell><TablixCell><CellContents><Textbox Name="Finalised"><CanGrow>true</CanGrow><KeepTogether>true</KeepTogether><Paragraphs><Paragraph><TextRuns><TextRun><Value>=Fields!Finalised.Value</Value><Style /></TextRun></TextRuns><Style /></Paragraph></Paragraphs><rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Finalised</rd:DefaultName><Style><Border><Style>Solid</Style></Border><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell><TablixCell><CellContents><Textbox Name="Unresolved"><CanGrow>true</CanGrow><KeepTogether>true</KeepTogether><Paragraphs><Paragraph><TextRuns><TextRun><Value>=Fields!Unresolved.Value</Value><Style /></TextRun></TextRuns><Style /></Paragraph></Paragraphs><rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Unresolved</rd:DefaultName><Style><Border><Style>Solid</Style></Border><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell></TablixCells></TablixRow><TablixRow><Height>0.6cm</Height><TablixCells><TablixCell><CellContents><Textbox Name="Textbox21"><CanGrow>true</CanGrow><KeepTogether>true</KeepTogether><Paragraphs><Paragraph><TextRuns><TextRun><Value /><Style><FontWeight>Bold</FontWeight><Color>White</Color></Style></TextRun></TextRuns><Style /></Paragraph></Paragraphs><rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Textbox21</rd:DefaultName><Style><Border><Style>Solid</Style></Border><BackgroundColor>SteelBlue</BackgroundColor><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell><TablixCell><CellContents><Textbox Name="Textbox23"><CanGrow>true</CanGrow><KeepTogether>true</KeepTogether><Paragraphs><Paragraph><TextRuns><TextRun><Value /><Style><FontWeight>Bold</FontWeight><Color>White</Color></Style></TextRun></TextRuns><Style /></Paragraph></Paragraphs><rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Textbox23</rd:DefaultName><Style><Border><Style>Solid</Style></Border><BackgroundColor>SteelBlue</BackgroundColor><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell><TablixCell><CellContents><Textbox Name="Textbox24"><CanGrow>true</CanGrow><KeepTogether>true</KeepTogether><Paragraphs><Paragraph><TextRuns><TextRun><Value>=SUM(Fields!Recieved.Value)</Value><Style><FontWeight>Bold</FontWeight><Color>White</Color></Style></TextRun></TextRuns><Style /></Paragraph></Paragraphs><rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Textbox24</rd:DefaultName><Style><Border><Style>Solid</Style></Border><BackgroundColor>SteelBlue</BackgroundColor><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell><TablixCell><CellContents><Textbox Name="Textbox25"><CanGrow>true</CanGrow><KeepTogether>true</KeepTogether><Paragraphs><Paragraph><TextRuns><TextRun><Value>=SUM(Fields!Finalised.Value)</Value><Style><FontWeight>Bold</FontWeight><Color>White</Color></Style></TextRun></TextRuns><Style /></Paragraph></Paragraphs><rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Textbox25</rd:DefaultName><Style><Border><Style>Solid</Style></Border><BackgroundColor>SteelBlue</BackgroundColor><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell><TablixCell><CellContents><Textbox Name="Textbox26"><CanGrow>true</CanGrow><KeepTogether>true</KeepTogether><Paragraphs><Paragraph><TextRuns><TextRun><Value>=SUM(Fields!Unresolved.Value)</Value><Style><FontWeight>Bold</FontWeight><Color>White</Color></Style></TextRun></TextRuns><Style /></Paragraph></Paragraphs><rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Textbox26</rd:DefaultName><Style><Border><Style>Solid</Style></Border><BackgroundColor>SteelBlue</BackgroundColor><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></CellContents></TablixCell></TablixCells></TablixRow></TablixRows></TablixBody><TablixColumnHierarchy><TablixMembers><TablixMember /><TablixMember /><TablixMember /><TablixMember /><TablixMember /></TablixMembers></TablixColumnHierarchy><TablixRowHierarchy><TablixMembers><TablixMember><KeepWithGroup>After</KeepWithGroup></TablixMember><TablixMember><Group Name="Details" /><TablixMembers><TablixMember /></TablixMembers></TablixMember><TablixMember><KeepWithGroup>Before</KeepWithGroup></TablixMember></TablixMembers></TablixRowHierarchy><DataSetName>dspcmInflow</DataSetName><Top>1.27cm</Top><Height>1.8cm</Height><Width>15.78083cm</Width><Style><Border><Style>Solid</Style></Border></Style></Tablix><Textbox Name="Textbox2"><CanGrow>true</CanGrow><KeepTogether>true</KeepTogether><Paragraphs><Paragraph><TextRuns><TextRun><Value>Inflow   - </Value><Style><FontSize>20pt</FontSize><FontWeight>Bold</FontWeight><Color>White</Color></Style></TextRun><TextRun><Value>=Parameters!Period.Value</Value><Style><FontSize>20pt</FontSize><FontWeight>Bold</FontWeight><Color>White</Color></Style></TextRun><TextRun><Value> - Report</Value><Style><FontSize>20pt</FontSize><FontWeight>Bold</FontWeight><Color>White</Color></Style></TextRun></TextRuns><Style /></Paragraph></Paragraphs><rd:DefaultName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Textbox2</rd:DefaultName><Height>1.09361cm</Height><Width>25cm</Width><ZIndex>1</ZIndex><Style><Border><Style>None</Style></Border><BackgroundColor>SteelBlue</BackgroundColor><PaddingLeft>2pt</PaddingLeft><PaddingRight>2pt</PaddingRight><PaddingTop>2pt</PaddingTop><PaddingBottom>2pt</PaddingBottom></Style></Textbox></ReportItems><Height>2in</Height><Style /></Body><Width>9.84252in</Width><Page><PageHeight>29.7cm</PageHeight><PageWidth>21cm</PageWidth><LeftMargin>2cm</LeftMargin><RightMargin>2cm</RightMargin><TopMargin>2cm</TopMargin><BottomMargin>2cm</BottomMargin><ColumnSpacing>0.13cm</ColumnSpacing><Style /></Page><AutoRefresh>0</AutoRefresh><DataSources><DataSource Name="DataSource1"><DataSourceReference>IMSDataSource</DataSourceReference><rd:SecurityType xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">None</rd:SecurityType><rd:DataSourceID xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">3e6c6fb9-7364-45dc-a8c9-6a081f91b6d1</rd:DataSourceID></DataSource></DataSources><DataSets><DataSet Name="dspcmInflow"><Query><DataSourceName>DataSource1</DataSourceName><QueryParameters><QueryParameter Name="@ProcessId"><Value>=Parameters!ProcessId.Value</Value></QueryParameter><QueryParameter Name="@Period"><Value>=Parameters!Period.Value</Value></QueryParameter><QueryParameter Name="@Answer1"><Value>=Parameters!Answer1.Value</Value></QueryParameter><QueryParameter Name="@Year"><Value>=Parameters!Year.Value</Value></QueryParameter></QueryParameters><CommandText>Declare @tblWeekly table
+(
+[Week] int,
+[StartDate] datetime,
+[EndDate] datetime,
+[Recieved] int
+)
+Declare @tblFinalised table
+(
+[Week] int,
+[Finalised] int
+)
+Declare @tblUnresolved table
+(
+[Week] int,
+[Unresolved] int
+)
+
+IF @Period = 'Weekly'
+BEGIN
+
+	INSERT INTO @tblWeekly 
+    SELECT 	 DatePart(week,inc.Timestamp) as [Week]
+		,Convert(nvarchar(10),DATEADD(dd, -(DATEPART(dw, inc.Timestamp)-1), inc.Timestamp),101)as StartDate
+		,Convert(nvarchar(10),DATEADD(dd, 7-(DATEPART(dw, inc.Timestamp)), inc.Timestamp),101) as Date
+		,Count(1)as Recieved
+FROM       [dbo].[vw_PCM] pcm 
+        INNER JOIN incidents inc on pcm.incidentid = inc.IncidentID           
+			WHERE inc.ProcessId = @ProcessId
+			AND inc.IncidentId In( select IncidentId from vw_OOCOffice ooc where ooc.Answer IN (@Answer1)
+			AND DATEPART(year,inc.timestamp) IN ( @Year))
+GROUP BY   DatePart(week,inc.Timestamp),Convert(nvarchar(10),DATEADD(dd, -(DATEPART(dw, inc.Timestamp)-1), inc.Timestamp),101),
+		Convert(nvarchar(10),DATEADD(dd, 7-(DATEPART(dw, inc.Timestamp)), inc.Timestamp),101)
+
+
+	INSERT INTO  @tblFinalised
+SELECT      DatePart(week,inc.DateCompleted) as [Week],
+		Count(*)as Finalised
+FROM        dbo.Incidents inc inner join dbo.Processes p on inc.ProcessId = p.processId
+		WHERE IncidentStatusId in (4,5) and inc.processid = @ProcessId
+		and inc.IncidentId In( select IncidentId from vw_OOCOffice ooc where ooc.Answer IN (@Answer1) AND DATEPART(year,inc.timestamp) IN ( @Year))
+GROUP BY    DatePart(week,inc.DateCompleted)
+
+
+	INSERT INTO  @tblUnresolved
+SELECT		 DatePart(week,inc.Timestamp) as [Week],
+		    Count(*)as Finalised
+FROM	     dbo.Incidents inc inner join dbo.Processes p on inc.ProcessId = p.processId
+WHERE		 IncidentStatusId NOT IN (4,5) and inc.processid = @ProcessId
+		    AND inc.IncidentId In( select IncidentId from vw_OOCOffice ooc where ooc.Answer IN (@Answer1) AND DATEPART(year,inc.timestamp) IN ( @Year))
+GROUP BY     DatePart(week,inc.Timestamp)
+
+						SELECT w.Week,StartDate,EndDate, Isnull(Recieved,0) as Recieved,
+		Isnull(Finalised,0) as Finalised,
+		Isnull(Unresolved,0 ) as Unresolved		
+		FROM @tblWeekly w
+		LEFT JOIN @tblFinalised f on w.Week = f.Week
+		LEFT JOIN @tblUnresolved un on w.Week = un.Week
+END
+ELSE
+    BEGIN
+
+	INSERT INTO @tblWeekly 
+SELECT 		 DatePart(month,GetDate()) as [Week]
+			,CONVERT(VARCHAR(25),DATEADD(dd,-(DAY(Timestamp)-1),Timestamp),101) as StartDate
+			,CONVERT(VARCHAR(25),DATEADD(dd,-(DAY(DATEADD(mm,1,Timestamp))),DATEADD(mm,1,Timestamp)),101) as Date
+			,Count(1)as Recieved
+ FROM       [dbo].[vw_PCM] pcm 
+            INNER JOIN incidents inc on pcm.incidentid = inc.IncidentID           
+			 WHERE inc.ProcessId = @ProcessId
+			AND inc.IncidentId In( select IncidentId from vw_OOCOffice ooc where ooc.Answer IN (@Answer1) AND DATEPART(year,inc.timestamp) IN ( @Year))
+GROUP BY   DatePart(month,inc.Timestamp),CONVERT(VARCHAR(25),DATEADD(dd,-(DAY(Timestamp)-1),Timestamp),101) ,
+			CONVERT(VARCHAR(25),DATEADD(dd,-(DAY(DATEADD(mm,1,Timestamp))),DATEADD(mm,1,Timestamp)),101)
+
+
+    INSERT INTO  @tblFinalised
+SELECT      DatePart(month,inc.DateCompleted) as [Week],
+			Count(*)as Finalised
+FROM        dbo.Incidents inc inner join dbo.Processes p on inc.ProcessId = p.processId
+			WHERE IncidentStatusId in (4,5) and inc.processid = @ProcessId
+			and inc.IncidentId In( select IncidentId from vw_OOCOffice ooc where ooc.Answer IN (@Answer1) AND DATEPART(year,inc.timestamp) IN ( @Year))
+GROUP BY    DatePart(month,inc.DateCompleted)
+
+   INSERT INTO  @tblUnresolved
+SELECT		 DatePart(month,inc.Timestamp) as [Week],
+		     Count(*)as Finalised
+FROM	     dbo.Incidents inc inner join dbo.Processes p on inc.ProcessId = p.processId
+WHERE		 IncidentStatusId NOT IN (4,5) and inc.processid = @ProcessId
+		     AND inc.IncidentId In( select IncidentId from vw_OOCOffice ooc where ooc.Answer IN (@Answer1) AND DATEPART(year,inc.timestamp) IN ( @Year))
+GROUP BY     DatePart(month,inc.Timestamp)
+
+   SELECT w.Week,StartDate,EndDate, Isnull(Recieved,0) as Recieved,
+		Isnull(Finalised,0) as Finalised,
+		Isnull(Unresolved,0 ) as Unresolved		
+		FROM @tblWeekly w
+		LEFT JOIN @tblFinalised f on w.Week = f.Week
+		LEFT JOIN @tblUnresolved un on w.Week = un.Week
+END</CommandText><rd:UseGenericDesigner xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">true</rd:UseGenericDesigner></Query><Fields><Field Name="Week"><DataField>Week</DataField><rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Int32</rd:TypeName></Field><Field Name="StartDate"><DataField>StartDate</DataField><rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.DateTime</rd:TypeName></Field><Field Name="EndDate"><DataField>EndDate</DataField><rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.DateTime</rd:TypeName></Field><Field Name="Recieved"><DataField>Recieved</DataField><rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Int32</rd:TypeName></Field><Field Name="Finalised"><DataField>Finalised</DataField><rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Int32</rd:TypeName></Field><Field Name="Unresolved"><DataField>Unresolved</DataField><rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Int32</rd:TypeName></Field></Fields></DataSet><DataSet Name="dsFirstType"><Query><DataSourceName>DataSource1</DataSourceName><QueryParameters><QueryParameter Name="@ProcessId"><Value>=Parameters!ProcessId.Value</Value></QueryParameter></QueryParameters><CommandText>select distinct fieldname from [dbo].[vw_OOCOffice] o
+inner join incidents inc on o.IncidentId = inc.IncidentID
+where inc.ProcessId = @ProcessId
+and fieldName in ('Priority',
+'Place where complaint originated from',
+'Document Type',
+'Tax Type',
+'Method Recieved',
+'Operations Issue',
+'Processing Centre/ Unit',
+'Area Referred',
+'Business Area Manager',
+'Operations Issue',
+'Repeat query',
+'Responsible Centre Head',
+'Stakeholder',
+'Root Cause Analysis')</CommandText></Query><Fields><Field Name="fieldname"><DataField>fieldname</DataField><rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.String</rd:TypeName></Field></Fields></DataSet><DataSet Name="dsAnswers"><Query><DataSourceName>DataSource1</DataSourceName><QueryParameters><QueryParameter Name="@Type1"><Value>=Parameters!Type1.Value</Value></QueryParameter><QueryParameter Name="@ProcessId"><Value>=Parameters!ProcessId.Value</Value></QueryParameter></QueryParameters><CommandText>Select DISTINCT Answer from 
+vw_OOCOffice ooc 
+INNER JOIN Incidents inc on ooc.IncidentId = inc.IncidentID
+WHERE
+ ooc.FieldName  IN (@Type1) and  inc.ProcessId = @ProcessId</CommandText><rd:UseGenericDesigner xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">true</rd:UseGenericDesigner></Query><Fields><Field Name="Answer"><DataField>Answer</DataField><rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.String</rd:TypeName></Field></Fields></DataSet><DataSet Name="dsPeriod"><Query><DataSourceName>DataSource1</DataSourceName><CommandText>SELECT  'Weekly' as period
+UNION ALL
+SELECT 'Monthly' as period</CommandText><rd:UseGenericDesigner xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">true</rd:UseGenericDesigner></Query><Fields><Field Name="period"><DataField>period</DataField><rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.String</rd:TypeName></Field></Fields></DataSet><DataSet Name="dsYear"><Query><DataSourceName>DataSource1</DataSourceName><CommandText>Select distinct Datepart(year,timestamp ) as [Year] from [dbo].[vw_PCM] pcm
+inner join incidents inc 
+ON pcm.incidentid = inc.IncidentID</CommandText></Query><Fields><Field Name="Year"><DataField>Year</DataField><rd:TypeName xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">System.Int32</rd:TypeName></Field></Fields></DataSet></DataSets><ReportParameters><ReportParameter Name="Period"><DataType>String</DataType><Prompt>Period</Prompt><ValidValues><DataSetReference><DataSetName>dsPeriod</DataSetName><ValueField>period</ValueField><LabelField>period</LabelField></DataSetReference></ValidValues></ReportParameter><ReportParameter Name="Year"><DataType>String</DataType><Prompt>Year</Prompt><ValidValues><DataSetReference><DataSetName>dsYear</DataSetName><ValueField>Year</ValueField><LabelField>Year</LabelField></DataSetReference></ValidValues><MultiValue>true</MultiValue></ReportParameter><ReportParameter Name="ProcessId"><DataType>String</DataType><Prompt>Process Id</Prompt><Hidden>true</Hidden></ReportParameter><ReportParameter Name="Type1"><DataType>String</DataType><Prompt>Only display totals where</Prompt><ValidValues><DataSetReference><DataSetName>dsFirstType</DataSetName><ValueField>fieldname</ValueField><LabelField>fieldname</LabelField></DataSetReference></ValidValues><MultiValue>true</MultiValue></ReportParameter><ReportParameter Name="Answer1"><DataType>String</DataType><DefaultValue><DataSetReference><DataSetName>dsAnswers</DataSetName><ValueField>Answer</ValueField></DataSetReference></DefaultValue><Prompt>Is equal to</Prompt><ValidValues><DataSetReference><DataSetName>dsAnswers</DataSetName><ValueField>Answer</ValueField><LabelField>Answer</LabelField></DataSetReference></ValidValues><MultiValue>true</MultiValue></ReportParameter></ReportParameters><rd:ReportUnitType xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">Cm</rd:ReportUnitType><rd:ReportID xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">55e2c2da-f3c3-4a52-bc57-98dabe589ce7</rd:ReportID></Report>

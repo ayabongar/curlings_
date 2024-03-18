@@ -1,0 +1,155 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<%@ Register Src="~/Controls/MainMenu.ascx" TagPrefix="uc1" TagName="MainMenu" %>
+
+
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head id="Head1" runat="server">
+    <title></title>
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/survey.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/toolBars.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/bootstrap.css" rel="stylesheet" type="text/css" />
+
+    <style type="text/css">
+        .style1 {
+            width: 8px;
+            height: 8px;
+        }
+
+        .style2 {
+            height: 8px;
+        }
+
+
+        .dvhdr1 {
+            background: #CCCCCC;
+            font-family: verdana;
+            font-size: 9px;
+            font-weight: bold;
+            border-top: 1px solid #000000;
+            border-left: 1px solid #000000;
+            border-right: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            padding: 2px;
+            width: 400px;
+        }
+
+        .dvbdy1 {
+            background: #FFFFFF;
+            font-family: verdana;
+            font-size: 10px;
+            border-left: 1px solid #000000;
+            border-right: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            padding: 2px;
+            width: 400px;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="Form1" runat="server" autocomplete="off">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="550" EnablePartialRendering="false" AllowCustomErrorsRedirect="true">
+            <Services>
+                <asp:ServiceReference Path="Services/IncidentTrackingService.asmx" />
+            </Services>
+            <Scripts>
+                <asp:ScriptReference Path="~/Scripts/boxover.js" />
+                <asp:ScriptReference Path="~/Scripts/_validation.js" />
+                <asp:ScriptReference Path="Scripts/jquery-1.7.1.min.js" />
+                <asp:ScriptReference Path="~/Scripts/webservices.js" />
+                <%--     <asp:ScriptReference Path="~/Scripts/jquery.maskedinput.min.js"/>
+            <asp:ScriptReference Path="~/Scripts/jquery-ui.js"/>
+            <asp:ScriptReference Path="~/Scripts/fusioncharts/fusioncharts.js"/>--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <table class="page">
+            <tr>
+                <td>
+                    <div class="header">
+                        <table style="width: 100%; text-align: right; font-size: 12px; color: #FFFFFF; vertical-align: top;">
+                            <tr>
+                                <td style="text-align: left;">
+                                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">
+                                        <asp:Image runat="server" ID="logo" ImageUrl="~/Images/logo-sars.png" BorderStyle="None"
+                                            ImageAlign="Left" />
+                                    </asp:HyperLink>
+                                </td>
+                                <td style="padding-right: 10px; text-align: right;">
+                                    <table style="width: 100%; float: right;">
+                                        <tr>
+                                            <td><span style="float: right; font-size: x-large; font-family: Century; color: #ffffff;">
+                                                <%=ConfigurationManager.AppSettings["version"] %></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span runat="server" id="welcome" style="font-size: small; float: right; padding-top: 0; text-align: right; color: #ffffff;"></span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                            <ContentTemplate>
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td valign="top" style="width: 280px">
+                                            <div class="panel panel-primary">
+                                                <div class="panel-heading">
+                                                    MAIN MENU
+                                                </div>
+                                                <div class="panel-body">
+                                                    <span id="SideNav2" style="display: inline-block; width: 280px;">
+                                                        <link href="/IMS/WebResource.axd?d=zMZbHqHACchWdIGWM4OOtHgwawA9m3FMd5hC_3AFOYxowC7zD7we4Td1WzfzMeMn5HzWvL7CfmmhdkoubMbzmOAlpHHjXKQDNl7WS1Dv9YWdWzQh0&amp;t=636088444049537236" type="text/css" rel="stylesheet">
+                                                        <div id="navigation" style="width: 280px;">
+                                                            <ul>
+                                                                <li></li>
+                                                                <li><a href="#" class="aheading" id="id_heading_1" style="font-size: 11px;">NTQR Administration</a>
+                                                                    <ul class="submenu_block">
+                                                                        <%--  <li>
+                                                                            <a href="/ims/ntqr/UserProfile.aspx?procid=<%=ConfigurationManager.AppSettings["ntqProcess"] %>" class="asubmenu" style="font-size: 11px">Register</a>
+                                                                        </li>    --%>                                                                      
+                                                                        <li>
+                                                                            <a href="/ims/ntqr/normaluserlandingpage.aspx?procid=<%=ConfigurationManager.AppSettings["ntqProcess"] %>" class="asubmenu" style="font-size: 11px">NT Quarterly Report</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </span>
+                                                   <%-- <sars:SideNav ID="SideNav1" runat="server" AutoBuildMenu="True" Width="280px" HeaderFontSize="11px" ItemFontSize="8px" />
+                                                 --%> 
+                                                                                                <uc1:MainMenu runat="server" ID="MainMenu" />   
+                                                    
+                                                    
+                                                </div>
+
+                                            </div>
+                                        </td>
+                                        <td valign="top" style="text-align: left;">
+                                            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                                            </asp:ContentPlaceHolder>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

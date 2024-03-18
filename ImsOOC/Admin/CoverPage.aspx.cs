@@ -1,5 +1,6 @@
 ﻿using Sars.Systems.Data;
 using System;
+using System.Xml.Linq;
 
 public partial class Admin_CoverPage : IncidentTrackingPage
 {
@@ -48,8 +49,9 @@ public partial class Admin_CoverPage : IncidentTrackingPage
                 {
                     signedOff = 1;
                 }
-
-                    AddCoverPage(CurrentIncidentDetails.IncidentID,
+                    var subject = !string.IsNullOrEmpty(lblSubject.Text) ? lblSubject.Text: lblSecSubject.Text;
+                    AddCoverPage(subject,
+                    CurrentIncidentDetails.IncidentID,
                     chkDelivered.Checked ? 1 : 0,
                     txtDocContent.Text,
                     signedOff,
@@ -88,13 +90,14 @@ public partial class Admin_CoverPage : IncidentTrackingPage
         }
     }
 
-    public static int AddCoverPage(decimal incidentId, int delivered, string documentContent, int signedOff, int docCheckedForGrammar, int docCheckedForConflict,
+    public static int AddCoverPage(string Subject, decimal incidentId, int delivered, string documentContent, int signedOff, int docCheckedForGrammar, int docCheckedForConflict,
        int docAddressInfoRequested, int docNotDicloseFacts, int docSarsStdTemp, string commissionerComent, int dg, int deputyMinister, int minister, int addInfo, string nature,
        string methodReceived, string DocumentContent2, string FrontOfficeComments)
     {
         var oParams = new DBParamCollection
         {
             {"@IncidentId", incidentId},
+            {"@Subject", Subject},
             {"@Delivered", delivered},
             {"@DocumentContent", documentContent},
             {"@SignedOff", signedOff},
@@ -148,7 +151,7 @@ public partial class Admin_CoverPage : IncidentTrackingPage
         {
             for (int i = 0; i < results.Rows.Count; i++)
             {
-                if (results.Tables[0].Rows[i][1].ToString().Equals("SystemReferenceNo", StringComparison.OrdinalIgnoreCase))
+                if (results.Tables[0].Rows[i][1].ToString().Equals("ReferenceNumber", StringComparison.OrdinalIgnoreCase))
                 {
                     lblReferenceNumber.Text = results.Tables[0].Rows[i][2].ToString();
                     lblComReferenceNo.Text = results.Tables[0].Rows[i][2].ToString();
@@ -175,7 +178,7 @@ public partial class Admin_CoverPage : IncidentTrackingPage
                     txtDocContent.Text = results.Tables[0].Rows[i][2].ToString();
                 }
                 else if (results.Tables[0].Rows[i][1].ToString()
-                    .Equals("Priority", StringComparison.OrdinalIgnoreCase))
+                    .Equals("LevelOfurgency", StringComparison.OrdinalIgnoreCase))
                 {
                     lblPriority.Text = results.Tables[0].Rows[i][2].ToString();
                 }
@@ -263,7 +266,7 @@ public partial class Admin_CoverPage : IncidentTrackingPage
                     chkAdditionalInformation.SelectedValue = results.Tables[0].Rows[i][2].ToString();
                 }
                 else if (results.Tables[0].Rows[i][1].ToString()
-                  .Equals("MethodReceived", StringComparison.OrdinalIgnoreCase))
+                  .Equals("Channel", StringComparison.OrdinalIgnoreCase))
                 {
                     lblMethodRecieved.Text = results.Tables[0].Rows[i][2].ToString();
                     lblSecMethodReceived.Text = results.Tables[0].Rows[i][2].ToString();

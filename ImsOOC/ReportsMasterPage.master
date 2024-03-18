@@ -1,6 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ReportsMasterPage.master.cs" Inherits="ReportsMasterPage" %>
-
-<!DOCTYPE>
+<!DOCTYPE html>
 <html lang="en-ZA">
 <head id="Head1" runat="server">
     <title></title>

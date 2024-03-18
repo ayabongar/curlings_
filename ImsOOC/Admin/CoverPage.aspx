@@ -149,7 +149,7 @@ input[type=text]:focus, textarea:focus {
                                     <tr>
                                         <td>Subject</td>
                                         <td>
-                                            <asp:TextBox runat="server" ID="lblSubject" Enabled="false"></asp:TextBox></td>
+                                            <asp:TextBox runat="server" ID="lblSubject"></asp:TextBox></td>
                                     </tr>
                                     <tr>
                                         <td>Method Received</td>
@@ -219,7 +219,7 @@ input[type=text]:focus, textarea:focus {
                                         <tr>
                                             <td>Subject</td>
                                             <td>
-                                                <asp:TextBox runat="server" ID="lblSecSubject" Enabled="false"></asp:TextBox></td>
+                                                <asp:TextBox runat="server" ID="lblSecSubject" Enabled="true"></asp:TextBox></td>
                                         </tr>
                                         <tr>
                                             <td>Method Received</td>

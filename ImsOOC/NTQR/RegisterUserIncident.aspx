@@ -2,7 +2,6 @@
 
 <%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
 
-<%@ Register TagPrefix="cc1" Namespace="AjaxControlToolkit" Assembly="AjaxControlToolkit, Version=4.1.51116.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e" %>
 <%@ Register Src="~/Admin/UserSelector.ascx" TagPrefix="uc1" TagName="UserSelector" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
@@ -581,9 +580,9 @@ information systems within their sections, and for using performance information
 
                                 <div class="col-xs-12 col-sm-5">
                                     <asp:TextBox runat="server" ID="txtCompilerDate" />
-                                    <cc1:CalendarExtender ID="CalendarExtender1" runat="server" Format="yyyy-MM-dd"
+                                    <asp:CalendarExtender ID="CalendarExtender1" runat="server" Format="yyyy-MM-dd"
                                         Enabled="True" TargetControlID="txtCompilerDate">
-                                    </cc1:CalendarExtender>
+                                    </asp:CalendarExtender>
                                 </div>
 
                             </div>
@@ -644,9 +643,9 @@ information systems within their sections, and for using performance information
 
                                         <div class="col-xs-12 col-sm-5">
                                             <asp:TextBox runat="server" ID="txtKeyResultDate" />
-                                            <cc1:CalendarExtender ID="txtDate_CalendarExtender" runat="server" Format="yyyy-MM-dd"
+                                            <asp:CalendarExtender ID="txtDate_CalendarExtender" runat="server" Format="yyyy-MM-dd"
                                                 Enabled="True" TargetControlID="txtKeyResultDate">
-                                            </cc1:CalendarExtender>
+                                            </asp:CalendarExtender>
                                         </div>
 
                                     </div>
@@ -710,9 +709,9 @@ information systems within their sections, and for using performance information
 
                                         <div class="col-xs-12 col-sm-5">
                                             <asp:TextBox runat="server" ID="txtKeyResult2Date" />
-                                            <cc1:CalendarExtender ID="CalendarExtender4" runat="server" Format="yyyy-MM-dd"
+                                            <asp:CalendarExtender ID="CalendarExtender4" runat="server" Format="yyyy-MM-dd"
                                                 Enabled="True" TargetControlID="txtKeyResult2Date">
-                                            </cc1:CalendarExtender>
+                                            </asp:CalendarExtender>
                                         </div>
 
                                     </div>
@@ -783,9 +782,9 @@ information systems within their sections, and for using performance information
 
                                 <div class="col-xs-12 col-sm-5">
                                     <asp:TextBox runat="server" ID="txtAnchorSignedDate" />
-                                    <cc1:CalendarExtender ID="CalendarExtender2" runat="server" Format="yyyy-MM-dd"
+                                    <asp:CalendarExtender ID="CalendarExtender2" runat="server" Format="yyyy-MM-dd"
                                         Enabled="True" TargetControlID="txtAnchorSignedDate">
-                                    </cc1:CalendarExtender>
+                                    </asp:CalendarExtender>
                                 </div>
 
                             </div>
@@ -852,9 +851,9 @@ information systems within their sections, and for using performance information
 
                                 <div class="col-xs-12 col-sm-5">
                                     <asp:TextBox runat="server" ID="txtAnchor2SignedDate" />
-                                    <cc1:CalendarExtender ID="CalendarExtender3" runat="server" Format="yyyy-MM-dd"
+                                    <asp:CalendarExtender ID="CalendarExtender3" runat="server" Format="yyyy-MM-dd"
                                         Enabled="True" TargetControlID="txtAnchor2SignedDate">
-                                    </cc1:CalendarExtender>
+                                    </asp:CalendarExtender>
                                 </div>
 
                             </div>

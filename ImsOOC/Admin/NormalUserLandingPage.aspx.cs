@@ -165,7 +165,7 @@ public partial class Admin_NormalUserLandingPage : IncidentTrackingPage
                     gvIncidents.Bind(inc.FindAll(i => i.ProcessId == Convert.ToInt64(ProcessID) && i.RoleId == roleId));
                     break;
                 case "Developer":
-                    gvIncidents.Bind(inc.FindAll(i => i.ProcessId == Convert.ToInt64(ProcessID) && i.RoleId == roleId));
+                    gvIncidents.Bind(inc.FindAll(i => i.ProcessId == Convert.ToInt64(ProcessID)));
                     break;
                 default:
                     break;

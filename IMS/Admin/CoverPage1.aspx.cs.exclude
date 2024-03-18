@@ -1,0 +1,153 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class Admin_CoverPage :IncidentTrackingPage
+{
+    protected Incident CurrentIncidentDetails;
+    protected IncidentProcess CurrentProcessDetails;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        CurrentIncidentDetails = CurrentIncident;
+    }
+
+    protected void drpDocumentType_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (drpDocumentType.SelectedValue.Equals("Blue"))
+        {
+            Page.Header.Controls.Add(
+                new System.Web.UI.LiteralControl("<style>td {background-color:blue;border:3px solid white;}</style>"));
+        }
+        else if (drpDocumentType.SelectedValue.Equals("Green"))
+        {
+            Page.Header.Controls.Add(
+                new System.Web.UI.LiteralControl("<style>td {background-color:green;border:3px solid white;}</style>"));
+        }
+        else if (drpDocumentType.SelectedValue.Equals("Red"))
+        {
+            Page.Header.Controls.Add(
+                new System.Web.UI.LiteralControl("<style>td {background-color:red;border:3px solid white;}</style>"));
+        }
+        else if (drpDocumentType.SelectedValue.Equals("Yellow"))
+        {
+            Page.Header.Controls.Add(
+                new System.Web.UI.LiteralControl("<style>td {background-color:yellow;border:3px solid white;}</style>"));
+        }
+        else if (drpDocumentType.SelectedValue.Equals("Orange"))
+        {
+            Page.Header.Controls.Add(
+                new System.Web.UI.LiteralControl("<style>td {background-color:Orange;border:3px solid white;}</style>"));
+        }
+    }
+
+    protected void Toolbar1_ButtonClicked(object sender, SCS.Web.UI.WebControls.ButtonEventArgs e)
+    {
+        switch (e.CommandName)
+        {
+            case "Close":
+            {
+                break;
+            }
+            case "Print" :
+            {
+                if (drpDocumentType.SelectedValue.Equals("Blue"))
+                {
+                    Page.Header.Controls.Add(
+                        new System.Web.UI.LiteralControl("<style>td {background-color:blue;border:3px solid white;}</style>"));
+                    PrintDocument(GetData(drpPageToPrint.SelectedValue),
+                  "<style>td {background-color:blue;border:3px solid white;}</style>");
+                }
+                else if (drpDocumentType.SelectedValue.Equals("Green"))
+                {
+                    Page.Header.Controls.Add(
+                        new System.Web.UI.LiteralControl("<style>td {background-color:green;border:3px solid white;}</style>"));
+                    PrintDocument( GetData(drpPageToPrint.SelectedValue) ,
+                   "<style>td {background-color:green;border:3px solid white;}</style>");
+                }
+                else if (drpDocumentType.SelectedValue.Equals("Red"))
+                {
+                    Page.Header.Controls.Add(
+                        new System.Web.UI.LiteralControl("<style>td {background-color:red;border:3px solid white;}</style>"));
+                    PrintDocument(GetData(drpPageToPrint.SelectedValue),
+                     "<style>td {background-color:red;border:3px solid white;}</style>");
+                }
+                else if (drpDocumentType.SelectedValue.Equals("Yellow"))
+                {
+                    Page.Header.Controls.Add(
+                        new System.Web.UI.LiteralControl("<style>td {background-color:yellow;border:3px solid white;}</style>"));
+                    PrintDocument( GetData(drpPageToPrint.SelectedValue),
+                      "<style>td {background-color:yellow;border:3px solid white;}</style>");
+                }
+                else if (drpDocumentType.SelectedValue.Equals("Orange"))
+                {
+                    Page.Header.Controls.Add(
+                        new System.Web.UI.LiteralControl("<style>td {background-color:Orange;border:3px solid white;}</style>"));
+                    PrintDocument( GetData(drpPageToPrint.SelectedValue) ,
+                        "<style>td {background-color:Orange;border:3px solid white;}</style>");
+                }
+               break;
+            }
+        }
+    }
+
+    private void PrintDocument(string data, string color)
+    {
+        var sb = new StringBuilder();
+        // sb.Append("function Popup() {");
+        sb.Append(
+            " var mywindow = window.open('', 'Incident Tracking - Cover Page', 'width=1200,height=800,left=100,top=100,resizable=yes,scrollbars=1');");
+        sb.Append("mywindow.document.write('<html><head><title>Incident Tracking - Cover Page</title>');");
+        sb.Append("mywindow.document.write('" + color + "');");
+        sb.Append(" mywindow.document.write(' <link href=../Styles/CoverPagePrinter.css rel=stylesheet />');");
+        sb.Append(" mywindow.document.write('</head><body >');");
+
+        //sb.Append(" mywindow.document.write(' <div id=dvheader style=width: 100%; background-color: #4B6C9E; height: 100px>');");
+        //sb.Append(" mywindow.document.write( '  <div style=float: left>');");
+        //sb.Append(" mywindow.document.write( '    <a id=HyperLink1 href=../Default.aspx><img id=logo src=../Images/logo-sars.png align=left style=border-style:None;width:250px; /></a>');");
+        //sb.Append(" mywindow.document.write( '  </div>'); ");
+        //sb.Append(" mywindow.document.write( ' <div style=float: right>');");
+        //sb.Append(" mywindow.document.write('     <span id=lblProcess></span>');");
+        //sb.Append(" mywindow.document.write('   </div>');");
+        //sb.Append(" mywindow.document.write(' </div>');");
+        //sb.Append(" mywindow.document.write($('#dvheader').html());");
+
+        sb.Append(" mywindow.document.write($('" + data + "').html());");
+        sb.Append(" mywindow.document.write('</body></html>');");
+        sb.Append("mywindow.document.close(); ");
+        sb.Append(" mywindow.focus(); ");
+        sb.Append(" mywindow.print();");
+        sb.Append(" mywindow.close();");
+        // sb.Append(" return true;");
+        //  sb.Append("}");
+        ClientScript.RegisterStartupScript(this.GetType(), "Print", sb.ToString(), true);
+        // ClientScript.RegisterStartupScript(this.GetType(), "OpenPopup", "Popup();", true);
+    }
+
+    private string GetData(string documentVallue)
+    {
+        string content = null;
+        switch (documentVallue)
+        {
+            case "0":
+                content = "#dvMain";
+                break;
+                 case "1":
+                content = "#dvFirst";
+                break;
+              
+                 case "2":
+                content = "#dvSecond";
+                break;
+               
+                 case "3":
+                content = "#dvThird";
+                break;
+                
+        }
+        return content;
+    }
+}

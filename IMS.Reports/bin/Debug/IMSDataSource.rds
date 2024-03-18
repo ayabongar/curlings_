@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="IMSDataSource">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=PTADVSQC02SQL;Initial Catalog=IMS_OOC</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>49d8f226-80f3-4575-8f38-44727e7cd9db</DataSourceID>
+</RptDataSource>

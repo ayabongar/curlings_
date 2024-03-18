@@ -7,6 +7,8 @@ using Microsoft.Reporting.WebForms;
 using System.Data;
 using Sars.Systems.Data;
 using Sars.Systems.Extensions;
+using Sars.Systems.Security;
+using System.Configuration;
 
 public partial class Admin_SelectNormalUserProcess : IncidentTrackingPage
 {
@@ -39,7 +41,7 @@ public partial class Admin_SelectNormalUserProcess : IncidentTrackingPage
 
         if (processes != null && processes.Any())
         {
-            if(processes.Count > 1)
+            if(processes.Count >= 1)
             {
                 gvProcesses.Bind(processes);
                 drpProcess.DataSource = processes;
@@ -81,9 +83,9 @@ public partial class Admin_SelectNormalUserProcess : IncidentTrackingPage
             if(processes.Count == 1)
             {
                 var proc = processes[0];
-                Response.Redirect(string.Format("NormalUserLandingPage.aspx?procId={0}", proc.ProcessId));
+               // Response.Redirect(string.Format("NormalUserLandingPage.aspx?procId={0}", proc.ProcessId));
             }
-            Response.Redirect("../NormalUserDefault.aspx");
+           // Response.Redirect("../NormalUserDefault.aspx");
         }
         else
         {
@@ -229,21 +231,43 @@ public partial class Admin_SelectNormalUserProcess : IncidentTrackingPage
         try
         {
 
+            var userRole = this.Page.User.GetRole();
+            var roleId = new Guid();
+            switch (userRole)
+            {
+                case "Administrator Head - Top Secret":
+                    roleId = new Guid(ConfigurationManager.AppSettings["AdministratorHeadTopSecret"]);
+                    break;
+                case "Administrator Manager - Secret":
+                    roleId = new Guid(ConfigurationManager.AppSettings["AdministratorManagerSecret"]);
+                    break;
+                case "Administrator - confidential":
+                    roleId = new Guid(ConfigurationManager.AppSettings["AdministratorConfidential"]);
+                    break;
+                case "System User":
+                    roleId = new Guid(ConfigurationManager.AppSettings["SystemUser"]);
+                    break;
+                case "Developer":
+                    roleId = new Guid(ConfigurationManager.AppSettings["SystemUser"]);
+                    break;
+            }
 
-            const string path = "/IMS/imsDashboard";
+            const string path = "/IMS/OocNewDashboard";
 
             ReportViewer1.ServerReport.ReportServerUrl =
                 new Uri(System.Configuration.ConfigurationManager.AppSettings["reports-url"]);
             ReportViewer1.ServerReport.ReportPath = path;
             DateTime date = DateTime.Today;
-            var firstDayOfMonth = new DateTime(2015, 01, 1);
+            var firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
             var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
             _DateFrom = firstDayOfMonth.ToString("dd-MMM-yyyy");
             _DateTo = DateTime.Now.ToString("dd-MMM-yyyy");
-            ReportParameter[] reportParam = new ReportParameter[3];
-            reportParam[0] = new ReportParameter("SID", SarsUser.SID);
-            reportParam[1] = new ReportParameter("startDate", firstDayOfMonth.ToString());
-            reportParam[2] = new ReportParameter("Date", _DateTo.ToString());
+            ReportParameter[] reportParam = new ReportParameter[4];
+            //reportParam[0] = new ReportParameter("ProcessId", "96");
+            reportParam[0] = new ReportParameter("startDate", firstDayOfMonth.ToString());
+            reportParam[1] = new ReportParameter("EndDate", _DateTo.ToString());
+            reportParam[2] = new ReportParameter("roleId", roleId.ToString());
+            reportParam[3] = new ReportParameter("SID", SarsUser.SID);
 
             ReportViewer1.ServerReport.SetParameters(reportParam);
             ReportViewer1.ServerReport.Refresh();
@@ -256,39 +280,7 @@ public partial class Admin_SelectNormalUserProcess : IncidentTrackingPage
         }
     }
 
-    protected void btnFilter_Click(object sender, EventArgs e)
-    {
-        if (!string.IsNullOrEmpty(DateFrom.Text) && !string.IsNullOrEmpty(DateTo.Text))
-        {
-             DateTime testDate;
-            if (!DateTime.TryParse(DateFrom.Text, out testDate))
-            {
-                MessageBox.Show("Date From formart is invalid.");
-                return;
-            }
-            if (!DateTime.TryParse(DateTo.Text, out testDate))
-            {
-                MessageBox.Show("Date To formart is invalid.");
-                return;
-            }
-            const string path = "/IMS/imsDashboard";
-            ReportViewer1.ServerReport.ReportServerUrl =
-                new Uri(System.Configuration.ConfigurationManager.AppSettings["reports-url"]);
-            ReportViewer1.ServerReport.ReportPath = path;
-
-            _DateFrom = DateTime.Parse(DateFrom.Text).ToString("dd-MMM-yyyy");
-            _DateTo = DateTime.Parse(DateTo.Text).ToString("dd-MMM-yyyy");
-            ReportParameter[] reportParam = new ReportParameter[3];
-            reportParam[0] = new ReportParameter("SID", SarsUser.SID);
-            reportParam[1] = new ReportParameter("startDate", DateFrom.Text);
-            reportParam[2] = new ReportParameter("Date", DateTo.Text);
-
-            ReportViewer1.ServerReport.SetParameters(reportParam);
-            ReportViewer1.ServerReport.Refresh();
-            ReportViewer1.Visible = true;
-        }
-    }
-
+  
     protected void ExportData()
     {
 
@@ -314,9 +306,49 @@ public partial class Admin_SelectNormalUserProcess : IncidentTrackingPage
             DataTable tblFiltered = new DataTable();
             if (!string.IsNullOrEmpty(txtDate.Text) && !string.IsNullOrEmpty(txtEndDate.Text))
             {
-                var tblRow = data.Tables[0].AsEnumerable()
-                     .Where(row => row.Field<DateTime>("Date Registered") >= Convert.ToDateTime(txtDate.Text)
-                                  && row.Field<DateTime>("Date Registered") <= Convert.ToDateTime(txtEndDate.Text) && row.Field<string>("AssignedToSID") == SarsUser.SID);
+                var userRole = this.Page.User.GetRole();
+                var secret = new Guid(ConfigurationManager.AppSettings["AdministratorManagerSecret"]);
+                var topSecret = new Guid(ConfigurationManager.AppSettings["AdministratorHeadTopSecret"]);
+                var systemUser = new Guid(ConfigurationManager.AppSettings["SystemUser"]);
+                var tblRow = new DataTable().AsEnumerable();
+                switch (userRole)
+                {
+                    case "Administrator Head - Top Secret":
+                        var roleId = new Guid(ConfigurationManager.AppSettings["AdministratorHeadTopSecret"]);
+                        tblRow = data.Tables[0].AsEnumerable()
+                                    .Where(row => row.Field<DateTime>("Date Registered") >= Convert.ToDateTime(txtDate.Text)
+                                     && row.Field<DateTime>("Date Registered") <= Convert.ToDateTime(txtEndDate.Text));
+                        break;
+                    case "Administrator Manager - Secret":
+                        // no access to HeadTopScret
+                        roleId = new Guid(ConfigurationManager.AppSettings["AdministratorHeadTopSecret"]);
+                        tblRow = data.Tables[0].AsEnumerable()
+                                    .Where(row => row.Field<DateTime>("Date Registered") >= Convert.ToDateTime(txtDate.Text)
+                                     && row.Field<DateTime>("Date Registered") <= Convert.ToDateTime(txtEndDate.Text) && row.Field<Guid>("RoleId") != roleId);
+                        break;
+                    case "Administrator - confidential":
+                        roleId = new Guid(ConfigurationManager.AppSettings["AdministratorConfidential"]);
+                        tblRow = data.Tables[0].AsEnumerable()
+                                    .Where(row => row.Field<DateTime>("Date Registered") >= Convert.ToDateTime(txtDate.Text)
+                                     && row.Field<DateTime>("Date Registered") <= Convert.ToDateTime(txtEndDate.Text)
+                                       && (row.Field<Guid>("RoleId") != topSecret && row.Field<Guid>("RoleId") != secret));
+                        break;
+                    case "System User":
+                        roleId = new Guid(ConfigurationManager.AppSettings["SystemUser"]);
+                        tblRow = data.Tables[0].AsEnumerable()
+                                  .Where(row => row.Field<DateTime>("Date Registered") >= Convert.ToDateTime(txtDate.Text)
+                                   && row.Field<DateTime>("Date Registered") <= Convert.ToDateTime(txtEndDate.Text)
+                                     && (row.Field<Guid>("RoleId") == roleId));
+                        break;
+                    case "Developer":
+                        tblRow = data.Tables[0].AsEnumerable()
+                                       .Where(row => row.Field<DateTime>("Date Registered") >= Convert.ToDateTime(txtDate.Text)
+                                        && row.Field<DateTime>("Date Registered") <= Convert.ToDateTime(txtEndDate.Text));
+                        break;
+                    default:
+                        break;
+                }
+
                 if (tblRow.Any())
                 {
                     tblFiltered = tblRow.CopyToDataTable();
@@ -359,9 +391,49 @@ public partial class Admin_SelectNormalUserProcess : IncidentTrackingPage
             DataTable tblFiltered = new DataTable();
             if (!string.IsNullOrEmpty(txtDate.Text) && !string.IsNullOrEmpty(txtEndDate.Text))
             {
-                var tblRow = data.Tables[0].AsEnumerable()
-                     .Where(row => row.Field<DateTime>("Date Registered") >= Convert.ToDateTime(txtDate.Text)
-                                  && row.Field<DateTime>("Date Registered") <= Convert.ToDateTime(txtEndDate.Text) && row.Field<string>("AssignedToSID") == SarsUser.SID);
+                var userRole = this.Page.User.GetRole();
+                var secret = new Guid(ConfigurationManager.AppSettings["AdministratorManagerSecret"]);
+                var topSecret = new Guid(ConfigurationManager.AppSettings["AdministratorHeadTopSecret"]);
+                var systemUser = new Guid(ConfigurationManager.AppSettings["SystemUser"]);
+                var tblRow = new DataTable().AsEnumerable();
+                switch (userRole)
+                {
+                    case "Administrator Head - Top Secret":
+                        var roleId = new Guid(ConfigurationManager.AppSettings["AdministratorHeadTopSecret"]);
+                        tblRow = data.Tables[0].AsEnumerable()
+                                    .Where(row => row.Field<DateTime>("Date Registered") >= Convert.ToDateTime(txtDate.Text)
+                                     && row.Field<DateTime>("Date Registered") <= Convert.ToDateTime(txtEndDate.Text));
+                        break;
+                    case "Administrator Manager - Secret":
+                        // no access to HeadTopScret
+                        roleId = new Guid(ConfigurationManager.AppSettings["AdministratorHeadTopSecret"]);
+                        tblRow = data.Tables[0].AsEnumerable()
+                                    .Where(row => row.Field<DateTime>("Date Registered") >= Convert.ToDateTime(txtDate.Text)
+                                     && row.Field<DateTime>("Date Registered") <= Convert.ToDateTime(txtEndDate.Text) && row.Field<Guid>("RoleId") != roleId);
+                        break;
+                    case "Administrator - confidential":
+                        roleId = new Guid(ConfigurationManager.AppSettings["AdministratorConfidential"]);
+                        tblRow = data.Tables[0].AsEnumerable()
+                                    .Where(row => row.Field<DateTime>("Date Registered") >= Convert.ToDateTime(txtDate.Text)
+                                     && row.Field<DateTime>("Date Registered") <= Convert.ToDateTime(txtEndDate.Text)
+                                       && (row.Field<Guid>("RoleId") != topSecret && row.Field<Guid>("RoleId") != secret));
+                        break;
+                    case "System User":
+                        roleId = new Guid(ConfigurationManager.AppSettings["SystemUser"]);
+                        tblRow = data.Tables[0].AsEnumerable()
+                                  .Where(row => row.Field<DateTime>("Date Registered") >= Convert.ToDateTime(txtDate.Text)
+                                   && row.Field<DateTime>("Date Registered") <= Convert.ToDateTime(txtEndDate.Text)
+                                     && (row.Field<Guid>("RoleId") == roleId));
+                        break;
+                    case "Developer":
+                        tblRow = data.Tables[0].AsEnumerable()
+                                       .Where(row => row.Field<DateTime>("Date Registered") >= Convert.ToDateTime(txtDate.Text)
+                                        && row.Field<DateTime>("Date Registered") <= Convert.ToDateTime(txtEndDate.Text));
+                        break;
+                    default:
+                        break;
+                }
+
                 if (tblRow.Any())
                 {
                     tblFiltered = tblRow.CopyToDataTable();

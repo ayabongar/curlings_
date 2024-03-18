@@ -1,6 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ReportsMaster.master.cs" Inherits="ReportsMaster" %>
 
-<!DOCTYPE>
+<!DOCTYPE html>
 <html lang="en-US">
 <head id="Head1" runat="server">
     <title></title>
@@ -77,12 +77,12 @@
                                                         <Nodes>
                                                             <asp:TreeNode Text="Incident Management System Reports" Value="0">
                                                                 <asp:TreeNode Text="Home" Value="Home"></asp:TreeNode>
-                                                                <asp:TreeNode Text="Dashboard" Value="100"></asp:TreeNode>
+                                                               <%-- <asp:TreeNode Text="Dashboard" Value="100"></asp:TreeNode>
                                                                 <asp:TreeNode Text="Assigned" Value="2"></asp:TreeNode>
                                                                 <asp:TreeNode Text="WIP"
                                                                     Value="3"></asp:TreeNode>
                                                                 <asp:TreeNode Text="Completed" Value="4"></asp:TreeNode>
-                                                                <asp:TreeNode Text="Closed" Value="5"></asp:TreeNode>
+                                                                <asp:TreeNode Text="Closed" Value="5"></asp:TreeNode>--%>
                                                                 <asp:TreeNode Text="Incidents Data Extract"
                                                                     Value="6"></asp:TreeNode>
                                                             </asp:TreeNode>

@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/NormalUserNoUpdatePanel.master" AutoEventWireup="true"
     CodeFile="RegisterUserIncident.aspx.cs" Inherits="Admin_RegisterUserIncident" %>
 
-<%@ Register TagPrefix="cc1" Namespace="AjaxControlToolkit" Assembly="AjaxControlToolkit, Version=4.1.51116.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e" %>
 <%@ Register Src="~/Admin/UserSelector.ascx" TagPrefix="uc1" TagName="UserSelector" %>
 <%@ Register Src="~/SurveyWizard/HierarchicalLookup.ascx" TagPrefix="uc1" TagName="HierarchicalLookup" %>
 <%@ Register Src="~/SurveyWizard/MatrixQuestion.ascx" TagPrefix="uc1" TagName="MatrixQuestion" %>
@@ -47,12 +46,12 @@
                 <SCS:Toolbar ID="Toolbar1" runat="server" OnButtonClicked="Toolbar1_ButtonClicked" EnableClientApi="False" CssClass="toolbar" Width="99.5%">
                     <Items>
                         <SCS:ToolbarButton CausesValidation="True" CommandName="Submit" Text="Save Incident Details" />
-                        <SCS:ToolbarButton CausesValidation="True" CommandName="SaveAndClose" Text="Save & Close" />
-                        <SCS:ToolbarButton CausesValidation="True" CommandName="Cancel" Text="Cancel" />
+                        <SCS:ToolbarButton CausesValidation="True" CommandName="SaveAndClose" Text="Save & Close" />                        
                         <SCS:ToolbarButton CausesValidation="True" CommandName="Print" Text="Cover Page" Visible="False" />
                         <SCS:ToolbarButton CausesValidation="True" CommandName="AcknowledgementLetter" Text="Acknowledgement Letter" Visible="False" />
                         <SCS:ToolbarButton CausesValidation="True" CommandName="ReAssign" Text="Re-Assign" Visible="False" />
-                        <SCS:ToolbarButton CausesValidation="True" CommandName="PrintScreen" Text="Print" Visible="true" />
+                        <SCS:ToolbarButton CausesValidation="True" CommandName="PrintScreen" Text="Print" Visible="False" />
+                        <SCS:ToolbarButton CausesValidation="True" CommandName="Cancel" Text="Cancel" />
 
                     </Items>
                     <ButtonCssClasses CssClass="button" CssClassEnabled="button_enabled" CssClassSelected="" CssClassDisabled="button_disabled"></ButtonCssClasses>

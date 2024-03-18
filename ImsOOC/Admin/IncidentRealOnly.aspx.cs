@@ -103,9 +103,29 @@ public partial class Admin_IncidentRealOnly : IncidentTrackingPage
 
             BindSecondAssignedUser();
             UCAttachDocuments.LoadDocuments();
+           
+            drpRoles.Bind(GetActiveRoles(), "Description", "RoleId");
+            drpRoles.SelectedValue = CurrentIncidentDetails.RoleId.ToString();
+            drpRoles.Enabled = false;
         }
     }
+    public static RecordSet GetActiveRoles()
+    {
+        var oParams = new DBParamCollection
+                {
+                    {"@SystemName", SARSDataSettings.Settings.ApplicationName}
+                };
+        var roles = new RecordSet();
+        using (var data = new RecordSet("[secure].spGetActiveRoles", QueryType.StoredProcedure, oParams))
+        {
+            if (data.HasRows)
+            {
+                roles = data;
+            }
 
+        }
+        return roles;
+    }
     private void BindSecondAssignedUser()
     {
         List<IncidentAllocation> data = IncidentTrackingManager.GetSecondAssignedUser(IncidentID);

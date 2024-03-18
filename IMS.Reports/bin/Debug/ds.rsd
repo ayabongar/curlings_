@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>IMS_OOCDataSource</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@IncidentId">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandText>SELECT top 1
+      [IncidentId]
+      ,case  [Delivered] when 1 then  'Yes' Else 'No' end as Delivered
+      ,[DocumentContent]
+      ,case  [SignedOff] when 1 then  'Yes' Else 'No' end as [SignedOff]
+      ,case  [DocCheckedForGrammar] when 1 then  'Yes' Else 'No' end as [DocCheckedForGrammar]
+      ,case  [DocCheckedForConflict] when 1 then  'Yes' Else 'No' end as [DocCheckedForConflict]
+      ,case  [DocAddressInfoRequested] when 1 then  'Yes' Else 'No' end as [DocAddressInfoRequested]
+      ,case  [DocNotDicloseFacts] when 1 then  'Yes' Else 'No' end as [DocNotDicloseFacts]
+      ,case  [DocSarsStdTemp] when 1 then  'Yes' Else 'No' end as [DocSarsStdTemp]
+      ,[Nature]
+      ,[CommissionerComent]
+      ,case  [DG] when 1 then  'Yes' Else 'No' end as [DG]
+      ,case  [DeputyMinister] when 1 then  'Yes' Else 'No' end as [DeputyMinister]
+      ,case  [Minister] when 1 then  'Yes' Else 'No' end as [Minister]
+      ,case  [AddInfo] when 1 then  'Yes' Else 'No' end as [AddInfo]
+      ,[TimeStamp]
+      ,[CreatedBySID]
+      ,[UpdatedBySID]
+      ,[UpdatedDate],
+      [MethodReceived],
+	  [DocumentContent2],
+	  [FrontOfficeComments],
+	  [Subject]
+  FROM [dbo].[IncidentCoverPage]
+  where incidentid = @IncidentId
+  order by TimeStamp desc</CommandText>
+      <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+    </Query>
+    <Fields>
+      <Field Name="IncidentId">
+        <DataField>IncidentId</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="Delivered">
+        <DataField>Delivered</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="DocumentContent">
+        <DataField>DocumentContent</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="SignedOff">
+        <DataField>SignedOff</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="DocCheckedForGrammar">
+        <DataField>DocCheckedForGrammar</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="DocCheckedForConflict">
+        <DataField>DocCheckedForConflict</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="DocAddressInfoRequested">
+        <DataField>DocAddressInfoRequested</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="DocNotDicloseFacts">
+        <DataField>DocNotDicloseFacts</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="DocSarsStdTemp">
+        <DataField>DocSarsStdTemp</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Nature">
+        <DataField>Nature</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CommissionerComent">
+        <DataField>CommissionerComent</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="DG">
+        <DataField>DG</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="DeputyMinister">
+        <DataField>DeputyMinister</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Minister">
+        <DataField>Minister</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="AddInfo">
+        <DataField>AddInfo</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TimeStamp">
+        <DataField>TimeStamp</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="CreatedBySID">
+        <DataField>CreatedBySID</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="UpdatedBySID">
+        <DataField>UpdatedBySID</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="UpdatedDate">
+        <DataField>UpdatedDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="MethodReceived">
+        <DataField>MethodReceived</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="DocumentContent2">
+        <DataField>DocumentContent2</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="FrontOfficeComments">
+        <DataField>FrontOfficeComments</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Subject">
+        <DataField>Subject</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

@@ -39,14 +39,13 @@ public partial class Admin_RegisterUserIncident : IncidentTrackingPage
         {
             if (CurrentProcessDetails.AddCoverPage)
             {
-                Toolbar1.Items[3].Visible = true;
-
+                Toolbar1.Items[2].Visible = true;
             }
 
             var status = IncidentTrackingManager.GetIncidentsStatuses();
             BindUserRolesAccess();
 
-            Toolbar1.Items[5].Visible = true;
+            Toolbar1.Items[6].Visible = true;
             if (CurrentIncidentDetails != null && CurrentIncidentDetails.DueDate != null)
             {
                 txtIncidentDueDate.SetValue(CurrentIncidentDetails.DueDate.Value.ToString("yyyy-MM-dd"));
@@ -462,8 +461,10 @@ public partial class Admin_RegisterUserIncident : IncidentTrackingPage
                 }
             case "Print":
                 {
-                    Response.Redirect(String.Format("GenerateCoverPage.aspx?procId={0}&incId={1}&msgId=1", ProcessID,
-                        IncidentID));
+                    //Response.Redirect(String.Format("GenerateCoverPage.aspx?procId={0}&incId={1}&msgId=1", ProcessID,
+                    //    IncidentID));
+                    var page = "~/Admin/RegisterUserIncident";
+                    Response.Redirect(String.Format("~/Admin/CoverPage.aspx?procId={0}&incId={1}&msgId=1&pg={2}", ProcessID, IncidentID, page));
                     break;
                 }
             case "AcknowledgementLetter":

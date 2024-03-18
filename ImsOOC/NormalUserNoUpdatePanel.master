@@ -6,9 +6,9 @@
 <head id="Head1" runat="server">
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge" > 
-    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+   <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Styles/survey.css" rel="stylesheet" type="text/css" />
-    <link href="~/Styles/toolBars.css" rel="stylesheet" type="text/css" />
+  <link href="~/Styles/toolBars.css" rel="stylesheet" type="text/css" />
     <link href="Styles/bootstrap.css" rel="stylesheet" />
     <script src="Scripts/boxover.js"></script>
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">

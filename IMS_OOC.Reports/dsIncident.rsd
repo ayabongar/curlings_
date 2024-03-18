@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>IMS_OOCDataSource</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@ProcessId">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="@IncidentId">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandText>SELECT TimeStamp,DateReceived,Subject,ActionPerson,ReferenceNumber,Priority,Description,AssignedToSID + ' - ' + FullName as ResponsibleAdmin from 
+             (
+                 SELECT ooc.IncidentId, ooc.FieldName, ooc.Answer, inc.Timestamp, inc.DateCompleted, p.Description, inc.AssignedToSID, Users.FullName
+FROM     vw_OOCOffice AS ooc INNER JOIN
+                  Incidents AS inc ON inc.IncidentID = ooc.IncidentId INNER JOIN
+                  Processes AS p ON inc.ProcessId = p.ProcessId LEFT OUTER JOIN
+                  Users ON inc.AssignedToSID = Users.SID
+WHERE  (inc.ProcessId = @ProcessId) AND (inc.IncidentID = @IncidentId)
+            ) x
+            pivot 
+            (
+                Max(Answer)
+                for FieldName in (DateReceived,Subject,ActionPerson,[Priority],ReferenceNumber)
+            ) p</CommandText>
+      <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+    </Query>
+    <Fields>
+      <Field Name="TimeStamp">
+        <DataField>TimeStamp</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="DateReceived">
+        <DataField>DateReceived</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Subject">
+        <DataField>Subject</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="ActionPerson">
+        <DataField>ActionPerson</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="ReferenceNumber">
+        <DataField>ReferenceNumber</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Description">
+        <DataField>Description</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Priority">
+        <DataField>Priority</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="ResponsibleAdmin">
+        <DataField>ResponsibleAdmin</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

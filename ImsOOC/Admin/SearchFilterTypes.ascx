@@ -1,6 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="SearchFilterTypes.ascx.cs" Inherits="Admin_SearchFilterTypes" %>
 <%@ Register Src="~/Admin/UserSelector.ascx" TagPrefix="uc1" TagName="UserSelector" %>
-<%@ Register TagPrefix="asp" Namespace="AjaxControlToolkit" Assembly="AjaxControlToolkit, Version=4.1.51116.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e" %>
 <table width="100%" border="0">
     <tr runat="server" id="row_RegisteredDate" visible="False">
         <td style="vertical-align: top;width:40%" >Select date Range:

@@ -9,26 +9,28 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
     <div class="panel panel-primary">
         <div class="panel-heading">
-            ADD/REMOVE USERS</div>
+            ADD/REMOVE USERS
+        </div>
         <div class="panel-body">
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
                     <table style="padding: 15px; width: 100%;">
                         <tr>
                             <td>
-                                <fieldset>   <table style="width: 100%" border="0">
-                                            <tr>
-                                                <td align="right"><b>Search By </b>
-                                                    <asp:TextBox runat="server" ID="txtTeamSearch"  CssClass="search_textbox" Width="100px" />
-                                                    <asp:TextBoxWatermarkExtender ID="TextBoxWatermarkExtender1" runat="server"
-                                                        Enabled="True" TargetControlID="txtTeamSearch" WatermarkCssClass="watermarked"
-                                                        WatermarkText="SID">
-                                                    </asp:TextBoxWatermarkExtender>
-                                                    <asp:Button Text="Search" ID="Button3" runat="server" OnClick="btnTeamSearch_Click" />
-                                                </td>
+                                <fieldset>
+                                    <table style="width: 100%" border="0">
+                                        <tr>
+                                            <td align="right"><b>Search By </b>
+                                                <asp:TextBox runat="server" ID="txtTeamSearch" CssClass="search_textbox" Width="100px" />
+                                                <asp:TextBoxWatermarkExtender ID="TextBoxWatermarkExtender1" runat="server"
+                                                    Enabled="True" TargetControlID="txtTeamSearch" WatermarkCssClass="watermarked"
+                                                    WatermarkText="SID">
+                                                </asp:TextBoxWatermarkExtender>
+                                                <asp:Button Text="Search" ID="Button3" runat="server" OnClick="btnTeamSearch_Click" />
+                                            </td>
 
-                                            </tr>
-                                        </table>
+                                        </tr>
+                                    </table>
                                     <asp:GridView ID="gvUsers" runat="server" AllowPaging="True" AutoGenerateColumns="False"
                                         CssClass="documents" DataKeyNames="UserProcessId" EmptyDataText="NO USERS ASSIGNED YET"
                                         GridLines="Horizontal" OnPageIndexChanging="gvUsers_PageIndexChanging" PageSize="4"
@@ -82,9 +84,15 @@
                                                 <strong>Select User Role:</strong>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <%--<tr>
                                             <td style="padding-left: 15px;">
                                                 <asp:DropDownList ID="ddlRole" runat="server" Height="30px" MaxLength="20" Width="300px">
+                                                </asp:DropDownList>
+                                            </td>
+                                        </tr>--%>
+                                        <tr>
+                                            <td style="padding-left: 15px;">
+                                                <asp:DropDownList ID="drpOocRoles" runat="server" Height="30px" MaxLength="20" Width="300px">
                                                 </asp:DropDownList>
                                             </td>
                                         </tr>

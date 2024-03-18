@@ -90,7 +90,7 @@
                      <Columns>
                         <asp:BoundField DataField="System Name" HeaderText="System Name" />
                         <asp:BoundField DataField="IncidentNumber" HeaderText="Reference Number" />
-                        <asp:BoundField DataField="ReferenceNumber" HeaderText="Incident Number" />
+                       
                         <asp:BoundField DataField="Date Registered" HeaderText="Date Registered" DataFormatString="{0:yyyy-MM-dd}" />
                         <asp:BoundField DataField="Registered By" HeaderText="Registered By" />
                         <asp:BoundField DataField="Assigned To" HeaderText="Assigned To" />

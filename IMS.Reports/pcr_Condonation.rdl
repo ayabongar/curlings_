@@ -1,0 +1,2121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Rectangle Name="Rectangle1">
+        <ReportItems>
+          <Tablix Name="Tablix2">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>5cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>5.96604cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>4.21979cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>4.29917cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>5.78083cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>5.96604cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>6.04542cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>6.04542cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>7.73875cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>5cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>3.34667cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox8">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Procurement Category</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox8</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>CornflowerBlue</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox27">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Deviation Responsible Person</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox27</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>CornflowerBlue</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox12">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Subject</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox12</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>CornflowerBlue</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox30">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Cross Reference No</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox30</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>CornflowerBlue</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox32">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Condonation Name Of Vendor</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox32</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>CornflowerBlue</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox47">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Condonation Name Of Vendor</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox47</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>CornflowerBlue</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox34">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Condonation Vendor Number</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox34</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>CornflowerBlue</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox38">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Condonation Purchase Order Number</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox38</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>CornflowerBlue</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox40">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Condonation Award Reported To National Treasury</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox40</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>CornflowerBlue</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox43">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Condonation Awarded</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox43</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>CornflowerBlue</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox45">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Condonation Date Of Award</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox45</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>CornflowerBlue</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ProcurementCategory">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!ProcurementCategory.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>ProcurementCategory</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="DeviationResponsiblePerson">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!DeviationResponsiblePerson.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>DeviationResponsiblePerson</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Subject">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Subject.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Subject</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="CrossReferenceNo">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!CrossReferenceNo.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>CrossReferenceNo</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="CondonationNameOfVendor">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!CondonationNameOfVendor.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>CondonationNameOfVendor</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="CondonationNameOfVendor1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!CondonationNameOfVendor.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>CondonationNameOfVendor1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="CondonationVendorNumber">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!CondonationVendorNumber.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>CondonationVendorNumber</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="CondonationPurchaseOrderNumber">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!CondonationPurchaseOrderNumber.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>CondonationPurchaseOrderNumber</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="CondonationAwardReportedToNationalTreasury">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!CondonationAwardReportedToNationalTreasury.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>CondonationAwardReportedToNationalTreasury</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="CondonationAwarded">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!CondonationAwarded.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>CondonationAwarded</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="CondonationDateOfAward">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!CondonationDateOfAward.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>CondonationDateOfAward</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="Details" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>dsCondonation</DataSetName>
+            <Top>1.23472cm</Top>
+            <Height>1.2cm</Height>
+            <Width>59.40812cm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Textbox Name="Textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Condonation Report</Value>
+                    <Style>
+                      <FontSize>20pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <Color>White</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>0.03528cm</Top>
+            <Height>1.09361cm</Height>
+            <Width>52.31729cm</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BackgroundColor>SteelBlue</BackgroundColor>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <KeepTogether>true</KeepTogether>
+        <Height>7.57646cm</Height>
+        <Width>61.82875cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Rectangle>
+    </ReportItems>
+    <Height>2.98286in</Height>
+    <Style />
+  </Body>
+  <Width>24.34203in</Width>
+  <Page>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>2cm</LeftMargin>
+    <RightMargin>2cm</RightMargin>
+    <TopMargin>2cm</TopMargin>
+    <BottomMargin>2cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <DataSourceReference>IMSDataSource</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>68457613-1a79-405c-8008-ade8639ec524</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="dsCondonation">
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@StartDate">
+            <Value>=Parameters!StartDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ProcessId">
+            <Value>=Parameters!ProcessId.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>Declare @temp Table 
+(
+[Incidentid] nvarchar(max)
+,[TimeStamp] datetime
+,[DateCompleted] nvarchar(max)
+,[SystemReferenceNo] nvarchar(max)
+,[CrossReferenceNo] nvarchar(max)
+,[TypeofRequest] nvarchar(max)
+,[Subject] nvarchar(max)
+,[Priority] nvarchar(max)
+,[Division] nvarchar(max)
+,[SubDivision] nvarchar(max)
+,[RequestorName] nvarchar(max)
+,[SARSFinancialYear] nvarchar(max)
+,[ProcurementCategory] nvarchar(max)
+,[SeniorManager] nvarchar(max)
+,[ActionPerson] nvarchar(max)
+,[DueDate] nvarchar(max)
+,[AdminNotes] nvarchar(max)
+,[ApprovedProcurementPlan] nvarchar(max)
+,[DateOfKickOffMmeeting] nvarchar(max)
+,[ProcurementBidRequestFormSignedoffByProjectSponsorAndFinance] nvarchar(max)
+,[RequestForCorporateLegalAssistanceProvideTheCLSReferenceNumber] nvarchar(max)
+,[ConfidentialityAgreementSignedByAllBECMembers] nvarchar(max)
+,[BECAppointmentLetterSignedByProjectSponsor] nvarchar(max)
+,[ProjectPlanSignedApprovedByASeniorOfficialFromBusiness] nvarchar(max)
+,[CompletionAndSignedOffOfTheBecKickoffChecklist] nvarchar(max)
+,[SBD1InvitationToBid] nvarchar(max)
+,[SBD2TaxclearanceCertificateRequirements] nvarchar(max)
+,[SBD313233PricingSchedule] nvarchar(max)
+,[SBD4DeclarationofInterest] nvarchar(max)
+,[SBD5NationalIndustrialParticipationProgramme] nvarchar(max)
+,[SBD61PreferencePointClaimForm] nvarchar(max)
+,[SBD62DeclarationCertificateforLocalProductionandContentfordesignatedSectors] nvarchar(max)
+,[SBD8DeclarationofBidderspastSupplyChainManagementPractices] nvarchar(max)
+,[SBD9CertificateofindependentBiddetermination] nvarchar(max)
+,[GovernmentProcurementGeneralConditionsofContractGCCorSpecialtermsandconditions] nvarchar(max)
+,[OathsOfSecrecy] nvarchar(max)
+,[DraftSLA] nvarchar(max)
+,[SBDDocumentNotes] nvarchar(max)
+,[MandatoryRequirementssignedbybusiness] nvarchar(max)
+,[Technicalevaluationcriteriasignedbybusiness] nvarchar(max)
+,[Pricingscheduledsignedbyevaluators] nvarchar(max)
+,[RelevantPreferencePointSystemSelectedPriceandBEE] nvarchar(max)
+,[ValidityperiodofatenderclearlyindicatedintheSBD3] nvarchar(max)
+,[Whetherornotsitevisitwillbeconducted] nvarchar(max)
+,[ClearlyindicatethatthetechnicalresponseandPriceBEEmustbesubmittedintwoseperateenvelopes] nvarchar(max)
+,[BidSpecificationNotes] nvarchar(max)
+,[Tenderadvertisedfortheminimumperiodof21workingdaysbeforeclosingdate] nvarchar(max)
+,[Isthereabriefingsessionandifsoisitcompulsoryornot] nvarchar(max)
+,[Arethebiddocumentsbeingsoldandifsowhatisthesellingprice] nvarchar(max)
+,[IstheDraftAdvertbeensignedbyCommodityLeaderBusinessandSupport] nvarchar(max)
+,[Areallthedocumentsstoredonsecuredfolderorsharepoint] nvarchar(max)
+,[TenderAdvertisingAdequatelyNotes] nvarchar(max)
+,[IstheinvitationletterfromSARSpreparedandattachedtotenderpack] nvarchar(max)
+,[IsthecontentoftheinvitationletteragreestoRFPdocumentanddraftadvert] nvarchar(max)
+,[InvitationLetterNotes] nvarchar(max)
+,[AdvertiseDate] nvarchar(max)
+,[ClosingDate] nvarchar(max)
+,[NumberofworkingdaysissuedtoMarket] nvarchar(max)
+,[EtenderNTwebsite] nvarchar(max)
+,[TenderGovernmentBulletin] nvarchar(max)
+,[PublicMedia] nvarchar(max)
+,[PublicMediaspecify] nvarchar(max)
+,[CIDBWebsite] nvarchar(max)
+,[SARSWebsite] nvarchar(max)
+,[Briefingsessionagendaandbriefingpresentationinfile] nvarchar(max)
+,[Compulsorybriefingattendanceregistersignedbyattendees] nvarchar(max)
+,[QuestionsandanswersforbidderswereprintedplacedinthefileanduploadedonSARSwebsite] nvarchar(max)
+,[TenderAdvertisingInOnNotes] nvarchar(max)
+,[Totalnumberofbidsreceivedbyclosingdateandtime] nvarchar(max)
+,[SignedBidOpeningRegisterbytenderofficeandGovernancemember] nvarchar(max)
+,[Latetenders] nvarchar(max)
+,[ListofbidderspublishedonSARSwebsite] nvarchar(max)
+,[TenderClosingNotes] nvarchar(max)
+,[Prequalificationsignedbytenderoffice] nvarchar(max)
+,[Mandatoryevaluationsignedoffbyevaluators] nvarchar(max)
+,[DeclarationofinterestwassignedbyallBECmembers] nvarchar(max)
+,[PrequalificationNotes] nvarchar(max)
+,[TechnicalevaluationoccurredinProcurement] nvarchar(max)
+,[Evaluationwasconductedundersurveillancecamera] nvarchar(max)
+,[Technicalevaluatorsscoredallbidsindependently] nvarchar(max)
+,[Scoresheetsweresignedbyallevaluators] nvarchar(max)
+,[Anomoliesresolved] nvarchar(max)
+,[Technicalpointsappliedaswaspublishedinbiddocument] nvarchar(max)
+,[Bidderswhodidnotattainminimumscoreontechnicalwereeliminated] nvarchar(max)
+,[Governancereviewedtechnicalscores] nvarchar(max)
+,[TechnicalEvalutationNotes] nvarchar(max)
+,[Pricingsignedoffbyevaluators] nvarchar(max)
+,[Pricingpointsappliedaswaspublishedinbiddocument] nvarchar(max)
+,[BidderspricesreviewedbyGovernance] nvarchar(max)
+,[PricingEvalutationNotes] nvarchar(max)
+,[BEEpointsSignedoffbyevaluators] nvarchar(max)
+,[BEEscoresreviewedbyGovernance] nvarchar(max)
+,[BEEEvaluationNotes] nvarchar(max)
+,[ObtainthesignoffFinancialAnalysisReport] nvarchar(max)
+,[FinancialStatementNotes] nvarchar(max)
+,[PricingandBEEscoresconsolidated] nvarchar(max)
+,[Rankingofscorewasdonecorrectly] nvarchar(max)
+,[Topscorerwascorrectlyranked] nvarchar(max)
+,[ConsolidationOfPricingNotes] nvarchar(max)
+,[Checkedagainstthelistofrestrictedsuppliers] nvarchar(max)
+,[Checkedagainstthelistofdefaulters] nvarchar(max)
+,[AllBarnOwlActionplansresolved] nvarchar(max)
+,[ObtainProcurecheckreportattachandconsider] nvarchar(max)
+,[Recommendedbidderstaxaffairswerechecked] nvarchar(max)
+,[ConductFinalDueNotes] nvarchar(max)
+,[Reflectstenderadvertisementandclosingdate] nvarchar(max)
+,[Responsesreceivedcorrectlycaptured] nvarchar(max)
+,[Evaluationcriteriacorrectlyreflected] nvarchar(max)
+,[Rankingofbidderswasaccurate] nvarchar(max)
+,[Financialanalysisreportattachedandconsidered] nvarchar(max)
+,[GRCreportattached] nvarchar(max)
+,[Recommendationofsuccessfulbidderwasproperlymotivated] nvarchar(max)
+,[FinancialimplicationwascorrectlyreflectedinclusiveofVAT] nvarchar(max)
+,[Legalimplicationwascorrectlyreflected] nvarchar(max)
+,[AllBECmembersignedtheNBACreport] nvarchar(max)
+,[NBACReportNotes] nvarchar(max)
+,[Awarded] nvarchar(max)
+,[DateOfAward] nvarchar(max)
+,[LevelOfApproval] nvarchar(max)
+,[SignedMinutesOfApproval] nvarchar(max)
+,[SignedSubmissionOnTenderFile] nvarchar(max)
+,[NameOfVendor] nvarchar(max)
+,[SAPVendorNumber] nvarchar(max)
+,[PurchaseOrderNumber] nvarchar(max)
+,[OutlineAgreementNumber] nvarchar(max)
+,[ValueOfAward] nvarchar(max)
+,[StartDateOfAward] nvarchar(max)
+,[EndDateOfAward] nvarchar(max)
+,[AwardReportedToNationalTreasury] nvarchar(max)
+,[UploadTheSuccessfulBidderOnSARSWebsite] nvarchar(max)
+,[LetterOfSuccessfulBidderSentOutToTheWinningBidder] nvarchar(max)
+,[TenderAwardWasPublishedOnTheGovernmentTenderBulletinAndTheNewspaperThatWasUsedToAdvertiseATender] nvarchar(max)
+,[UploadInformationStoredInSharepoint] nvarchar(max)
+,[SignedContractBySARSAndSupplier] nvarchar(max)
+,[TenderStage2Notes] nvarchar(max)
+,[RFQ_Type] nvarchar(max)
+,[RFQ_SignedoffSpecificationsScopeofworkbyBusinessUnit] nvarchar(max)
+,[RFQ_TechnicalEvaluationrequired] nvarchar(max)
+,[RFQ_SignedoffTechnicalEvaluatinCriteria] nvarchar(max)
+,[RFQ_SignedoffPricingTemplateBillofquatinyPriceAnalysis] nvarchar(max)
+,[RFQ_PreparedRFQPack] nvarchar(max)
+,[RFQ_BriefingSessionRequired] nvarchar(max)
+,[RFQ_DateOfBriefingSession] nvarchar(max)
+,[RFQ_IfaBriefingSeessionIsRequiredPrepareAttendanceRegisterForsignOffByAttendeesBUandBuyer] nvarchar(max)
+,[RFQ_InquiriesReceivedFromBiddersWereRespondedToAllBiddersAndPrintedAndPlacedOnBidFileAndWere] nvarchar(max)
+,[RFQ_MainRFQDocumentedsubmitted] nvarchar(max)
+,[RFQ_SBD313233PricingSchedule] nvarchar(max)
+,[RFQ_SBD4DeclarationofInterest] nvarchar(max)
+,[RFQ_SBD61PreferencePointClaimForm] nvarchar(max)
+,[RFQ_SBD62DeclarationCertificateforLocalProductionandContentfordesignatedSectors] nvarchar(max)
+,[RFQ_SBD8DeclarationofBidderspastSupplyChainManagementPractices] nvarchar(max)
+,[RFQ_SBD9CertificateofindependentBiddetermination] nvarchar(max)
+,[RFQ_GovernmentProcurementGeneralConditionsofContractGCCorSpecialtermsandconditions] nvarchar(max)
+,[RFQ_OathsOfSecrecy] nvarchar(max)
+,[RFQ_MandatoryRequirementsSignedbyBusiness] nvarchar(max)
+,[RFQ_ValidityPeriodOfaRfqClearlyIndicatedInTheSBD3] nvarchar(max)
+,[RFQ_Numberofbiddersinvited] nvarchar(max)
+,[RFQ_Numberofbiddersreceived] nvarchar(max)
+,[RFQ_AllQuotationssourcedbyBuyerandreceivedbyclosingdateandtime] nvarchar(max)
+,[RFQ_RFQextended] nvarchar(max)
+,[RFQ_Dateofnewclosingdate] nvarchar(max)
+,[RFQ_EmailRorInvitingBiddersAndReceivingQoutationsMaintained] nvarchar(max)
+,[RFQ_SignedMemoRorLessThanThreeQuotationsOnlyIfLessThan3QuotesReceived] nvarchar(max)
+,[RQF_TechnicalEvaluationResultsConducted] nvarchar(max)
+,[RFQ_PriceComparisonSheet8020] nvarchar(max)
+,[RFQ_DoesThePriceIncludeVAT] nvarchar(max)
+,[RFQ_IfYesVerifyVATRegistrationNumberOnTheTCCorVATVendorSearchonSARSWebsite] nvarchar(max)
+,[RFQ_SignedMemoForNotSelectingTheHighestScoringBidderOnlyFfTheFirstBidderIsNotSelected] nvarchar(max)
+,[RFQ_ValidTCCValidByClosingDateOfTheRFQ] nvarchar(max)
+,[RFQ_ValidBEECertificateAuditorLetterAffidavitValidbyClosingDateOfTheRFQ] nvarchar(max)
+,[RFQ_CheckedAgainstTheListofRestrictedSuppliers] nvarchar(max)
+,[RFQ_CheckedAgainstTheListOfDefaulters] nvarchar(max)
+,[RFQ_AllBarnOwlActionPlansResolved] nvarchar(max)
+,[RFQ_SignedPRF] nvarchar(max)
+,[RFQ_lAwarded] nvarchar(max)
+,[RFQ_DateOfAward] nvarchar(max)
+,[RFQ_LevelOfApproval] nvarchar(max)
+,[RFQ_SAPVendorNumber] nvarchar(max)
+,[RFQ_NameOfVendor] nvarchar(max)
+,[RFQ_PurchaseOrderNumber] nvarchar(max)
+,[RFQ_OutlineAgreementNumber] nvarchar(max)
+,[RFQ_AwardReportedtoNationalTreasury] nvarchar(max)
+,[RFQ_ContractBySARSAndSupplier] nvarchar(max)
+,[RFQ_Notes] nvarchar(max)
+,[CondonationTenderNumber] nvarchar(max)
+,[CondonationResponsiblePerson] nvarchar(max)
+,[CondonationNameOfVendor] nvarchar(max)
+,[CondonationVendorNumber] nvarchar(max)
+,[CondonationType] nvarchar(max)
+,[CondonationAwarded] nvarchar(max)
+,[CondonationDateOfAward] nvarchar(max)
+,[CondonationLevelOfApproval] nvarchar(max)
+,[CondonationSignedMinutesOfApproval] nvarchar(max)
+,[CondonationValueOfAward] nvarchar(max)
+,[CondonationPurchaseOrderNumber] nvarchar(max)
+,[CondonationAwardReportedToNationalTreasury] nvarchar(max)
+,[CondonationNotes] nvarchar(max)
+,[DeviationTenderNumber] nvarchar(max)
+,[DeviationResponsiblePerson] nvarchar(max)
+,[DeviationNameOfVendor] nvarchar(max)
+,[DeviationVendorNumber] nvarchar(max)
+,[DeviationType] nvarchar(max)
+,[DeviationAwarded] nvarchar(max)
+,[DeviationDateOfAward] nvarchar(max)
+,[DeviationLevelOfApproval] nvarchar(max)
+,[DeviationSignedMinutesOfApproval] nvarchar(max)
+,[DeviationValueOfAward] nvarchar(max)
+,[DeviationStartDateOfAward] nvarchar(max)
+,[DeviationEndDateOfAward] nvarchar(max)
+,[DeviationPurchaseOrderNumber] nvarchar(max)
+,[DeviationOutlineAgreementNumber] nvarchar(max)
+,[DeviationAwardReportedtoNationalTreasury] nvarchar(max)
+,[DeviationSignedContractBySARSAndSupplier] nvarchar(max)
+,[DeviationNotes] nvarchar(max)
+,[ExpansionVariationTenderNumber] nvarchar(max)
+,[ExpansionVariationResponsiblePerson] nvarchar(max)
+,[ExpansionVariationNameOfVendor] nvarchar(max)
+,[ExpansionVariationVendorNumber] nvarchar(max)
+,[ExpansionVariationType] nvarchar(max)
+,[ExpansionVariationAwarded] nvarchar(max)
+,[ExpansionVariationDateOfAward] nvarchar(max)
+,[ExpansionVariationLevelOfApproval] nvarchar(max)
+,[ExpansionVariationValueOfAward] nvarchar(max)
+,[ExpansionVariationStartDateOfAward] nvarchar(max)
+,[ExpansionVariationEndDateOfAward] nvarchar(max)
+,[ExpansionVariationPurchaseOrderNumber] nvarchar(max)
+,[ExpansionVariationOutlineAgreementNumber] nvarchar(max)
+,[ExpansionVariationAwardReportedtoNationalTreasury] nvarchar(max)
+,[ExpansionVariationSignedContractBySARSAndSupplier] nvarchar(max)
+,[ExpansionVariationNotes] nvarchar(max)
+,[TransversalTenderNumber] nvarchar(max)
+,[TransversalResponsiblePerson] nvarchar(max)
+,[TransversalNameOfVendor] nvarchar(max)
+,[TransversalVendorNumber] nvarchar(max)
+,[TransversalType] nvarchar(max)
+,[TransversalAwarded] nvarchar(max)
+,[TransversalDateOfAward] nvarchar(max)
+,[TransversalLevelOfApproval] nvarchar(max)
+,[TransversalValueOfAward] nvarchar(max)
+,[TransversalStartDateOfAward] nvarchar(max)
+,[TransversalEndDateOfAward] nvarchar(max)
+,[TransversalPurchaseOrderNumber] nvarchar(max)
+,[TransversalOutlineAgreementNumber] nvarchar(max)
+,[TransversalAwardReportedtoNationalTreasury] nvarchar(max)
+,[TransversalSignedContractBySARSAndSupplier] nvarchar(max)
+,[TransversalNotes] nvarchar(max)
+,[RFQ_SBDDocuments] nvarchar(max)
+,[FRQ_BidSpecificationNotes] nvarchar(max)
+,[RFQ_Stage1PlanningNotes] nvarchar(max)
+)
+Insert @temp
+exec [dbo].[uspPivot_READ_ProcessData] @ProcessId
+select * from @temp
+where Convert(datetime,TimeStamp,103) between Convert(datetime,@StartDate,103) and Convert(datetime,@EndDate,103)
+and [ProcurementCategory] in ('Condonation')
+ </CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Incidentid">
+          <DataField>Incidentid</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TimeStamp">
+          <DataField>TimeStamp</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="DateCompleted">
+          <DataField>DateCompleted</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SystemReferenceNo">
+          <DataField>SystemReferenceNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CrossReferenceNo">
+          <DataField>CrossReferenceNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TypeofRequest">
+          <DataField>TypeofRequest</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Subject">
+          <DataField>Subject</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Priority">
+          <DataField>Priority</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Division">
+          <DataField>Division</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SubDivision">
+          <DataField>SubDivision</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RequestorName">
+          <DataField>RequestorName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SARSFinancialYear">
+          <DataField>SARSFinancialYear</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ProcurementCategory">
+          <DataField>ProcurementCategory</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SeniorManager">
+          <DataField>SeniorManager</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ActionPerson">
+          <DataField>ActionPerson</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DueDate">
+          <DataField>DueDate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AdminNotes">
+          <DataField>AdminNotes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ApprovedProcurementPlan">
+          <DataField>ApprovedProcurementPlan</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DateOfKickOffMmeeting">
+          <DataField>DateOfKickOffMmeeting</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ProcurementBidRequestFormSignedoffByProjectSponsorAndFinance">
+          <DataField>ProcurementBidRequestFormSignedoffByProjectSponsorAndFinance</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RequestForCorporateLegalAssistanceProvideTheCLSReferenceNumber">
+          <DataField>RequestForCorporateLegalAssistanceProvideTheCLSReferenceNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ConfidentialityAgreementSignedByAllBECMembers">
+          <DataField>ConfidentialityAgreementSignedByAllBECMembers</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BECAppointmentLetterSignedByProjectSponsor">
+          <DataField>BECAppointmentLetterSignedByProjectSponsor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ProjectPlanSignedApprovedByASeniorOfficialFromBusiness">
+          <DataField>ProjectPlanSignedApprovedByASeniorOfficialFromBusiness</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CompletionAndSignedOffOfTheBecKickoffChecklist">
+          <DataField>CompletionAndSignedOffOfTheBecKickoffChecklist</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SBD1InvitationToBid">
+          <DataField>SBD1InvitationToBid</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SBD2TaxclearanceCertificateRequirements">
+          <DataField>SBD2TaxclearanceCertificateRequirements</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SBD313233PricingSchedule">
+          <DataField>SBD313233PricingSchedule</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SBD4DeclarationofInterest">
+          <DataField>SBD4DeclarationofInterest</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SBD5NationalIndustrialParticipationProgramme">
+          <DataField>SBD5NationalIndustrialParticipationProgramme</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SBD61PreferencePointClaimForm">
+          <DataField>SBD61PreferencePointClaimForm</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SBD62DeclarationCertificateforLocalProductionandContentfordesignatedSectors">
+          <DataField>SBD62DeclarationCertificateforLocalProductionandContentfordesignatedSectors</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SBD8DeclarationofBidderspastSupplyChainManagementPractices">
+          <DataField>SBD8DeclarationofBidderspastSupplyChainManagementPractices</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SBD9CertificateofindependentBiddetermination">
+          <DataField>SBD9CertificateofindependentBiddetermination</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="GovernmentProcurementGeneralConditionsofContractGCCorSpecialtermsandconditions">
+          <DataField>GovernmentProcurementGeneralConditionsofContractGCCorSpecialtermsandconditions</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OathsOfSecrecy">
+          <DataField>OathsOfSecrecy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DraftSLA">
+          <DataField>DraftSLA</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SBDDocumentNotes">
+          <DataField>SBDDocumentNotes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MandatoryRequirementssignedbybusiness">
+          <DataField>MandatoryRequirementssignedbybusiness</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Technicalevaluationcriteriasignedbybusiness">
+          <DataField>Technicalevaluationcriteriasignedbybusiness</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Pricingscheduledsignedbyevaluators">
+          <DataField>Pricingscheduledsignedbyevaluators</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RelevantPreferencePointSystemSelectedPriceandBEE">
+          <DataField>RelevantPreferencePointSystemSelectedPriceandBEE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ValidityperiodofatenderclearlyindicatedintheSBD3">
+          <DataField>ValidityperiodofatenderclearlyindicatedintheSBD3</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Whetherornotsitevisitwillbeconducted">
+          <DataField>Whetherornotsitevisitwillbeconducted</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClearlyindicatethatthetechnicalresponseandPriceBEEmustbesubmittedintwoseperateenvelopes">
+          <DataField>ClearlyindicatethatthetechnicalresponseandPriceBEEmustbesubmittedintwoseperateenvelopes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BidSpecificationNotes">
+          <DataField>BidSpecificationNotes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Tenderadvertisedfortheminimumperiodof21workingdaysbeforeclosingdate">
+          <DataField>Tenderadvertisedfortheminimumperiodof21workingdaysbeforeclosingdate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Isthereabriefingsessionandifsoisitcompulsoryornot">
+          <DataField>Isthereabriefingsessionandifsoisitcompulsoryornot</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Arethebiddocumentsbeingsoldandifsowhatisthesellingprice">
+          <DataField>Arethebiddocumentsbeingsoldandifsowhatisthesellingprice</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IstheDraftAdvertbeensignedbyCommodityLeaderBusinessandSupport">
+          <DataField>IstheDraftAdvertbeensignedbyCommodityLeaderBusinessandSupport</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Areallthedocumentsstoredonsecuredfolderorsharepoint">
+          <DataField>Areallthedocumentsstoredonsecuredfolderorsharepoint</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TenderAdvertisingAdequatelyNotes">
+          <DataField>TenderAdvertisingAdequatelyNotes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IstheinvitationletterfromSARSpreparedandattachedtotenderpack">
+          <DataField>IstheinvitationletterfromSARSpreparedandattachedtotenderpack</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IsthecontentoftheinvitationletteragreestoRFPdocumentanddraftadvert">
+          <DataField>IsthecontentoftheinvitationletteragreestoRFPdocumentanddraftadvert</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="InvitationLetterNotes">
+          <DataField>InvitationLetterNotes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AdvertiseDate">
+          <DataField>AdvertiseDate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ClosingDate">
+          <DataField>ClosingDate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NumberofworkingdaysissuedtoMarket">
+          <DataField>NumberofworkingdaysissuedtoMarket</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EtenderNTwebsite">
+          <DataField>EtenderNTwebsite</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TenderGovernmentBulletin">
+          <DataField>TenderGovernmentBulletin</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PublicMedia">
+          <DataField>PublicMedia</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PublicMediaspecify">
+          <DataField>PublicMediaspecify</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CIDBWebsite">
+          <DataField>CIDBWebsite</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SARSWebsite">
+          <DataField>SARSWebsite</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Briefingsessionagendaandbriefingpresentationinfile">
+          <DataField>Briefingsessionagendaandbriefingpresentationinfile</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Compulsorybriefingattendanceregistersignedbyattendees">
+          <DataField>Compulsorybriefingattendanceregistersignedbyattendees</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="QuestionsandanswersforbidderswereprintedplacedinthefileanduploadedonSARSwebsite">
+          <DataField>QuestionsandanswersforbidderswereprintedplacedinthefileanduploadedonSARSwebsite</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TenderAdvertisingInOnNotes">
+          <DataField>TenderAdvertisingInOnNotes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Totalnumberofbidsreceivedbyclosingdateandtime">
+          <DataField>Totalnumberofbidsreceivedbyclosingdateandtime</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SignedBidOpeningRegisterbytenderofficeandGovernancemember">
+          <DataField>SignedBidOpeningRegisterbytenderofficeandGovernancemember</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Latetenders">
+          <DataField>Latetenders</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ListofbidderspublishedonSARSwebsite">
+          <DataField>ListofbidderspublishedonSARSwebsite</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TenderClosingNotes">
+          <DataField>TenderClosingNotes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Prequalificationsignedbytenderoffice">
+          <DataField>Prequalificationsignedbytenderoffice</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Mandatoryevaluationsignedoffbyevaluators">
+          <DataField>Mandatoryevaluationsignedoffbyevaluators</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeclarationofinterestwassignedbyallBECmembers">
+          <DataField>DeclarationofinterestwassignedbyallBECmembers</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PrequalificationNotes">
+          <DataField>PrequalificationNotes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TechnicalevaluationoccurredinProcurement">
+          <DataField>TechnicalevaluationoccurredinProcurement</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Evaluationwasconductedundersurveillancecamera">
+          <DataField>Evaluationwasconductedundersurveillancecamera</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Technicalevaluatorsscoredallbidsindependently">
+          <DataField>Technicalevaluatorsscoredallbidsindependently</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Scoresheetsweresignedbyallevaluators">
+          <DataField>Scoresheetsweresignedbyallevaluators</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Anomoliesresolved">
+          <DataField>Anomoliesresolved</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Technicalpointsappliedaswaspublishedinbiddocument">
+          <DataField>Technicalpointsappliedaswaspublishedinbiddocument</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Bidderswhodidnotattainminimumscoreontechnicalwereeliminated">
+          <DataField>Bidderswhodidnotattainminimumscoreontechnicalwereeliminated</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Governancereviewedtechnicalscores">
+          <DataField>Governancereviewedtechnicalscores</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TechnicalEvalutationNotes">
+          <DataField>TechnicalEvalutationNotes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Pricingsignedoffbyevaluators">
+          <DataField>Pricingsignedoffbyevaluators</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Pricingpointsappliedaswaspublishedinbiddocument">
+          <DataField>Pricingpointsappliedaswaspublishedinbiddocument</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BidderspricesreviewedbyGovernance">
+          <DataField>BidderspricesreviewedbyGovernance</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PricingEvalutationNotes">
+          <DataField>PricingEvalutationNotes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BEEpointsSignedoffbyevaluators">
+          <DataField>BEEpointsSignedoffbyevaluators</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BEEscoresreviewedbyGovernance">
+          <DataField>BEEscoresreviewedbyGovernance</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BEEEvaluationNotes">
+          <DataField>BEEEvaluationNotes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ObtainthesignoffFinancialAnalysisReport">
+          <DataField>ObtainthesignoffFinancialAnalysisReport</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FinancialStatementNotes">
+          <DataField>FinancialStatementNotes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PricingandBEEscoresconsolidated">
+          <DataField>PricingandBEEscoresconsolidated</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Rankingofscorewasdonecorrectly">
+          <DataField>Rankingofscorewasdonecorrectly</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Topscorerwascorrectlyranked">
+          <DataField>Topscorerwascorrectlyranked</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ConsolidationOfPricingNotes">
+          <DataField>ConsolidationOfPricingNotes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Checkedagainstthelistofrestrictedsuppliers">
+          <DataField>Checkedagainstthelistofrestrictedsuppliers</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Checkedagainstthelistofdefaulters">
+          <DataField>Checkedagainstthelistofdefaulters</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AllBarnOwlActionplansresolved">
+          <DataField>AllBarnOwlActionplansresolved</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ObtainProcurecheckreportattachandconsider">
+          <DataField>ObtainProcurecheckreportattachandconsider</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Recommendedbidderstaxaffairswerechecked">
+          <DataField>Recommendedbidderstaxaffairswerechecked</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ConductFinalDueNotes">
+          <DataField>ConductFinalDueNotes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Reflectstenderadvertisementandclosingdate">
+          <DataField>Reflectstenderadvertisementandclosingdate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Responsesreceivedcorrectlycaptured">
+          <DataField>Responsesreceivedcorrectlycaptured</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Evaluationcriteriacorrectlyreflected">
+          <DataField>Evaluationcriteriacorrectlyreflected</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Rankingofbidderswasaccurate">
+          <DataField>Rankingofbidderswasaccurate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Financialanalysisreportattachedandconsidered">
+          <DataField>Financialanalysisreportattachedandconsidered</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="GRCreportattached">
+          <DataField>GRCreportattached</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Recommendationofsuccessfulbidderwasproperlymotivated">
+          <DataField>Recommendationofsuccessfulbidderwasproperlymotivated</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FinancialimplicationwascorrectlyreflectedinclusiveofVAT">
+          <DataField>FinancialimplicationwascorrectlyreflectedinclusiveofVAT</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Legalimplicationwascorrectlyreflected">
+          <DataField>Legalimplicationwascorrectlyreflected</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AllBECmembersignedtheNBACreport">
+          <DataField>AllBECmembersignedtheNBACreport</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NBACReportNotes">
+          <DataField>NBACReportNotes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Awarded">
+          <DataField>Awarded</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DateOfAward">
+          <DataField>DateOfAward</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LevelOfApproval">
+          <DataField>LevelOfApproval</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SignedMinutesOfApproval">
+          <DataField>SignedMinutesOfApproval</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SignedSubmissionOnTenderFile">
+          <DataField>SignedSubmissionOnTenderFile</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NameOfVendor">
+          <DataField>NameOfVendor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SAPVendorNumber">
+          <DataField>SAPVendorNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PurchaseOrderNumber">
+          <DataField>PurchaseOrderNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OutlineAgreementNumber">
+          <DataField>OutlineAgreementNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ValueOfAward">
+          <DataField>ValueOfAward</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StartDateOfAward">
+          <DataField>StartDateOfAward</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EndDateOfAward">
+          <DataField>EndDateOfAward</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AwardReportedToNationalTreasury">
+          <DataField>AwardReportedToNationalTreasury</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="UploadTheSuccessfulBidderOnSARSWebsite">
+          <DataField>UploadTheSuccessfulBidderOnSARSWebsite</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LetterOfSuccessfulBidderSentOutToTheWinningBidder">
+          <DataField>LetterOfSuccessfulBidderSentOutToTheWinningBidder</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TenderAwardWasPublishedOnTheGovernmentTenderBulletinAndTheNewspaperThatWasUsedToAdvertiseATender">
+          <DataField>TenderAwardWasPublishedOnTheGovernmentTenderBulletinAndTheNewspaperThatWasUsedToAdvertiseATender</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="UploadInformationStoredInSharepoint">
+          <DataField>UploadInformationStoredInSharepoint</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SignedContractBySARSAndSupplier">
+          <DataField>SignedContractBySARSAndSupplier</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TenderStage2Notes">
+          <DataField>TenderStage2Notes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_Type">
+          <DataField>RFQ_Type</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_SignedoffSpecificationsScopeofworkbyBusinessUnit">
+          <DataField>RFQ_SignedoffSpecificationsScopeofworkbyBusinessUnit</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_TechnicalEvaluationrequired">
+          <DataField>RFQ_TechnicalEvaluationrequired</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_SignedoffTechnicalEvaluatinCriteria">
+          <DataField>RFQ_SignedoffTechnicalEvaluatinCriteria</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_SignedoffPricingTemplateBillofquatinyPriceAnalysis">
+          <DataField>RFQ_SignedoffPricingTemplateBillofquatinyPriceAnalysis</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_PreparedRFQPack">
+          <DataField>RFQ_PreparedRFQPack</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_BriefingSessionRequired">
+          <DataField>RFQ_BriefingSessionRequired</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_DateOfBriefingSession">
+          <DataField>RFQ_DateOfBriefingSession</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_IfaBriefingSeessionIsRequiredPrepareAttendanceRegisterForsignOffByAttendeesBUandBuyer">
+          <DataField>RFQ_IfaBriefingSeessionIsRequiredPrepareAttendanceRegisterForsignOffByAttendeesBUandBuyer</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_InquiriesReceivedFromBiddersWereRespondedToAllBiddersAndPrintedAndPlacedOnBidFileAndWere">
+          <DataField>RFQ_InquiriesReceivedFromBiddersWereRespondedToAllBiddersAndPrintedAndPlacedOnBidFileAndWere</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_MainRFQDocumentedsubmitted">
+          <DataField>RFQ_MainRFQDocumentedsubmitted</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_SBD313233PricingSchedule">
+          <DataField>RFQ_SBD313233PricingSchedule</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_SBD4DeclarationofInterest">
+          <DataField>RFQ_SBD4DeclarationofInterest</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_SBD61PreferencePointClaimForm">
+          <DataField>RFQ_SBD61PreferencePointClaimForm</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_SBD62DeclarationCertificateforLocalProductionandContentfordesignatedSectors">
+          <DataField>RFQ_SBD62DeclarationCertificateforLocalProductionandContentfordesignatedSectors</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_SBD8DeclarationofBidderspastSupplyChainManagementPractices">
+          <DataField>RFQ_SBD8DeclarationofBidderspastSupplyChainManagementPractices</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_SBD9CertificateofindependentBiddetermination">
+          <DataField>RFQ_SBD9CertificateofindependentBiddetermination</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_GovernmentProcurementGeneralConditionsofContractGCCorSpecialtermsandconditions">
+          <DataField>RFQ_GovernmentProcurementGeneralConditionsofContractGCCorSpecialtermsandconditions</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_OathsOfSecrecy">
+          <DataField>RFQ_OathsOfSecrecy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_MandatoryRequirementsSignedbyBusiness">
+          <DataField>RFQ_MandatoryRequirementsSignedbyBusiness</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_ValidityPeriodOfaRfqClearlyIndicatedInTheSBD3">
+          <DataField>RFQ_ValidityPeriodOfaRfqClearlyIndicatedInTheSBD3</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_Numberofbiddersinvited">
+          <DataField>RFQ_Numberofbiddersinvited</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_Numberofbiddersreceived">
+          <DataField>RFQ_Numberofbiddersreceived</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_AllQuotationssourcedbyBuyerandreceivedbyclosingdateandtime">
+          <DataField>RFQ_AllQuotationssourcedbyBuyerandreceivedbyclosingdateandtime</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_RFQextended">
+          <DataField>RFQ_RFQextended</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_Dateofnewclosingdate">
+          <DataField>RFQ_Dateofnewclosingdate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_EmailRorInvitingBiddersAndReceivingQoutationsMaintained">
+          <DataField>RFQ_EmailRorInvitingBiddersAndReceivingQoutationsMaintained</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_SignedMemoRorLessThanThreeQuotationsOnlyIfLessThan3QuotesReceived">
+          <DataField>RFQ_SignedMemoRorLessThanThreeQuotationsOnlyIfLessThan3QuotesReceived</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RQF_TechnicalEvaluationResultsConducted">
+          <DataField>RQF_TechnicalEvaluationResultsConducted</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_PriceComparisonSheet8020">
+          <DataField>RFQ_PriceComparisonSheet8020</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_DoesThePriceIncludeVAT">
+          <DataField>RFQ_DoesThePriceIncludeVAT</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_IfYesVerifyVATRegistrationNumberOnTheTCCorVATVendorSearchonSARSWebsite">
+          <DataField>RFQ_IfYesVerifyVATRegistrationNumberOnTheTCCorVATVendorSearchonSARSWebsite</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_SignedMemoForNotSelectingTheHighestScoringBidderOnlyFfTheFirstBidderIsNotSelected">
+          <DataField>RFQ_SignedMemoForNotSelectingTheHighestScoringBidderOnlyFfTheFirstBidderIsNotSelected</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_ValidTCCValidByClosingDateOfTheRFQ">
+          <DataField>RFQ_ValidTCCValidByClosingDateOfTheRFQ</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_ValidBEECertificateAuditorLetterAffidavitValidbyClosingDateOfTheRFQ">
+          <DataField>RFQ_ValidBEECertificateAuditorLetterAffidavitValidbyClosingDateOfTheRFQ</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_CheckedAgainstTheListofRestrictedSuppliers">
+          <DataField>RFQ_CheckedAgainstTheListofRestrictedSuppliers</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_CheckedAgainstTheListOfDefaulters">
+          <DataField>RFQ_CheckedAgainstTheListOfDefaulters</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_AllBarnOwlActionPlansResolved">
+          <DataField>RFQ_AllBarnOwlActionPlansResolved</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_SignedPRF">
+          <DataField>RFQ_SignedPRF</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_lAwarded">
+          <DataField>RFQ_lAwarded</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_DateOfAward">
+          <DataField>RFQ_DateOfAward</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_LevelOfApproval">
+          <DataField>RFQ_LevelOfApproval</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_SAPVendorNumber">
+          <DataField>RFQ_SAPVendorNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_NameOfVendor">
+          <DataField>RFQ_NameOfVendor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_PurchaseOrderNumber">
+          <DataField>RFQ_PurchaseOrderNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_OutlineAgreementNumber">
+          <DataField>RFQ_OutlineAgreementNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_AwardReportedtoNationalTreasury">
+          <DataField>RFQ_AwardReportedtoNationalTreasury</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_ContractBySARSAndSupplier">
+          <DataField>RFQ_ContractBySARSAndSupplier</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_Notes">
+          <DataField>RFQ_Notes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CondonationTenderNumber">
+          <DataField>CondonationTenderNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CondonationResponsiblePerson">
+          <DataField>CondonationResponsiblePerson</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CondonationNameOfVendor">
+          <DataField>CondonationNameOfVendor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CondonationVendorNumber">
+          <DataField>CondonationVendorNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CondonationType">
+          <DataField>CondonationType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CondonationAwarded">
+          <DataField>CondonationAwarded</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CondonationDateOfAward">
+          <DataField>CondonationDateOfAward</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CondonationLevelOfApproval">
+          <DataField>CondonationLevelOfApproval</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CondonationSignedMinutesOfApproval">
+          <DataField>CondonationSignedMinutesOfApproval</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CondonationValueOfAward">
+          <DataField>CondonationValueOfAward</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CondonationPurchaseOrderNumber">
+          <DataField>CondonationPurchaseOrderNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CondonationAwardReportedToNationalTreasury">
+          <DataField>CondonationAwardReportedToNationalTreasury</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CondonationNotes">
+          <DataField>CondonationNotes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeviationTenderNumber">
+          <DataField>DeviationTenderNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeviationResponsiblePerson">
+          <DataField>DeviationResponsiblePerson</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeviationNameOfVendor">
+          <DataField>DeviationNameOfVendor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeviationVendorNumber">
+          <DataField>DeviationVendorNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeviationType">
+          <DataField>DeviationType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeviationAwarded">
+          <DataField>DeviationAwarded</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeviationDateOfAward">
+          <DataField>DeviationDateOfAward</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeviationLevelOfApproval">
+          <DataField>DeviationLevelOfApproval</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeviationSignedMinutesOfApproval">
+          <DataField>DeviationSignedMinutesOfApproval</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeviationValueOfAward">
+          <DataField>DeviationValueOfAward</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeviationStartDateOfAward">
+          <DataField>DeviationStartDateOfAward</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeviationEndDateOfAward">
+          <DataField>DeviationEndDateOfAward</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeviationPurchaseOrderNumber">
+          <DataField>DeviationPurchaseOrderNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeviationOutlineAgreementNumber">
+          <DataField>DeviationOutlineAgreementNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeviationAwardReportedtoNationalTreasury">
+          <DataField>DeviationAwardReportedtoNationalTreasury</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeviationSignedContractBySARSAndSupplier">
+          <DataField>DeviationSignedContractBySARSAndSupplier</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DeviationNotes">
+          <DataField>DeviationNotes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ExpansionVariationTenderNumber">
+          <DataField>ExpansionVariationTenderNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ExpansionVariationResponsiblePerson">
+          <DataField>ExpansionVariationResponsiblePerson</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ExpansionVariationNameOfVendor">
+          <DataField>ExpansionVariationNameOfVendor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ExpansionVariationVendorNumber">
+          <DataField>ExpansionVariationVendorNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ExpansionVariationType">
+          <DataField>ExpansionVariationType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ExpansionVariationAwarded">
+          <DataField>ExpansionVariationAwarded</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ExpansionVariationDateOfAward">
+          <DataField>ExpansionVariationDateOfAward</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ExpansionVariationLevelOfApproval">
+          <DataField>ExpansionVariationLevelOfApproval</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ExpansionVariationValueOfAward">
+          <DataField>ExpansionVariationValueOfAward</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ExpansionVariationStartDateOfAward">
+          <DataField>ExpansionVariationStartDateOfAward</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ExpansionVariationEndDateOfAward">
+          <DataField>ExpansionVariationEndDateOfAward</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ExpansionVariationPurchaseOrderNumber">
+          <DataField>ExpansionVariationPurchaseOrderNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ExpansionVariationOutlineAgreementNumber">
+          <DataField>ExpansionVariationOutlineAgreementNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ExpansionVariationSignedContractBySARSAndSupplier">
+          <DataField>ExpansionVariationSignedContractBySARSAndSupplier</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ExpansionVariationAwardReportedtoNationalTreasury">
+          <DataField>ExpansionVariationAwardReportedtoNationalTreasury</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ExpansionVariationNotes">
+          <DataField>ExpansionVariationNotes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TransversalTenderNumber">
+          <DataField>TransversalTenderNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TransversalResponsiblePerson">
+          <DataField>TransversalResponsiblePerson</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TransversalNameOfVendor">
+          <DataField>TransversalNameOfVendor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TransversalVendorNumber">
+          <DataField>TransversalVendorNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TransversalType">
+          <DataField>TransversalType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TransversalAwarded">
+          <DataField>TransversalAwarded</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TransversalDateOfAward">
+          <DataField>TransversalDateOfAward</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TransversalLevelOfApproval">
+          <DataField>TransversalLevelOfApproval</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TransversalValueOfAward">
+          <DataField>TransversalValueOfAward</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TransversalStartDateOfAward">
+          <DataField>TransversalStartDateOfAward</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TransversalEndDateOfAward">
+          <DataField>TransversalEndDateOfAward</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TransversalPurchaseOrderNumber">
+          <DataField>TransversalPurchaseOrderNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TransversalOutlineAgreementNumber">
+          <DataField>TransversalOutlineAgreementNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TransversalSignedContractBySARSAndSupplier">
+          <DataField>TransversalSignedContractBySARSAndSupplier</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TransversalNotes">
+          <DataField>TransversalNotes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TransversalAwardReportedtoNationalTreasury">
+          <DataField>TransversalAwardReportedtoNationalTreasury</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_SBDDocuments">
+          <DataField>RFQ_SBDDocuments</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FRQ_BidSpecificationNotes">
+          <DataField>FRQ_BidSpecificationNotes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RFQ_Stage1PlanningNotes">
+          <DataField>RFQ_Stage1PlanningNotes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="StartDate">
+      <DataType>DateTime</DataType>
+      <Prompt>Start Date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EndDate">
+      <DataType>DateTime</DataType>
+      <Prompt>End Date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ProcessId">
+      <DataType>String</DataType>
+      <Prompt>Process Id</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>ffe2d867-c496-45c4-8569-8fa82cb62b3e</rd:ReportID>
+</Report>

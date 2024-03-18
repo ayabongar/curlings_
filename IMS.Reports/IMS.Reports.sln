@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "IMS.Reports", "IMS.Reports.rptproj", "{155E20A6-C42F-4316-B4DE-CF322D3F88D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{155E20A6-C42F-4316-B4DE-CF322D3F88D4}.Debug|Default.ActiveCfg = Debug
+		{155E20A6-C42F-4316-B4DE-CF322D3F88D4}.Debug|Default.Build.0 = Debug
+		{155E20A6-C42F-4316-B4DE-CF322D3F88D4}.Debug|Default.Deploy.0 = Debug
+		{155E20A6-C42F-4316-B4DE-CF322D3F88D4}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{155E20A6-C42F-4316-B4DE-CF322D3F88D4}.DebugLocal|Default.Build.0 = DebugLocal
+		{155E20A6-C42F-4316-B4DE-CF322D3F88D4}.DebugLocal|Default.Deploy.0 = DebugLocal
+		{155E20A6-C42F-4316-B4DE-CF322D3F88D4}.Release|Default.ActiveCfg = Release
+		{155E20A6-C42F-4316-B4DE-CF322D3F88D4}.Release|Default.Build.0 = Release
+		{155E20A6-C42F-4316-B4DE-CF322D3F88D4}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E24E72F0-C48D-4B44-83F3-1C55FACEFC74}
+	EndGlobalSection
+EndGlobal

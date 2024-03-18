@@ -46,7 +46,7 @@
 
 
 
-                            <asp:TabContainer runat="server" ID="tabIncidents" CssClass="Tab">
+                            <asp:TabContainer runat="server" ID="tabIncidents" >
                                 <asp:TabPanel runat="server" ID="tabMyIncidents">
                                     <HeaderTemplate>My Incidents</HeaderTemplate>
                                     <ContentTemplate>

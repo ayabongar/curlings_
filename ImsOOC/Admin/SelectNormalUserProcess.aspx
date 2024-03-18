@@ -2,6 +2,8 @@
     CodeFile="SelectNormalUserProcess.aspx.cs" Inherits="Admin_SelectNormalUserProcess" %>
 <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 
+<%@ Register assembly="Microsoft.ReportViewer.WebForms" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <script src="../Scripts/boxover.js"></script>
     <style type="text/css">
@@ -45,6 +47,10 @@
         .TextBoxes {
             width: 150px!important;
         }
+        .wrapper{
+              z-index:inherit;
+              max-width: 1200px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="Server">
@@ -79,52 +85,7 @@
                 </div>
 
 
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        FILTER BY
-                    </div>
-                    <div class="panel-body">
-                        <div class="pageBody" style="width: 97%">
-
-                            <table>
-                                <tr>
-
-                                    <td style="padding-left: 4px;">
-                                        <asp:TextBox type="text" runat="server" ID="DateFrom"  CssClass="TextBoxes" />
-
-                                        <asp:CalendarExtender ID="CalendarExtender1" runat="server" ClearTime="True"
-                                            Enabled="True" Format="yyyy-MM-dd" TargetControlID="DateFrom"
-                                            TodaysDateFormat="yyyy-MM-dd">
-                                        </asp:CalendarExtender>
-                                        <asp:TextBoxWatermarkExtender ID="TextBoxWatermarkExtender1" runat="server"
-                                            Enabled="true" TargetControlID="DateFrom" WatermarkCssClass="watermarked"
-                                            WatermarkText="Date From">
-                                        </asp:TextBoxWatermarkExtender>
-                                    </td>
-                                </tr>
-                                <tr>
-
-                                    <td style="padding-left: 4px;">
-                                        <asp:TextBox type="text" runat="server" ID="DateTo" CssClass="TextBoxes" />
-
-                                        <asp:CalendarExtender ID="CalendarExtender2" runat="server" ClearTime="True"
-                                            Enabled="True" Format="yyyy-MM-dd" TargetControlID="DateTo"
-                                            TodaysDateFormat="yyyy-MM-dd">
-                                        </asp:CalendarExtender>
-                                        <asp:TextBoxWatermarkExtender ID="TextBoxWatermarkExtender2" runat="server"
-                                            Enabled="true" TargetControlID="DateTo" WatermarkCssClass="watermarked"
-                                            WatermarkText="Date To">
-                                        </asp:TextBoxWatermarkExtender>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="padding-left: 4px;">
-                                        <asp:Button ID="btnFilter" runat="server" Text="Filter" OnClick="btnFilter_Click" /></td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+                
 
             </td>
             <td>
@@ -141,10 +102,11 @@
                                 <asp:TabPanel runat="server" ID="tabMyIncidents" Style="min-height: 600px">
                                     <HeaderTemplate>Dashboard</HeaderTemplate>
                                     <ContentTemplate>
-                                        <rsweb:ReportViewer ID="ReportViewer1" runat="server"
-                                            ProcessingMode="Remote" ShowBackButton="False" ShowCredentialPrompts="False"
-                                            ShowFindControls="false" ShowPageNavigationControls="False"
-                                            ShowParameterPrompts="false" Width="100%" Height="1000px" Font-Names="Verdana" Font-Size="8pt" ShowDocumentMapButton="False" ShowExportControls="False" ShowPrintButton="False" ShowPromptAreaButton="False" ShowRefreshButton="False" ShowToolBar="False" ShowZoomControl="False" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
+                                        <rsweb:ReportViewer ID="ReportViewer1" runat="server" 
+                                            ProcessingMode="Remote" ShowBackButton="True" ShowCredentialPrompts="False"
+                                            ShowFindControls="False" ShowPageNavigationControls="False"
+                                            ShowParameterPrompts="True" Width="100%" Height="1000px" Font-Names="Verdana" Font-Size="8pt" ShowDocumentMapButton="False" ShowExportControls="True" ShowPrintButton="True" ShowPromptAreaButton="True" ShowRefreshButton="True" ShowToolBar="True" 
+                                            ShowZoomControl="False" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
                                             <ServerReport ReportPath="/IMS/Dashboard" />
                                         </rsweb:ReportViewer>
                                     </ContentTemplate>
@@ -200,7 +162,7 @@
                                             </tr>
                                             <tr>
                                                 <td colspan="2">
-                                                    <asp:Panel runat="server" Width="1200px" ScrollBars="Both">
+                                                    <asp:Panel runat="server"  CssClass="wrapper" ScrollBars="Both">
                                                         <asp:GridView runat="server" ID="gvReports" CssClass="documents" AllowPaging="True" OnPageIndexChanging="gvReports_PageIndexChanging" EmptyDataText="NO INCIDENTS " PageSize="30">
                                                         </asp:GridView>
                                                     </asp:Panel>

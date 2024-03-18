@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "309cf3bb-5243-47f9-8974-33f1bfc4857f": {
+      "ProjectGuid": "309cf3bb-5243-47f9-8974-33f1bfc4857f",
+      "DisplayName": "http://localhost/ims/",
+      "ColorIndex": 0
+    },
+    "b2041bad-5b8a-43a7-a7e9-13b775f8a4fc": {
+      "ProjectGuid": "b2041bad-5b8a-43a7-a7e9-13b775f8a4fc",
+      "DisplayName": "SARS.Systems",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
