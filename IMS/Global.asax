@@ -16,19 +16,19 @@
 
     void Application_Error(object sender, EventArgs e)
     {
-        var error = Server.GetLastError();
-        if (error != null)
-        {
-            if (error.InnerException != null)
-            {
-                var sessionId = Session.SessionID;
-                var message = error.InnerException.Message;
-                var stacktrace = error.InnerException.StackTrace;
-                var systemUser = SarsUser.FullName;
-                IncidentTrackingManager.SaveSystemError(sessionId, message, stacktrace, systemUser);
-                Response.Redirect("~/ErrorPage.aspx");
-            }
-        }
+        //var error = Server.GetLastError();
+        //if (error != null)
+        //{
+        //    if (error.InnerException != null)
+        //    {
+        //        var sessionId = Session.SessionID;
+        //        var message = error.InnerException.Message;
+        //        var stacktrace = error.InnerException.StackTrace;
+        //        var systemUser = SarsUser.FullName;
+        //        IncidentTrackingManager.SaveSystemError(sessionId, message, stacktrace, systemUser);
+        //        Response.Redirect("~/ErrorPage.aspx");
+        //    }
+        //}
     }
 
     void Session_Start(object sender, EventArgs e)

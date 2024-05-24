@@ -1,0 +1,121 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ReportsMaster.master.cs" Inherits="ReportsMaster" %>
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head id="Head1" runat="server">
+    <title></title>
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/survey.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/toolBars.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/bootstrap.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1 {
+            width: 8px;
+            height: 8px;
+        }
+
+        .style2 {
+            height: 8px;
+        }
+    </style>
+    <script src="~/Scripts/webservices.js"></script>
+    <script src="~/Scripts/jquery-1.9.1.js"></script>
+</head>
+<body>
+    <form id="Form1" runat="server" autocomplete="off">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="550" EnablePartialRendering="true">
+            <Services>
+                <asp:ServiceReference Path="~/Services/IncidentTrackingService.asmx" />
+            </Services>
+        </asp:ScriptManager>
+        <table class="page">
+            <tr>
+                <td>
+                    <div class="header">
+                        <table width="100%" style="text-align: right; font-size: 12px; color: #FFFFFF; vertical-align: top;">
+                            <tr>
+                                <td align="left">
+                                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">
+                                        <asp:Image runat="server" ID="logo" ImageUrl="~/Images/logo-sars.png" BorderStyle="None"
+                                            ImageAlign="Left" />
+                                    </asp:HyperLink>
+                                </td>
+                                <td align="center" style="padding-right: 10px;">
+                                    <span style="float: right; font-size: x-large; font-family: Century;">
+                                        <%=ConfigurationManager.AppSettings["version"] %></span>
+                                    <br />
+                                    <br />
+                                    <span runat="server" id="welcome" style="font-size: small; float: right; padding-top: 20px; text-align: right;"></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table style="width: 100%;">
+                        <tr>
+                            <td valign="top" style="width: 10%;">
+                                <table style="width: 100%">
+                                    <tr>
+                                        <td valign="top" style="width: 100%;">
+
+                                            <div class="panel panel-primary">
+                                                <div class="panel-heading">
+                                                    REPORTS MAIN MENU
+                                                </div>
+                                                <div class="panel-body">
+                                                    <div class="pageBody" style="width:96%">
+                                                    <asp:TreeView ID="TreeView1" runat="server" LineImagesFolder="~/TreeLineImages" Width="100%"
+                                                        ExpandImageUrl="~/Images/112_Plus_Green_16x16_72.png" CollapseImageUrl="~/Images/112_Minus_Green_16x16_72.png"
+                                                        ImageSet="Arrows" Style="font-size: small" CssClass="question-block" OnSelectedNodeChanged="TreeView1_SelectedNodeChanged">
+                                                        <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
+                                                        <Nodes>
+                                                            <asp:TreeNode Text="Incident Management System Reports" Value="0">
+                                                                <asp:TreeNode Text="Home" Value="Home"></asp:TreeNode>
+                                                               <%-- <asp:TreeNode Text="Dashboard" Value="100"></asp:TreeNode>
+                                                                <asp:TreeNode Text="Assigned" Value="2"></asp:TreeNode>
+                                                                <asp:TreeNode Text="WIP"
+                                                                    Value="3"></asp:TreeNode>
+                                                                <asp:TreeNode Text="Completed" Value="4"></asp:TreeNode>
+                                                                <asp:TreeNode Text="Closed" Value="5"></asp:TreeNode>--%>
+                                                                <asp:TreeNode Text="Incidents Data Extract"
+                                                                    Value="6"></asp:TreeNode>
+                                                            </asp:TreeNode>
+                                                        </Nodes>
+                                                        <NodeStyle Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" HorizontalPadding="5px"
+                                                            NodeSpacing="0px" VerticalPadding="0px" />
+                                                        <ParentNodeStyle Font-Bold="False" />
+                                                        <SelectedNodeStyle Font-Underline="True" HorizontalPadding="0px" VerticalPadding="0px"
+                                                            ForeColor="#5555DD" />
+                                                    </asp:TreeView>
+                                                </div>
+                                            </div>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td valign="top">
+                                <table width="100%">
+                                    <tr>
+                                        <td valign="top" style="border-left: 2px solid silver; padding-left: 10px;">
+                                            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                                            </asp:ContentPlaceHolder>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

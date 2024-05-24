@@ -1,12 +1,25 @@
 ﻿
 using System;
+using System.Configuration;
 
 public class IncidentTrackingPage : System.Web.UI.Page
 {
 	public IncidentTrackingPage()
 	{
 	}
+    public int OocInternalProcessId
+    {
+        get { return int.Parse(ConfigurationManager.AppSettings["OocInternal"]); }
+    }
 
+    public int OocExternalProcessId
+    {
+        get { return int.Parse(ConfigurationManager.AppSettings["OocExternal"]); }
+    }
+    public int TaxEscalationProcessId
+    {
+        get { return int.Parse(ConfigurationManager.AppSettings["TaxEscalation"]); }
+    }
     public string ProcessID
     {
         get { return Request.Params["procId"]; }

@@ -46,12 +46,12 @@
                 <SCS:Toolbar ID="Toolbar1" runat="server" OnButtonClicked="Toolbar1_ButtonClicked" EnableClientApi="False" CssClass="toolbar" Width="99.5%">
                     <Items>
                         <SCS:ToolbarButton CausesValidation="True" CommandName="Submit" Text="Save Incident Details" />
-                        <SCS:ToolbarButton CausesValidation="True" CommandName="SaveAndClose" Text="Save & Close" />                        
-                        <SCS:ToolbarButton CausesValidation="True" CommandName="Print" Text="Cover Page" Visible="False" />
-                        <SCS:ToolbarButton CausesValidation="True" CommandName="AcknowledgementLetter" Text="Acknowledgement Letter" Visible="False" />
-                        <SCS:ToolbarButton CausesValidation="True" CommandName="ReAssign" Text="Re-Assign" Visible="False" />
-                        <SCS:ToolbarButton CausesValidation="True" CommandName="PrintScreen" Text="Print" Visible="False" />
-                        <SCS:ToolbarButton CausesValidation="True" CommandName="Cancel" Text="Cancel" />
+                        <SCS:ToolbarButton CausesValidation="True" CommandName="SaveAndClose" Text="Save & Close"  Visible="False" />
+                        <SCS:ToolbarButton CausesValidation="false" CommandName="Print" Text="Cover Page" Visible="False" />
+                        <SCS:ToolbarButton CausesValidation="false" CommandName="AcknowledgementLetter" Text="Acknowledgement Letter" Visible="False" />
+                        <SCS:ToolbarButton CausesValidation="false" CommandName="ReAssign" Text="Re-Assign" Visible="False" />
+                        <SCS:ToolbarButton CausesValidation="false" CommandName="PrintScreen" Text="Print" Visible="False" />
+                        <SCS:ToolbarButton CausesValidation="false" CommandName="Cancel" Text="Cancel" />
 
                     </Items>
                     <ButtonCssClasses CssClass="button" CssClassEnabled="button_enabled" CssClassSelected="" CssClassDisabled="button_disabled"></ButtonCssClasses>
@@ -84,15 +84,25 @@
                                     </td>
                                     <td style="padding-left: 4px;">
 
-                                        <asp:DropDownList runat="server" ID="drpStatuses" Visible="False" Width="100px">
+                                        <asp:DropDownList runat="server" ID="drpStatuses" Visible="False" Width="100px" AutoPostBack="True" OnSelectedIndexChanged="drpStatuses_SelectedIndexChanged">
                                             <asp:ListItem Value="0">Select One..</asp:ListItem>
                                             <asp:ListItem Value="4">Complete</asp:ListItem>
                                             <asp:ListItem Value="5">Close</asp:ListItem>
-                                            <asp:ListItem Value=""></asp:ListItem>
-                                            <asp:ListItem Value=""></asp:ListItem>
                                         </asp:DropDownList>
                                         <input type="text" value="<%=CurrentIncidentDetails.IncidentStatus %>" disabled="disabled" style="width: 197px" />
 
+                                    </td>
+                                </tr>
+                                <tr id="trDateAction" runat="server" visible="false">
+                                    <td class="inc-details-label" style="font-weight: bold">Date Actioned:
+                                    </td>
+                                    <td style="padding-left: 4px;">
+                                        <asp:TextBox type="text" runat="server" ID="txtDateActioned" Width="150px" />
+
+                                        <asp:CalendarExtender ID="CalendarExtender1" runat="server" ClearTime="True"
+                                            Enabled="True" Format="yyyy-MM-dd" TargetControlID="txtDateActioned"
+                                            TodaysDateFormat="yyyy-MM-dd"></asp:CalendarExtender>
+                                        <asp:RequiredFieldValidator ErrorMessage="Date Actioned is a required field" ForeColor="Red" ControlToValidate="txtDateActioned" runat="server" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -100,20 +110,19 @@
                                     </td>
                                     <td style="padding-left: 4px;">
 
-                                        <asp:DropDownList runat="server" ID="drpRoles" Width="100px">                                            
-                                        </asp:DropDownList>                                        
+                                        <asp:DropDownList runat="server" ID="drpRoles" Width="100px">
+                                        </asp:DropDownList>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="inc-details-label" style="font-weight: bold">Incident SLA Due Date:
+                                    <td class="inc-details-label" style="font-weight: bold">Incident Due Date:
                                     </td>
                                     <td style="padding-left: 4px;">
                                         <asp:TextBox type="text" runat="server" ID="txtIncidentDueDate" Width="150px" />
 
                                         <asp:CalendarExtender ID="txtIncidentDueDate_CalendarExtender" runat="server" ClearTime="True"
                                             Enabled="True" Format="yyyy-MM-dd" TargetControlID="txtIncidentDueDate"
-                                            TodaysDateFormat="yyyy-MM-dd">
-                                        </asp:CalendarExtender>
+                                            TodaysDateFormat="yyyy-MM-dd"></asp:CalendarExtender>
 
                                     </td>
                                 </tr>
@@ -129,6 +138,30 @@
                                     </td>
                                     <td>
                                         <uc1:UserSelector ID="SecAssignedToSID" runat="server" />
+                                    </td>
+                                </tr>
+                                <tr id="trSLAUpdate" runat="server" visible="false">
+                                    <td class="inc-details-label" style="font-weight: bold">SLA Date 
+                                    </td>
+                                    <td style="padding-left: 4px;">
+                                        <asp:TextBox type="text" runat="server" ID="txtSLAUpdated" Width="150px" />
+
+                                        <asp:CalendarExtender ID="CalendarExtender2" runat="server" ClearTime="True"
+                                            Enabled="True" Format="yyyy-MM-dd" TargetControlID="txtSLAUpdated"
+                                            TodaysDateFormat="yyyy-MM-dd"></asp:CalendarExtender>
+
+                                        <asp:RequiredFieldValidator ErrorMessage="Date SLA date is a required field" ForeColor="Red" ControlToValidate="txtSLAUpdated" runat="server" />
+                                    </td>
+                                </tr>
+                                <tr id="trSLADateReason" runat="server" visible="false">
+                                    <td class="inc-details-label"  style="font-weight: bold">Reason For Updating Of SLA Date:
+                                    </td>
+                                    <td style="padding-left: 4px;">
+
+                                        <asp:TextBox type="text" runat="server" ID="txtSLAUpdateReason"  Height="80px" TextMode="MultiLine" />
+                                          <asp:RequiredFieldValidator ErrorMessage="Reason For Updating Of SLA Date is a required field" ForeColor="Red" ControlToValidate="txtSLAUpdateReason" runat="server" />
+                           
+
                                     </td>
                                 </tr>
                             </table>

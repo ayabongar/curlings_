@@ -46,7 +46,7 @@
 
 
 
-                            <asp:TabContainer runat="server" ID="tabIncidents" >
+                            <asp:TabContainer runat="server" ID="tabIncidents">
                                 <asp:TabPanel runat="server" ID="tabMyIncidents">
                                     <HeaderTemplate>My Incidents</HeaderTemplate>
                                     <ContentTemplate>
@@ -56,8 +56,7 @@
                                                     <asp:TextBox runat="server" ID="txtMyIncidents" CssClass="search_textbox" Width="400px" />
                                                     <asp:TextBoxWatermarkExtender ID="TextBoxWatermarkExtender2" runat="server"
                                                         Enabled="True" TargetControlID="txtMyIncidents" WatermarkCssClass="watermarked"
-                                                        WatermarkText="IncidentNo,Summary,StatusType">
-                                                    </asp:TextBoxWatermarkExtender>
+                                                        WatermarkText="IncidentNo,Summary,StatusType"></asp:TextBoxWatermarkExtender>
                                                     <asp:Button Text="Search" ID="Button4" runat="server" OnClick="btnTeamSearch_Click" />
                                                 </td>
 
@@ -160,8 +159,7 @@
                                                     <asp:TextBox runat="server" ID="txtTeamSearch" Text="Work In Progress" CssClass="search_textbox" Width="400px" />
                                                     <asp:TextBoxWatermarkExtender ID="TextBoxWatermarkExtender1" runat="server"
                                                         Enabled="True" TargetControlID="txtTeamSearch" WatermarkCssClass="watermarked"
-                                                        WatermarkText="AssignedToSID,IncidentNo,Summary,StatusType">
-                                                    </asp:TextBoxWatermarkExtender>
+                                                        WatermarkText="AssignedToSID,IncidentNo,Summary,StatusType"></asp:TextBoxWatermarkExtender>
                                                     <asp:Button Text="Search" ID="Button3" runat="server" OnClick="btnTeamSearch_Click" />
                                                 </td>
 
@@ -322,8 +320,7 @@
 
                                                                 <asp:CalendarExtender
                                                                     ID="txtIncidentDueDate_CalendarExtender" runat="server" ClearTime="True" Enabled="True"
-                                                                    Format="yyyy-MM-dd hh:mm" TargetControlID="txtIncidentDueDate" TodaysDateFormat="yyyy-MM-dd hh:mm">
-                                                                </asp:CalendarExtender>
+                                                                    Format="yyyy-MM-dd hh:mm" TargetControlID="txtIncidentDueDate" TodaysDateFormat="yyyy-MM-dd hh:mm"></asp:CalendarExtender>
 
 
 

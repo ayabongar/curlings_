@@ -26,7 +26,7 @@
                 var stacktrace = error.InnerException.StackTrace;
                 var systemUser = SarsUser.FullName;
                 IncidentTrackingManager.SaveSystemError(sessionId, message, stacktrace, systemUser);
-                Response.Redirect("~/ErrorPage.aspx");
+               // Response.Redirect("~/ErrorPage.aspx");
             }
         }
     }

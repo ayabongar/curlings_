@@ -80,4 +80,15 @@ public class Incident : DataAccessObject
 
     [Column(Name = "Subject")]
     public string Subject { get; set; }
+    [Column(Name = "RoleId")]
+    public Guid RoleId { get; set; }
+    [Column(Name = "RoleName")]
+    public string RoleName { get; set; }
+    [Column(Name = "SecondAssignedToSID")]
+    public string SecondAssignedToSID { get; set; }
+
+    [Column(Name = "SLADate")]
+    public DateTime? SLADate { get; set; }
+    [Column(Name = "SLAReason")]
+    public string SLAReason { get; set; }
 }

@@ -15,6 +15,8 @@ using System.Xml;
 using System.IO;
 using SqlConnection = System.Data.SqlClient.SqlConnection;
 using System.Security.Cryptography;
+using Sars.Systems.Security;
+using System.EnterpriseServices;
 
 public static class IncidentTrackingManager
 {
@@ -1227,6 +1229,36 @@ public static class IncidentTrackingManager
         return new IncidentProcess("[dbo].[uspRead_AllProcesses]", new Dictionary<string, object> { { "@sid", sid } }).GetRecords<IncidentProcess>();
     }
 
+
+    public static int InitOocIncident(string processId, out string incidentId, out string incidentNumber)
+    {
+        incidentId = string.Empty;
+        incidentNumber = string.Empty;
+
+        var oParams = new DBParamCollection
+                          {
+                              {"@CreatedBySID", SarsUser.SID},
+                              {"@ProcessId", processId},
+                              {"@IncidentNumber", null, ParameterDirection.Output},
+                              {"@IncidentID", null, ParameterDirection.Output}
+                          };
+        using (
+            var command = new DBCommand("uspOocInitialiseNewIncident", QueryType.StoredProcedure, oParams, db.Connection))
+        {
+            Hashtable ht;
+            var numRecordsAffected = command.Execute(out ht);
+
+            if (ht.ContainsKey("@IncidentNumber"))
+            {
+                incidentNumber = ht["@IncidentNumber"].ToString();
+            }
+            if (ht.ContainsKey("@IncidentID"))
+            {
+                incidentId = ht["@IncidentID"].ToString();
+            }
+            return numRecordsAffected;
+        }
+    }
 
     public static int InitIncident(string processId, out string incidentId, out string incidentNumber)
     {
@@ -2973,4 +3005,149 @@ public static class IncidentTrackingManager
             return command.Execute();
         }
     }
+
+    #region OOC
+    public static List<IncidentAllocation> GetSecondAssignedUser(string incidentId)
+    {
+        return
+            new IncidentAllocation("[dbo].[uspReadAllocateSecondAssignee]",
+                                new Dictionary<string, object>
+                                    {
+                                        {"@IncidentID", incidentId}
+                                    }).GetRecords<IncidentAllocation>();
+    }
+
+    public static List<UserRoles> GetIncidentsRolesByUserRoleId(Guid roleId)
+    {
+        return
+            new IncidentStatus("[dbo].[Incident_RoleById]",
+            new Dictionary<string, object> { { "@RoleId", roleId } }).GetRecords<UserRoles>();
+    }
+
+    public static int UpdateIncidentDetails(DateTime dueDate, string assignedTo, string incidentId, Guid roleId, string SLADate, string SLAReason)
+    {
+        var oParams = new DBParamCollection
+                          {
+                              {"@DueDate", dueDate},
+                              {"@AssignedTo", assignedTo},
+                              {"@IncidentId", incidentId},
+                              {"@RoleId", roleId},
+                              {"@LastModifiedBySID", SarsUser.SID},
+                              {"@SLADate", SLADate},
+                              {"@SLAReason", SLAReason},
+                          };
+        using (
+            var command = new DBCommand("[dbo].[usp_OocAssignIncident]", QueryType.StoredProcedure, oParams, db.Connection))
+        {
+            return command.Execute();
+        }
+    }
+
+    public static int AllocateSecondAssignee(string assignedTo, string incidentId, bool isSecondAssigned)
+    {
+        var oParams = new DBParamCollection
+                          {
+                              {"@IncidentId", incidentId},
+                              {"@AssignedTo", assignedTo},
+                              {"@CreatedBy", SarsUser.SID},
+                              {"@SecSID", isSecondAssigned}
+                          };
+        using (
+            var command = new DBCommand("[dbo].[uspAllocateSecondAssignee]", QueryType.StoredProcedure, oParams, db.Connection))
+        {
+            return command.Execute();
+        }
+    }
+
+    public static int CompleteIncident(string incidentId, DateTime dateCompleted)
+    {
+        var oParams = new DBParamCollection {
+            { "@IncidentId", incidentId } ,
+            { "@DateCompleted", dateCompleted }
+        };
+        using (
+            var command = new DBCommand("[dbo].[uspOocCompleteIncident]", QueryType.StoredProcedure, oParams, db.Connection)
+            )
+        {
+            return command.Execute();
+        }
+    }
+    public static int CloseIncident(string incidentId, DateTime dateClosed)
+    {
+        var oParams = new DBParamCollection {
+            { "@IncidentId", incidentId },
+          { "@DateClosed", dateClosed }
+        };
+        using (
+            var command = new DBCommand("[dbo].[uspOocCloseIncident]", QueryType.StoredProcedure, oParams, db.Connection))
+        {
+            return command.Execute();
+        }
+    }
+
+    public static List<ServiceConfig> GetOocProcessConfiguration(decimal processid)
+    {
+        var oParams = new DBParamCollection
+                          {
+                              {"@processId", processid}
+                          };
+
+        using (
+            var data = new RecordSet("ImsService_SELECT_ProcessConfiguration", QueryType.StoredProcedure, oParams,
+                db.ConnectionString))
+        {
+            if (data.HasRows)
+            {
+                return data.Tables[0].ToList<ServiceConfig>();
+            }
+        }
+        return null;
+    }
+
+    public static int InsertOrUpdateServiceConfig(ServiceConfig conf)
+    {
+        var oParams = new DBParamCollection
+         {
+                { "@ProcessId", conf.ProcessId},
+                { "@NotifyUsers" ,conf.NotifyUsers },
+                { "@EscalateToManagers" ,conf.EscalateToManagers },
+                { "@EscalateToProcessOwners" ,conf.EscalateToProcessOwners },
+                { "@EscalateToDeputyCom" ,conf.EscalateToDeputyCom },
+                { "@DuputyComEmail" ,conf.DuputyComEmail },
+                { "@IsProServer" ,conf.IsProServer },
+                { "@TestEmailsGoTo" ,conf.TestEmailsGoTo },
+                { "@ReminderInterval" ,conf.ReminderInterval }
+         };
+        using (var command = new DBCommand("[dbo].[usp_Service_UpInsert_Config]", QueryType.StoredProcedure, oParams, db.Connection)
+            )
+        {
+            return command.Execute();
+        }
+    }
+
+    public static List<Incident> GetOocUserAssignedIncidents(string sid, int statusId)
+    {
+        return
+            new Incident("[dbo].[uspOocGetMyAssignedIncidents]",
+                         new Dictionary<string, object> { { "@SID", sid }, { "@StatusId", statusId } }).GetRecords<Incident>();
+    }
+
+    public static List<Incident> GetOocUserProcessIncidents(string processId)
+    {
+        return
+            new Incident("[dbo].[uspOocUserGetProcessIncidents]", new Dictionary<string, object>
+                                                               {
+                                                                   {"@ProcessId", processId}
+                                                               }).GetRecords<Incident>();
+    }
+
+    public static RecordSet GetOococessReportBystatus(string processId, string statusId)
+    {
+        return new RecordSet("usp_OOC_RPT_IncidentsByStatus", QueryType.StoredProcedure, new DBParamCollection
+                                                                                         {
+                                                                                             {"@ProcessId", processId}
+
+                                                                                         }, db.ConnectionString);
+    }
+    #endregion
 }

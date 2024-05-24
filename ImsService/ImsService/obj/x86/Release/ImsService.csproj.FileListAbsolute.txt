@@ -31,3 +31,13 @@ C:\_TFS_Development\IncidentManagementSystem\Dev\ImsService\ImsService\obj\x86\R
 C:\_TFS_Development\IncidentManagementSystem\Dev\ImsService\ImsService\obj\x86\Release\ImsService.csproj.CopyComplete
 C:\_TFS_Development\IncidentManagementSystem\Dev\ImsService\ImsService\obj\x86\Release\ImsService.exe
 C:\_TFS_Development\IncidentManagementSystem\Dev\ImsService\ImsService\obj\x86\Release\ImsService.pdb
+C:\_TFS_Development\IncidentTrackingSystem_OOC\ImsService\ImsService\bin\Release\ImsService.exe.config
+C:\_TFS_Development\IncidentTrackingSystem_OOC\ImsService\ImsService\bin\Release\ImsService.exe
+C:\_TFS_Development\IncidentTrackingSystem_OOC\ImsService\ImsService\bin\Release\ImsService.pdb
+C:\_TFS_Development\IncidentTrackingSystem_OOC\ImsService\ImsService\obj\x86\Release\ImsService.csproj.AssemblyReference.cache
+C:\_TFS_Development\IncidentTrackingSystem_OOC\ImsService\ImsService\obj\x86\Release\ImsService.ProjectInstaller.resources
+C:\_TFS_Development\IncidentTrackingSystem_OOC\ImsService\ImsService\obj\x86\Release\ImsService.csproj.GenerateResource.cache
+C:\_TFS_Development\IncidentTrackingSystem_OOC\ImsService\ImsService\obj\x86\Release\ImsService.csproj.CoreCompileInputs.cache
+C:\_TFS_Development\IncidentTrackingSystem_OOC\ImsService\ImsService\obj\x86\Release\ImsService.csproj.CopyComplete
+C:\_TFS_Development\IncidentTrackingSystem_OOC\ImsService\ImsService\obj\x86\Release\ImsService.exe
+C:\_TFS_Development\IncidentTrackingSystem_OOC\ImsService\ImsService\obj\x86\Release\ImsService.pdb

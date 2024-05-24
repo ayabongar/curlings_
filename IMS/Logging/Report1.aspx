@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/SiteNoUpdatePanel.master" AutoEventWireup="true" CodeFile="Report1.aspx.cs" Inherits="Logging_Report1" %>
 
-<%@ Register TagPrefix="asp" Namespace="AjaxControlToolkit" Assembly="AjaxControlToolkit, Version=4.1.51116.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>

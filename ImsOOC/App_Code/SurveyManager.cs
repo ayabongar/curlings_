@@ -1831,7 +1831,7 @@ public static class IncidentTrackingManager
             new IncidentStatus("[dbo].[Incident_RoleById]",
             new Dictionary<string, object> { { "@RoleId", roleId } }).GetRecords<UserRoles>();
     }
-    public static int UpdateIncidentDetails(DateTime dueDate, string assignedTo, string incidentId, Guid roleId)
+    public static int UpdateIncidentDetails(DateTime dueDate, string assignedTo, string incidentId, Guid roleId,string SLADate , string SLAReason)
     {
         var oParams = new DBParamCollection
                           {
@@ -1839,7 +1839,9 @@ public static class IncidentTrackingManager
                               {"@AssignedTo", assignedTo},
                               {"@IncidentId", incidentId},
                               {"@RoleId", roleId},
-                              {"@LastModifiedBySID", SarsUser.SID}
+                              {"@LastModifiedBySID", SarsUser.SID},
+                              {"@SLADate", SLADate},
+                              {"@SLAReason", SLAReason},
                           };
         using (
             var command = new DBCommand("[dbo].[uspAssignIncident]", QueryType.StoredProcedure, oParams, db.Connection))
@@ -2175,11 +2177,14 @@ public static class IncidentTrackingManager
         }
     }
 
-    public static int CompleteIncident(string incidentId)
+    public static int CompleteIncident(string incidentId,DateTime dateCompleted)
     {
-        var oParams = new DBParamCollection { { "@IncidentId", incidentId } };
+        var oParams = new DBParamCollection {
+            { "@IncidentId", incidentId } ,
+            { "@DateCompleted", dateCompleted }
+        };
         using (
-            var command = new DBCommand("[dbo].[uspCompleteIncident]", QueryType.StoredProcedure, oParams, db.Connection)
+            var command = new DBCommand("[dbo].[uspOocCompleteIncident", QueryType.StoredProcedure, oParams, db.Connection)
             )
         {
             return command.Execute();
@@ -2195,9 +2200,12 @@ public static class IncidentTrackingManager
             return command.Execute();
         }
     }
-    public static int ReturnToOriginator(string incidentId)
+    public static int ReturnToOriginator(string incidentId,DateTime dateClosed)
     {
-        var oParams = new DBParamCollection { { "@IncidentId", incidentId } };
+        var oParams = new DBParamCollection {
+            { "@IncidentId", incidentId },
+            { "@DateClosed", dateClosed }
+        };
         using (
             var command = new DBCommand("[dbo].[uspReturnToOriginatorIncident]", QueryType.StoredProcedure, oParams, db.Connection)
             )
@@ -2205,11 +2213,14 @@ public static class IncidentTrackingManager
             return command.Execute();
         }
     }
-    public static int CloseIncident(string incidentId)
+    public static int CloseIncident(string incidentId, DateTime dateClosed)
     {
-        var oParams = new DBParamCollection { { "@IncidentId", incidentId } };
+        var oParams = new DBParamCollection { 
+            { "@IncidentId", incidentId },
+          { "@DateClosed", dateClosed }
+        };
         using (
-            var command = new DBCommand("[dbo].[uspCloseIncident]", QueryType.StoredProcedure, oParams, db.Connection))
+            var command = new DBCommand("[dbo].[uspOocCloseIncident]", QueryType.StoredProcedure, oParams, db.Connection))
         {
             return command.Execute();
         }
@@ -2401,6 +2412,15 @@ public static class IncidentTrackingManager
                                                                                          {
                                                                                              {"@ProcessId", processId}
                                                                                              
+                                                                                         }, db.ConnectionString);
+    }
+
+    public static RecordSet GeOococessReportBystatus(string processId, string statusId)
+    {
+        return new RecordSet("usp_OOC_RPT_IncidentsByStatus", QueryType.StoredProcedure, new DBParamCollection
+                                                                                         {
+                                                                                             {"@ProcessId", processId}
+
                                                                                          }, db.ConnectionString);
     }
 
@@ -2951,11 +2971,15 @@ public static class IncidentTrackingManager
         }
     }
 
-    public static List<ServiceConfig> GetOocProcessConfiguration()
+    public static List<ServiceConfig> GetOocProcessConfiguration(decimal processid)
     {
+        var oParams = new DBParamCollection
+                          {
+                              {"@processId", processid}
+                          };        
 
         using (
-            var data = new RecordSet("ImsService_SELECT_ProcessConfiguration", QueryType.StoredProcedure, null,
+            var data = new RecordSet("ImsService_SELECT_ProcessConfiguration", QueryType.StoredProcedure, oParams,
                 db.ConnectionString))
         {
             if (data.HasRows)
@@ -3035,7 +3059,7 @@ public static class IncidentTrackingManager
                 { "@DuputyComEmail" ,conf.DuputyComEmail },
                 { "@IsProServer" ,conf.IsProServer },
                 { "@TestEmailsGoTo" ,conf.TestEmailsGoTo },
-
+                { "@ReminderInterval" ,conf.ReminderInterval }
          };
         using (var command = new DBCommand("[dbo].[usp_Service_UpInsert_Config]", QueryType.StoredProcedure, oParams, db.Connection)
             )

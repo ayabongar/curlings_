@@ -1,157 +1,584 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfCacheUserAccessDetails>
   <CacheUserAccessDetails>
-    <Description>Administrator HOME</Description>
-    <Role>Administrator - confidential</Role>
+    <Description>Administrator Head HOME</Description>
+    <Role>Administrator Head - Top Secret</Role>
     <Function>HOME</Function>
-    <UserName>SARSGOV\S2017082</UserName>
-    <SID>S2017082</SID>
+    <UserName>SARSGOV\S1006769</UserName>
+    <SID>S1006769</SID>
   </CacheUserAccessDetails>
   <CacheUserAccessDetails>
-    <Description>Administrator - confidential OOC Statistics Report</Description>
-    <Role>Administrator - confidential</Role>
+    <Description>Administrator Head - Top Secret OOC Statistics Report</Description>
+    <Role>Administrator Head - Top Secret</Role>
     <Function>OOC Statistics Report</Function>
-    <UserName>SARSGOV\S2017082</UserName>
-    <SID>S2017082</SID>
+    <UserName>SARSGOV\S1006769</UserName>
+    <SID>S1006769</SID>
   </CacheUserAccessDetails>
   <CacheUserAccessDetails>
-    <Description>Administrator - confidential Modify Process</Description>
-    <Role>Administrator - confidential</Role>
+    <Description>Administrator Head - Top Secret Modify Process</Description>
+    <Role>Administrator Head - Top Secret</Role>
     <Function>Modify Process</Function>
-    <UserName>SARSGOV\S2017082</UserName>
-    <SID>S2017082</SID>
+    <UserName>SARSGOV\S1006769</UserName>
+    <SID>S1006769</SID>
   </CacheUserAccessDetails>
   <CacheUserAccessDetails>
-    <Description>Administrator Incident Administration</Description>
-    <Role>Administrator - confidential</Role>
-    <Function>Incident Administration</Function>
-    <UserName>SARSGOV\S2017082</UserName>
-    <SID>S2017082</SID>
-  </CacheUserAccessDetails>
-  <CacheUserAccessDetails>
-    <Description>Administrator Add User To A Role</Description>
-    <Role>Administrator - confidential</Role>
+    <Description>Administrator Head Add User To A Role</Description>
+    <Role>Administrator Head - Top Secret</Role>
     <Function>Add User To A Role</Function>
-    <UserName>SARSGOV\S2017082</UserName>
-    <SID>S2017082</SID>
+    <UserName>SARSGOV\S1006769</UserName>
+    <SID>S1006769</SID>
   </CacheUserAccessDetails>
   <CacheUserAccessDetails>
-    <Description>Administrator - confidential OOC Dashboard Report</Description>
-    <Role>Administrator - confidential</Role>
-    <Function>OOC Dashboard Report</Function>
-    <UserName>SARSGOV\S2017082</UserName>
-    <SID>S2017082</SID>
-  </CacheUserAccessDetails>
-  <CacheUserAccessDetails>
-    <Description>Administrator HOME</Description>
-    <Role>Administrator - confidential</Role>
-    <Function>HOME</Function>
-    <UserName>SARSGOV\s2022311</UserName>
-    <SID>s2022311</SID>
-  </CacheUserAccessDetails>
-  <CacheUserAccessDetails>
-    <Description>Administrator - confidential OOC Statistics Report</Description>
-    <Role>Administrator - confidential</Role>
-    <Function>OOC Statistics Report</Function>
-    <UserName>SARSGOV\s2022311</UserName>
-    <SID>s2022311</SID>
-  </CacheUserAccessDetails>
-  <CacheUserAccessDetails>
-    <Description>Administrator - confidential Modify Process</Description>
-    <Role>Administrator - confidential</Role>
-    <Function>Modify Process</Function>
-    <UserName>SARSGOV\s2022311</UserName>
-    <SID>s2022311</SID>
-  </CacheUserAccessDetails>
-  <CacheUserAccessDetails>
-    <Description>Administrator Incident Administration</Description>
-    <Role>Administrator - confidential</Role>
+    <Description>Administrator Head Incident Administration</Description>
+    <Role>Administrator Head - Top Secret</Role>
     <Function>Incident Administration</Function>
-    <UserName>SARSGOV\s2022311</UserName>
-    <SID>s2022311</SID>
+    <UserName>SARSGOV\S1006769</UserName>
+    <SID>S1006769</SID>
   </CacheUserAccessDetails>
   <CacheUserAccessDetails>
-    <Description>Administrator Add User To A Role</Description>
-    <Role>Administrator - confidential</Role>
-    <Function>Add User To A Role</Function>
-    <UserName>SARSGOV\s2022311</UserName>
-    <SID>s2022311</SID>
+    <Description>Administrator Head - Top Secret Filter by Report Type</Description>
+    <Role>Administrator Head - Top Secret</Role>
+    <Function>Filter by Report Type</Function>
+    <UserName>SARSGOV\S1006769</UserName>
+    <SID>S1006769</SID>
   </CacheUserAccessDetails>
   <CacheUserAccessDetails>
-    <Description>Administrator - confidential OOC Dashboard Report</Description>
-    <Role>Administrator - confidential</Role>
-    <Function>OOC Dashboard Report</Function>
-    <UserName>SARSGOV\s2022311</UserName>
-    <SID>s2022311</SID>
+    <Description>Administrator Head - Top Secret Tax Escalation Statistics</Description>
+    <Role>Administrator Head - Top Secret</Role>
+    <Function>Tax Escalation Statistics Report</Function>
+    <UserName>SARSGOV\S1006769</UserName>
+    <SID>S1006769</SID>
   </CacheUserAccessDetails>
   <CacheUserAccessDetails>
-    <Description>Administrator Manager HOME</Description>
+    <Description>Administrator Manager - Secret Incident Administration</Description>
     <Role>Administrator Manager - Secret</Role>
-    <Function>HOME</Function>
-    <UserName>SARSGOV\S2025417</UserName>
-    <SID>S2025417</SID>
+    <Function>Incident Administration</Function>
+    <UserName>SARSGOV\S1030724</UserName>
+    <SID>S1030724</SID>
   </CacheUserAccessDetails>
   <CacheUserAccessDetails>
     <Description>Administrator Manager Add User To A Role</Description>
     <Role>Administrator Manager - Secret</Role>
     <Function>Add User To A Role</Function>
-    <UserName>SARSGOV\S2025417</UserName>
-    <SID>S2025417</SID>
-  </CacheUserAccessDetails>
-  <CacheUserAccessDetails>
-    <Description>Administrator Manager - Secret OOC Statistics Report</Description>
-    <Role>Administrator Manager - Secret</Role>
-    <Function>OOC Statistics Report</Function>
-    <UserName>SARSGOV\S2025417</UserName>
-    <SID>S2025417</SID>
-  </CacheUserAccessDetails>
-  <CacheUserAccessDetails>
-    <Description>Administrator Manager - Secret Modify Process</Description>
-    <Role>Administrator Manager - Secret</Role>
-    <Function>Modify Process</Function>
-    <UserName>SARSGOV\S2025417</UserName>
-    <SID>S2025417</SID>
-  </CacheUserAccessDetails>
-  <CacheUserAccessDetails>
-    <Description>Administrator Manager Incident Administration</Description>
-    <Role>Administrator Manager - Secret</Role>
-    <Function>Incident Administration</Function>
-    <UserName>SARSGOV\S2025417</UserName>
-    <SID>S2025417</SID>
+    <UserName>SARSGOV\S1030724</UserName>
+    <SID>S1030724</SID>
   </CacheUserAccessDetails>
   <CacheUserAccessDetails>
     <Description>Administrator Manager - Secret OOC Dashboard Report</Description>
     <Role>Administrator Manager - Secret</Role>
     <Function>OOC Dashboard Report</Function>
+    <UserName>SARSGOV\S1030724</UserName>
+    <SID>S1030724</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Manager - Secret Tax Escalation Statistics Report</Description>
+    <Role>Administrator Manager - Secret</Role>
+    <Function>Tax Escalation Statistics Report</Function>
+    <UserName>SARSGOV\S1030724</UserName>
+    <SID>S1030724</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Manager - Secret Filter by Report Type</Description>
+    <Role>Administrator Manager - Secret</Role>
+    <Function>Filter by Report Type</Function>
+    <UserName>SARSGOV\S1030724</UserName>
+    <SID>S1030724</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Manager - Secret HOME</Description>
+    <Role>Administrator Manager - Secret</Role>
+    <Function>HOME</Function>
+    <UserName>SARSGOV\S1030724</UserName>
+    <SID>S1030724</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Manager - Secret OOC Statistics Report</Description>
+    <Role>Administrator Manager - Secret</Role>
+    <Function>OOC Statistics Report</Function>
+    <UserName>SARSGOV\S1030724</UserName>
+    <SID>S1030724</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Manager - Secret Modify Process</Description>
+    <Role>Administrator Manager - Secret</Role>
+    <Function>Modify Process</Function>
+    <UserName>SARSGOV\S1030724</UserName>
+    <SID>S1030724</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator - confidential Tax Escalation Statistics</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>Tax Escalation Statistics Report</Function>
+    <UserName>SARSGOV\S1036684</UserName>
+    <SID>S1036684</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator HOME</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>HOME</Function>
+    <UserName>SARSGOV\S1036684</UserName>
+    <SID>S1036684</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator - confidential OOC Statistics Report</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>OOC Statistics Report</Function>
+    <UserName>SARSGOV\S1036684</UserName>
+    <SID>S1036684</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator - confidential Modify Process</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>Modify Process</Function>
+    <UserName>SARSGOV\S1036684</UserName>
+    <SID>S1036684</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Incident Administration</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>Incident Administration</Function>
+    <UserName>SARSGOV\S1036684</UserName>
+    <SID>S1036684</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Add User To A Role</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>Add User To A Role</Function>
+    <UserName>SARSGOV\S1036684</UserName>
+    <SID>S1036684</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator - confidential OOC Dashboard Report</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>OOC Dashboard Report</Function>
+    <UserName>SARSGOV\S1036684</UserName>
+    <SID>S1036684</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator - confidential Tax Escalation Statistics</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>Tax Escalation Statistics Report</Function>
+    <UserName>SARSGOV\S2017082</UserName>
+    <SID>S2017082</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator HOME</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>HOME</Function>
+    <UserName>SARSGOV\S2017082</UserName>
+    <SID>S2017082</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator - confidential OOC Statistics Report</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>OOC Statistics Report</Function>
+    <UserName>SARSGOV\S2017082</UserName>
+    <SID>S2017082</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator - confidential Modify Process</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>Modify Process</Function>
+    <UserName>SARSGOV\S2017082</UserName>
+    <SID>S2017082</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Incident Administration</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>Incident Administration</Function>
+    <UserName>SARSGOV\S2017082</UserName>
+    <SID>S2017082</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Add User To A Role</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>Add User To A Role</Function>
+    <UserName>SARSGOV\S2017082</UserName>
+    <SID>S2017082</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator - confidential OOC Dashboard Report</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>OOC Dashboard Report</Function>
+    <UserName>SARSGOV\S2017082</UserName>
+    <SID>S2017082</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Head HOME</Description>
+    <Role>Administrator Head - Top Secret</Role>
+    <Function>HOME</Function>
+    <UserName>SARSGOV\s2022311</UserName>
+    <SID>s2022311</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Head - Top Secret OOC Statistics Report</Description>
+    <Role>Administrator Head - Top Secret</Role>
+    <Function>OOC Statistics Report</Function>
+    <UserName>SARSGOV\s2022311</UserName>
+    <SID>s2022311</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Head - Top Secret Modify Process</Description>
+    <Role>Administrator Head - Top Secret</Role>
+    <Function>Modify Process</Function>
+    <UserName>SARSGOV\s2022311</UserName>
+    <SID>s2022311</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Head Add User To A Role</Description>
+    <Role>Administrator Head - Top Secret</Role>
+    <Function>Add User To A Role</Function>
+    <UserName>SARSGOV\s2022311</UserName>
+    <SID>s2022311</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Head Incident Administration</Description>
+    <Role>Administrator Head - Top Secret</Role>
+    <Function>Incident Administration</Function>
+    <UserName>SARSGOV\s2022311</UserName>
+    <SID>s2022311</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Head - Top Secret Filter by Report Type</Description>
+    <Role>Administrator Head - Top Secret</Role>
+    <Function>Filter by Report Type</Function>
+    <UserName>SARSGOV\s2022311</UserName>
+    <SID>s2022311</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Head - Top Secret Tax Escalation Statistics</Description>
+    <Role>Administrator Head - Top Secret</Role>
+    <Function>Tax Escalation Statistics Report</Function>
+    <UserName>SARSGOV\s2022311</UserName>
+    <SID>s2022311</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Head HOME</Description>
+    <Role>Administrator Head - Top Secret</Role>
+    <Function>HOME</Function>
     <UserName>SARSGOV\S2025417</UserName>
     <SID>S2025417</SID>
   </CacheUserAccessDetails>
   <CacheUserAccessDetails>
-    <Description>System User Incident Administration</Description>
-    <Role>System User</Role>
-    <Function>Incident Administration</Function>
-    <UserName>SARSGOV\S2026055</UserName>
-    <SID>S2026055</SID>
+    <Description>Administrator Head - Top Secret OOC Statistics Report</Description>
+    <Role>Administrator Head - Top Secret</Role>
+    <Function>OOC Statistics Report</Function>
+    <UserName>SARSGOV\S2025417</UserName>
+    <SID>S2025417</SID>
   </CacheUserAccessDetails>
   <CacheUserAccessDetails>
-    <Description>System User HOME</Description>
-    <Role>System User</Role>
+    <Description>Administrator Head - Top Secret Modify Process</Description>
+    <Role>Administrator Head - Top Secret</Role>
+    <Function>Modify Process</Function>
+    <UserName>SARSGOV\S2025417</UserName>
+    <SID>S2025417</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Head Add User To A Role</Description>
+    <Role>Administrator Head - Top Secret</Role>
+    <Function>Add User To A Role</Function>
+    <UserName>SARSGOV\S2025417</UserName>
+    <SID>S2025417</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Head Incident Administration</Description>
+    <Role>Administrator Head - Top Secret</Role>
+    <Function>Incident Administration</Function>
+    <UserName>SARSGOV\S2025417</UserName>
+    <SID>S2025417</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Head - Top Secret Filter by Report Type</Description>
+    <Role>Administrator Head - Top Secret</Role>
+    <Function>Filter by Report Type</Function>
+    <UserName>SARSGOV\S2025417</UserName>
+    <SID>S2025417</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Head - Top Secret Tax Escalation Statistics</Description>
+    <Role>Administrator Head - Top Secret</Role>
+    <Function>Tax Escalation Statistics Report</Function>
+    <UserName>SARSGOV\S2025417</UserName>
+    <SID>S2025417</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator - confidential Tax Escalation Statistics</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>Tax Escalation Statistics Report</Function>
+    <UserName>SARSGOV\S2025962</UserName>
+    <SID>S2025962</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator HOME</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>HOME</Function>
+    <UserName>SARSGOV\S2025962</UserName>
+    <SID>S2025962</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator - confidential OOC Statistics Report</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>OOC Statistics Report</Function>
+    <UserName>SARSGOV\S2025962</UserName>
+    <SID>S2025962</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator - confidential Modify Process</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>Modify Process</Function>
+    <UserName>SARSGOV\S2025962</UserName>
+    <SID>S2025962</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Incident Administration</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>Incident Administration</Function>
+    <UserName>SARSGOV\S2025962</UserName>
+    <SID>S2025962</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Add User To A Role</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>Add User To A Role</Function>
+    <UserName>SARSGOV\S2025962</UserName>
+    <SID>S2025962</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator - confidential OOC Dashboard Report</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>OOC Dashboard Report</Function>
+    <UserName>SARSGOV\S2025962</UserName>
+    <SID>S2025962</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator - confidential Tax Escalation Statistics</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>Tax Escalation Statistics Report</Function>
+    <UserName>SARSGOV\S2025968</UserName>
+    <SID>S2025968</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator HOME</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>HOME</Function>
+    <UserName>SARSGOV\S2025968</UserName>
+    <SID>S2025968</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator - confidential OOC Statistics Report</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>OOC Statistics Report</Function>
+    <UserName>SARSGOV\S2025968</UserName>
+    <SID>S2025968</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator - confidential Modify Process</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>Modify Process</Function>
+    <UserName>SARSGOV\S2025968</UserName>
+    <SID>S2025968</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Incident Administration</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>Incident Administration</Function>
+    <UserName>SARSGOV\S2025968</UserName>
+    <SID>S2025968</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Add User To A Role</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>Add User To A Role</Function>
+    <UserName>SARSGOV\S2025968</UserName>
+    <SID>S2025968</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator - confidential OOC Dashboard Report</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>OOC Dashboard Report</Function>
+    <UserName>SARSGOV\S2025968</UserName>
+    <SID>S2025968</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Head HOME</Description>
+    <Role>Administrator Head - Top Secret</Role>
     <Function>HOME</Function>
     <UserName>SARSGOV\S2026055</UserName>
     <SID>S2026055</SID>
   </CacheUserAccessDetails>
   <CacheUserAccessDetails>
+    <Description>Administrator Head - Top Secret OOC Statistics Report</Description>
+    <Role>Administrator Head - Top Secret</Role>
+    <Function>OOC Statistics Report</Function>
+    <UserName>SARSGOV\S2026055</UserName>
+    <SID>S2026055</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Head - Top Secret Modify Process</Description>
+    <Role>Administrator Head - Top Secret</Role>
+    <Function>Modify Process</Function>
+    <UserName>SARSGOV\S2026055</UserName>
+    <SID>S2026055</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Head Add User To A Role</Description>
+    <Role>Administrator Head - Top Secret</Role>
+    <Function>Add User To A Role</Function>
+    <UserName>SARSGOV\S2026055</UserName>
+    <SID>S2026055</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Head Incident Administration</Description>
+    <Role>Administrator Head - Top Secret</Role>
+    <Function>Incident Administration</Function>
+    <UserName>SARSGOV\S2026055</UserName>
+    <SID>S2026055</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Head - Top Secret Filter by Report Type</Description>
+    <Role>Administrator Head - Top Secret</Role>
+    <Function>Filter by Report Type</Function>
+    <UserName>SARSGOV\S2026055</UserName>
+    <SID>S2026055</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Head - Top Secret Tax Escalation Statistics</Description>
+    <Role>Administrator Head - Top Secret</Role>
+    <Function>Tax Escalation Statistics Report</Function>
+    <UserName>SARSGOV\S2026055</UserName>
+    <SID>S2026055</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>System User Incident Administration</Description>
+    <Role>System User</Role>
+    <Function>Incident Administration</Function>
+    <UserName>SARSGOV\S2028809</UserName>
+    <SID>S2028809</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>System User HOME</Description>
+    <Role>System User</Role>
+    <Function>HOME</Function>
+    <UserName>SARSGOV\S2028809</UserName>
+    <SID>S2028809</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
     <Description>System User OOC Dashboard Report</Description>
     <Role>System User</Role>
     <Function>OOC Dashboard Report</Function>
-    <UserName>SARSGOV\S2026055</UserName>
-    <SID>S2026055</SID>
+    <UserName>SARSGOV\S2028809</UserName>
+    <SID>S2028809</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>System User Filter by Report Type</Description>
+    <Role>System User</Role>
+    <Function>Filter by Report Type</Function>
+    <UserName>SARSGOV\S2028809</UserName>
+    <SID>S2028809</SID>
   </CacheUserAccessDetails>
   <CacheUserAccessDetails>
     <Description>System User OOC Statistics Report</Description>
     <Role>System User</Role>
     <Function>OOC Statistics Report</Function>
-    <UserName>SARSGOV\S2026055</UserName>
-    <SID>S2026055</SID>
+    <UserName>SARSGOV\S2028809</UserName>
+    <SID>S2028809</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>System User Tax Escalation Statistics</Description>
+    <Role>System User</Role>
+    <Function>Tax Escalation Statistics Report</Function>
+    <UserName>SARSGOV\S2028809</UserName>
+    <SID>S2028809</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator - confidential Tax Escalation Statistics</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>Tax Escalation Statistics Report</Function>
+    <UserName>SARSGOV\S2028831</UserName>
+    <SID>S2028831</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator HOME</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>HOME</Function>
+    <UserName>SARSGOV\S2028831</UserName>
+    <SID>S2028831</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator - confidential OOC Statistics Report</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>OOC Statistics Report</Function>
+    <UserName>SARSGOV\S2028831</UserName>
+    <SID>S2028831</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator - confidential Modify Process</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>Modify Process</Function>
+    <UserName>SARSGOV\S2028831</UserName>
+    <SID>S2028831</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Incident Administration</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>Incident Administration</Function>
+    <UserName>SARSGOV\S2028831</UserName>
+    <SID>S2028831</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator Add User To A Role</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>Add User To A Role</Function>
+    <UserName>SARSGOV\S2028831</UserName>
+    <SID>S2028831</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>Administrator - confidential OOC Dashboard Report</Description>
+    <Role>Administrator - confidential</Role>
+    <Function>OOC Dashboard Report</Function>
+    <UserName>SARSGOV\S2028831</UserName>
+    <SID>S2028831</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>System User Incident Administration</Description>
+    <Role>System User</Role>
+    <Function>Incident Administration</Function>
+    <UserName>SARSGOV\S2028889</UserName>
+    <SID>S2028889</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>System User HOME</Description>
+    <Role>System User</Role>
+    <Function>HOME</Function>
+    <UserName>SARSGOV\S2028889</UserName>
+    <SID>S2028889</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>System User OOC Dashboard Report</Description>
+    <Role>System User</Role>
+    <Function>OOC Dashboard Report</Function>
+    <UserName>SARSGOV\S2028889</UserName>
+    <SID>S2028889</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>System User Filter by Report Type</Description>
+    <Role>System User</Role>
+    <Function>Filter by Report Type</Function>
+    <UserName>SARSGOV\S2028889</UserName>
+    <SID>S2028889</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>System User OOC Statistics Report</Description>
+    <Role>System User</Role>
+    <Function>OOC Statistics Report</Function>
+    <UserName>SARSGOV\S2028889</UserName>
+    <SID>S2028889</SID>
+  </CacheUserAccessDetails>
+  <CacheUserAccessDetails>
+    <Description>System User Tax Escalation Statistics</Description>
+    <Role>System User</Role>
+    <Function>Tax Escalation Statistics Report</Function>
+    <UserName>SARSGOV\S2028889</UserName>
+    <SID>S2028889</SID>
   </CacheUserAccessDetails>
 </ArrayOfCacheUserAccessDetails>

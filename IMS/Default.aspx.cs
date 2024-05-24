@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Configuration;
 using System.Linq;
 using Sars.Systems.Data;
+using Sars.Systems.Security;
 
 public partial class _Default : System.Web.UI.Page
 {
@@ -12,13 +14,26 @@ public partial class _Default : System.Web.UI.Page
         {
             Response.Redirect("~/admin/SelectNormalUserProcess.aspx");
         }
-
         var roles = IncidentTrackingManager.GetUserRoles();
+        var userProcess = roles.FindAll(r => r.ProcessId == double.Parse(ConfigurationManager.AppSettings["OocInternal"])
+            || r.ProcessId == double.Parse(ConfigurationManager.AppSettings["OocExternal"])
+             || r.ProcessId == double.Parse(ConfigurationManager.AppSettings["TaxEscalation"]));
+        
         if (null != roles && roles.Any())
         {
-            
+            var userRole = this.Page.User.GetRole();
             var powerUsers = roles.FindAll(role => role.ProcessId == 135 || role.ProcessId == 74);
             if (powerUsers.Any())
+            {
+                imgWorkFlow.Visible = false;
+                spnLogo.Visible = true;
+            }
+             if(userProcess != null && userProcess.Any())
+            {
+                imgWorkFlow.Visible = false;
+                spnLogo.Visible = false;
+            }
+            else
             {
                 imgWorkFlow.Visible = false;
                 spnLogo.Visible = true;

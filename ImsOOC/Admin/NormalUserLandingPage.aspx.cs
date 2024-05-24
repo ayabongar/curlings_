@@ -833,14 +833,27 @@ public partial class Admin_NormalUserLandingPage : IncidentTrackingPage
             // IncidentStatus1.Text = CurrentIncidentDetails.IncidentStatus;
             // Timestamp.Text = CurrentIncidentDetails.AssignedToFullName;
             var adUser = SarsUser.GetADUser(CurrentIncidentDetails.AssignedToSID);
-            UserSelector1.SelectedAdUserDetails = new SelectedUserDetails
+            if (adUser != null)
             {
-                SID = adUser.SID,
-                FoundUserName =
-                    string.Format("{0} | {1}", adUser.FullName, adUser.SID),
-                FullName = adUser.FullName
-            };
-            UserSelector1.Disable();
+                try
+                {
+                    UserSelector1.SelectedAdUserDetails = new SelectedUserDetails
+                    {
+                        SID = adUser.SID,
+                        FoundUserName =
+                                        string.Format("{0} | {1}", adUser.FullName, adUser.SID),
+                        FullName = adUser.FullName
+                    };
+                    UserSelector1.Disable();
+                }
+                catch (Exception)
+                {
+
+                    //throw;
+                }
+            }
+            
+          
             // txtSummary.SetValue(CurrentIncidentDetails.Summary);
             //if (!string.IsNullOrEmpty(CurrentIncidentDetails.Summary))
             //{

@@ -206,11 +206,11 @@ public partial class Admin_SelectNormalUserProcess : IncidentTrackingPage
                     processType = "External";
                 else if (prodessId == "98")
                     processType = "Internal";
-                else if (pname.Contains("Escalation"))
+                else if (prodessId == "133")
                     processType = "Escalation";
                 if (!string.IsNullOrEmpty(processType))
                 {
-                    Response.Redirect(string.Format("~/PrOoc/NormalUserLandingPage.aspx?procId={0}&type={1}", prodessId, processType));
+                    Response.Redirect(string.Format("~/OOC/Admin/NormalUserLandingPage.aspx?procId={0}&type={1}", prodessId, processType));
                 }
                 else
                 {

@@ -20,7 +20,7 @@ public class SarsUser
         get
         {
            return HttpContext.Current.User.Identity.Name.Split("\\".ToCharArray())[1];
-            //return "s1022678";//
+            //return "S1025152";//
         }
     }
     public static string FullName

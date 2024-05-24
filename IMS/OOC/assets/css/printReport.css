@@ -1,0 +1,328 @@
+﻿
+@media print {
+    body {
+        font-family: Calibri, 10pt, Default, Default, Default !important;
+        margin: 0 !important;
+        counter-reset: page !important;
+    }
+
+    .pagebreak {
+        page-break-before: always;
+    }
+    /* page-break-after works, as well */
+
+    @page {
+        size: auto;
+        margin: 10%;
+    }
+
+
+
+    a[href]:after {
+        content: none !important;
+    }
+
+    section {
+        page-break-before: always;
+    }
+
+    #pageFooter {
+        display: table-footer-group;
+    }
+
+    #content {
+        display: table;
+    }
+
+    #pageFooter:after {
+        counter-increment: page;
+        content: "Page " counter(page);
+        left: 0;
+        top: 100%;
+        white-space: nowrap;
+        z-index: 20;
+        -moz-border-radius: 5px;
+        -moz-box-shadow: 0px 0px 4px #222;
+        background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+    }
+
+    .td1 {
+        background-color: #154c79 !important;
+        color: white !important;
+        font-weight: bold !important;
+        font-size: 10pt !important;
+        vertical-align: top !important;
+        border: 1px solid black !important;
+        font-family: Calibri, 10pt, Default, Default, Default !important;
+    }
+
+    .tdActualAchievement {
+        background-color: #154c79 !important;
+        color: white !important;
+        font-weight: bold !important;
+        font-size: 10pt !important;
+        vertical-align: top !important;
+        border: 1px solid black !important;
+        width: 10%;
+        font-family: Calibri, 10pt, Default, Default, Default !important;
+    }
+
+    .tdTable2 {
+        background-color: #154c79 !important;
+        color: white !important;
+        font-weight: bold !important;
+        font-size: 10pt !important;
+        vertical-align: top !important;
+        border: 1px solid black !important;
+        width: 10%;
+        font-family: Calibri, 10pt, Default, Default, Default !important;
+    }
+
+    .td1a {
+        background-color: #154c79 !important;
+        color: white !important;
+        font-weight: bold !important;
+        font-size: 10pt !important;
+        vertical-align: top !important;
+        border: 1px solid black !important;
+    }
+
+    .td1b {
+        font-size: 10pt;
+        vertical-align: top;
+        border: 1px solid black;
+    }
+
+    .tdObjective {
+        font-size: 10pt !important;
+        vertical-align: top !important;
+        vertical-align: top !important;
+        width: 25% !important;
+    }
+
+    .td2 {
+        font-size: 10pt !important;
+        vertical-align: top !important;
+        vertical-align: top !important;
+    }
+
+    .td1BottomBorder {
+        background-color: #154c79 !important;
+        color: white !important;
+        font-weight: bold !important;
+        font-size: 10pt !important;
+        vertical-align: top !important;
+        width: 25% !important;
+        border: 1px solid black !important;
+    }
+
+    .td2BottomBorder {
+        font-size: 10pt !important;
+        vertical-align: top !important;
+        width: 25% !important;
+        border: 1px solid black !important;
+    }
+
+    .BorderBottom {
+        border-bottom: 1px solid black !important;
+    }
+
+    .sig {
+        font-weight: bold !important;
+        vertical-align: top !important;
+        max-width: 10% !important;
+    }
+
+
+
+    #dvVariance table {
+        table-layout: fixed !important;
+    }
+
+    #dvVariance table, dvVariance table tr tdbody td {
+        width: auto !important;
+        word-wrap: break-word;
+    }
+
+    table {
+        width: auto !important;
+        table-layout: fixed !important;
+        border-collapse: collapse !important;
+    }
+
+    td {
+        min-height: 0.39583in !important;
+        width: auto !important;
+        word-wrap: break-word !important;
+        padding: 3px !important;
+    }
+
+    tr {
+        min-height: 0.39583in !important;
+        width: auto !important;
+        word-wrap: break-word !important;
+    }
+}
+
+body {
+    font-family: Calibri, 10pt, Default, Default, Default !important;
+    margin: 0 !important;
+    counter-reset: page !important;
+}
+
+.pagebreak {
+    page-break-before: always;
+}
+/* page-break-after works, as well */
+
+@page {
+    size: auto;
+    margin: 10%;
+}
+
+
+
+a[href]:after {
+    content: none !important;
+}
+
+section {
+    page-break-before: always;
+}
+
+#pageFooter {
+    display: table-footer-group;
+}
+
+#content {
+    display: table;
+}
+
+#pageFooter:after {
+    counter-increment: page;
+    content: "Page " counter(page);
+    left: 0;
+    top: 100%;
+    white-space: nowrap;
+    z-index: 20;
+    -moz-border-radius: 5px;
+    -moz-box-shadow: 0px 0px 4px #222;
+    background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+}
+
+.td1 {
+    background-color: #154c79 !important;
+    color: white !important;
+    font-weight: bold !important;
+    font-size: 10pt !important;
+    vertical-align: top !important;
+    border: 1px solid black !important;
+    font-family: Calibri, 10pt, Default, Default, Default !important;
+}
+
+.tdActualAchievement {
+    background-color: #154c79 !important;
+    color: white !important;
+    font-weight: bold !important;
+    font-size: 10pt !important;
+    vertical-align: top !important;
+    border: 1px solid black !important;
+    width: 10%;
+    font-family: Calibri, 10pt, Default, Default, Default !important;
+}
+
+.tdTable2 {
+    background-color: #154c79 !important;
+    color: white !important;
+    font-weight: bold !important;
+    font-size: 10pt !important;
+    vertical-align: top !important;
+    border: 1px solid black !important;
+    width: 10%;
+    font-family: Calibri, 10pt, Default, Default, Default !important;
+}
+
+.td1a {
+    background-color: #154c79 !important;
+    color: white !important;
+    font-weight: bold !important;
+    font-size: 10pt !important;
+    vertical-align: top !important;
+    border: 1px solid black !important;
+}
+
+.td1b {
+    font-size: 10pt;
+    vertical-align: top;
+    border: 1px solid black;
+}
+
+.tdObjective {
+    font-size: 10pt !important;
+    vertical-align: top !important;
+    vertical-align: top !important;
+    width: 25% !important;
+}
+
+.td2 {
+    font-size: 10pt !important;
+    vertical-align: top !important;
+    vertical-align: top !important;
+}
+
+.td1BottomBorder {
+    background-color: #154c79 !important;
+    color: white !important;
+    font-weight: bold !important;
+    font-size: 10pt !important;
+    vertical-align: top !important;
+    width: 25% !important;
+    border: 1px solid black !important;
+}
+
+.td2BottomBorder {
+    font-size: 10pt !important;
+    vertical-align: top !important;
+    width: 25% !important;
+    border: 1px solid black !important;
+}
+
+.BorderBottom {
+    border-bottom: 1px solid black !important;
+}
+
+.sig {
+    font-weight: bold !important;
+    vertical-align: top !important;
+    max-width: 10% !important;
+}
+
+
+
+#dvVariance table {
+    table-layout: fixed !important;
+}
+
+#dvVariance table, dvVariance table tr tdbody td {
+    width: auto !important;
+    word-wrap: break-word;
+}
+
+table {
+    width: auto !important;
+    table-layout: fixed !important;
+    border-collapse: collapse !important;
+}
+
+td {
+    min-height: 0.39583in !important;
+    width: auto !important;
+    word-wrap: break-word !important;
+    padding: 3px !important;
+}
+
+tr {
+    min-height: 0.39583in !important;
+    width: auto !important;
+    word-wrap: break-word !important;
+}

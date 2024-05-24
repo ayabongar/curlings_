@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sars.Systems.Security;
+using System;
 using System.Collections.Generic;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -16,7 +17,8 @@ public partial class SiteMaster : MasterPage
             }
             else
             {
-                welcome.InnerHtml = string.Format("Welcome <b>{0} - {1}</b> ", user.FullName, user.SID);
+                var userRole = this.Page.User.GetRole();
+                welcome.InnerHtml = string.Format("Welcome <b>{0} - {1}</b><br/>Role <b>{2}</b> ", user.FullName, user.SID, userRole);
             }
         }
         else

@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="SARS SURVEY - MODIFY SURVEYS" Language="C#" EnableEventValidation="false" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="ModifyProcess.aspx.cs" Inherits="ModifyProcessPage" %>
 
-<%@ Register TagPrefix="cc1" Namespace="AjaxControlToolkit" Assembly="AjaxControlToolkit, Version=4.1.51116.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e" %>
+
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">

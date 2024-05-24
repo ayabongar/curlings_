@@ -52,6 +52,9 @@ public class Incidents
     [Column(Name = "DueDate")]
     public DateTime? DueDate { get; set; }
 
+    [Column(Name = "SLADate")]
+    public DateTime? SLADate { get; set; }
+
     [Column(Name = "DateCompleted")]
     public DateTime? DateCompleted { get; set; }
 

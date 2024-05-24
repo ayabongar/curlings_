@@ -110,10 +110,10 @@ namespace ImsService
                         {
                             return;
                         }
-                        if (DateTime.Today.DayOfWeek != DayOfWeek.Monday)
-                        {
-                            return;
-                        }
+                        //if (DateTime.Today.DayOfWeek != DayOfWeek.Monday)
+                        //{
+                        //    return;
+                        //}
                     }
                     foreach (var proc in processConfig)
                     {
@@ -126,13 +126,17 @@ namespace ImsService
 
                                 foreach (var inc in processIncidents)
                                 {                             
-                                    var reminderTracker = Repository.GetOocCountOfSentEmailsByIncidentsId(inc.IncidentID);                                   
-                                    if (reminderTracker == null || (reminderTracker[0].Timestamp.Date != DateTime.Now.Date))
+                                    var reminderTracker = Repository.GetOocCountOfSentEmailsByIncidentsId(inc.IncidentID);
+                                    DateTime start = reminderTracker != null ? reminderTracker[0].Timestamp.Date : DateTime.Now;
+                                    DateTime end = DateTime.Now ;                                    
+                                    int totalDays = ( end - start ).Days;
+                                    if (reminderTracker == null || ((reminderTracker[0].Timestamp.Date != DateTime.Now.Date)
+                                       && (totalDays == proc.ReminderInterval)))
                                     {
                                         int week = (reminderTracker != null && reminderTracker[0].WeekNo > 0) ? reminderTracker[0].WeekNo :0 ;
                                         int empNotificationCount = reminderTracker != null ? reminderTracker[0].EmpNoOfNotification + 1 :1 ;
                                         week++;
-                                        switch (week)
+                                        switch (week)// weeks are number of email sent out.
                                         {
                                             case 1:
                                             case 2:
@@ -190,7 +194,7 @@ namespace ImsService
                 var endTime = int.Parse(ConfigurationManager.AppSettings["NotificationEndTime"]);
 
                 new EmailReminder().Init_ServiceTracking("Service Started", string.Format("Service Started at {0}", DateTime.Now.ToString()));
-                var processConfig = Repository.GetProcessConfiguration();
+                var processConfig = Repository.GetIMSProcessConfiguration();
 
                 if (processConfig != null)
                 {
@@ -279,8 +283,7 @@ namespace ImsService
 
                 Init_ServiceTracking("NTQ REPORT Service Error", string.Format("Message {0} - Inner Exception {1} - StackTrace {2}", ex.Message, ex.InnerException, ex.StackTrace));
             }
-        }
-       
+        }       
         public void Init_ServiceTracking(string status, string comment)
         {
             try

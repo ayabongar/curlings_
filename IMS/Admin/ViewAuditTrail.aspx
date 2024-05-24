@@ -1,9 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="ViewAuditTrail.aspx.cs" Inherits="Admin_ViewAuditTrail" %>
 
-<%@ Register TagPrefix="cc1" Namespace="AjaxControlToolkit" Assembly="AjaxControlToolkit, Version=4.1.51116.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e" %>
-<%@ Register TagPrefix="asp" Namespace="AjaxControlToolkit" Assembly="AjaxControlToolkit, Version=4.1.51116.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e" %>
 
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
 </asp:Content>
@@ -14,7 +12,7 @@
                 <div class="page-header">View Reports</div>
                 <fieldset>
 
-                    <cc1:TabContainer runat="server" ID="tcParams">
+                    <asp:TabContainer runat="server" ID="tcParams">
                         <asp:TabPanel runat="server" ID="pannelParams" HeaderText="Select Dates">
 
                             <ContentTemplate>
@@ -63,7 +61,7 @@
 
                             </ContentTemplate>
                         </asp:TabPanel>
-                    </cc1:TabContainer>
+                    </asp:TabContainer>
 
                 </fieldset>
 

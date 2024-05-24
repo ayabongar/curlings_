@@ -43,6 +43,20 @@ namespace ImsService.DAL
             }
         }
 
+        public static List<Service_ProcessConfiguration> GetIMSProcessConfiguration()
+        {
+
+            using (
+                var data = new RecordSet("ImsService_SELECT_IMSProcessConfiguration", QueryType.StoredProcedure, null,
+                   DAL.ConnectionStrings.ConnectionString))
+            {
+                if (data.HasRows)
+                {
+                    return data.Tables[0].ToList<Service_ProcessConfiguration>();
+                }
+            }
+            return null;
+        }
         public static List<Service_ProcessConfiguration> GetProcessConfiguration()
         {
            
@@ -386,7 +400,7 @@ namespace ImsService.DAL
         {
 
             using (
-                var data = new RecordSet("ImsService_SELECT_ProcessConfiguration", QueryType.StoredProcedure, null,
+                var data = new RecordSet("ImsService_SELECT_ProcessConfigurationValues", QueryType.StoredProcedure, null,
                    DAL.ConnectionStrings.OocConnectionString))
             {
                 if (data.HasRows)

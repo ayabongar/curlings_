@@ -30,73 +30,85 @@ public partial class Admin_RegisterUserIncident : IncidentTrackingPage
         //}
         CurrentIncidentDetails = CurrentIncident;
         CurrentProcessDetails = CurrentProcess;
-        if (CurrentIncidentDetails == null)
-        {
-            Response.Redirect("../InvalidProcessOrIncident.aspx");
-            return;
-        }
+     
         if (!IsPostBack)
         {
-            if (CurrentProcessDetails.AddCoverPage)
-            {
-                Toolbar1.Items[2].Visible = true;
-            }
 
-            var status = IncidentTrackingManager.GetIncidentsStatuses();
-            BindUserRolesAccess();
-
-            Toolbar1.Items[6].Visible = true;
-            if (CurrentIncidentDetails != null && CurrentIncidentDetails.DueDate != null)
+            if (CurrentIncidentDetails != null)
             {
-                txtIncidentDueDate.SetValue(CurrentIncidentDetails.DueDate.Value.ToString("yyyy-MM-dd"));
-            }
-            else
-            {
-                txtIncidentDueDate.SetValue(System.DateTime.Now.ToString("yyyy-MM-dd"));
-
-            }
-            txtCrossReferenceNo.SetValue(CurrentIncidentDetails.CrossRefNo);
-            if (CurrentIncidentDetails != null && !string.IsNullOrEmpty(CurrentIncidentDetails.AssignedToSID))
-            {
-                if (
-                    !CurrentIncidentDetails.AssignedToSID.Equals(SarsUser.SID, StringComparison.CurrentCultureIgnoreCase))
+                if (CurrentProcessDetails.AddCoverPage)
                 {
-                    Response.Redirect(String.Format("IncidentRealOnly.aspx?procId={0}&incId={1}&msgId=10", ProcessID,
-                                                    IncidentID));
-                    return;
+                    Toolbar1.Items[2].Visible = true;
                 }
 
-                if (CurrentIncidentDetails.IncidentStatusId != 2 && CurrentIncidentDetails.IncidentStatusId != 3)
+                var status = IncidentTrackingManager.GetIncidentsStatuses();
+                BindUserRolesAccess();
+
+                Toolbar1.Items[6].Visible = true;
+                if (CurrentIncidentDetails != null && CurrentIncidentDetails.DueDate != null)
                 {
-                    Response.Redirect(String.Format("IncidentRealOnly.aspx?procId={0}&incId={1}&msgId=10", ProcessID,
-                                                    IncidentID));
-                    return;
+                    txtIncidentDueDate.SetValue(CurrentIncidentDetails.DueDate.Value.ToString("yyyy-MM-dd"));
+                    if (CurrentIncidentDetails.SLADate != null)
+                    {
+                        txtSLAUpdated.SetValue(CurrentIncidentDetails.SLADate.Value.ToString("yyyy-MM-dd"));
+                        txtSLAUpdateReason.SetValue(CurrentIncidentDetails.SLAReason);
+                    }
+
+                    if (CurrentIncidentDetails.DueDate < DateTime.Today && (CurrentIncidentDetails.IncidentStatusId != 4 || CurrentIncidentDetails.IncidentStatusId != 5 || CurrentIncidentDetails.SLADate != null))
+                    {
+                        trSLAUpdate.Visible = true;
+                        trSLADateReason.Visible = true;
+                        txtIncidentDueDate.Enabled = false;
+                    }
                 }
-                var adUser = SarsUser.GetADUser(CurrentIncidentDetails.AssignedToSID);
-                AssignedToSID.SelectedAdUserDetails = new SelectedUserDetails
+                else
                 {
-                    SID = adUser.SID,
-                    FoundUserName =
-                                                                  string.Format("{0} | {1}", adUser.FullName, adUser.SID),
-                    FullName = adUser.FullName
-                };
-                AssignedToSID.Disable();
+                    txtIncidentDueDate.SetValue(System.DateTime.Now.ToString("yyyy-MM-dd"));
 
-                BindSecondAssignedUser();
-            }
-            LoadInfo();
-            txtCreatedBy.Value = string.Format("{0} | {1}", SarsUser.GetADUser(CurrentIncidentDetails.CreatedBySID).FullName, SarsUser.GetADUser(CurrentIncidentDetails.CreatedBySID).SID);
+                }
+                txtCrossReferenceNo.SetValue(CurrentIncidentDetails.CrossRefNo);
+                if (CurrentIncidentDetails != null && !string.IsNullOrEmpty(CurrentIncidentDetails.AssignedToSID))
+                {
+                    if (
+                        !CurrentIncidentDetails.AssignedToSID.Equals(SarsUser.SID, StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        Response.Redirect(String.Format("IncidentRealOnly.aspx?procId={0}&incId={1}&msgId=10", ProcessID,
+                                                        IncidentID));
+                        return;
+                    }
 
-            UCAttachDocuments.LoadDocuments();
-            if (!String.IsNullOrEmpty(Request["cpd"]) && ViewState["emailSent"] == null)
-            {
-                ViewState["emailSent"] = true;
-                SendFirstNotification(CurrentIncidentDetails);
-            }
-            if (CurrentIncidentDetails.IncidentStatusId >= 2)
-            {
-                drpStatuses.Visible = true;
-                drpStatuses.SelectedValue = CurrentIncidentDetails.IncidentStatus;
+                    if (CurrentIncidentDetails.IncidentStatusId != 2 && CurrentIncidentDetails.IncidentStatusId != 3)
+                    {
+                        Response.Redirect(String.Format("IncidentRealOnly.aspx?procId={0}&incId={1}&msgId=10", ProcessID,
+                                                        IncidentID));
+                        return;
+                    }
+                    var adUser = SarsUser.GetADUser(CurrentIncidentDetails.AssignedToSID);
+                    AssignedToSID.SelectedAdUserDetails = new SelectedUserDetails
+                    {
+                        SID = adUser.SID,
+                        FoundUserName =
+                                                                      string.Format("{0} | {1}", adUser.FullName, adUser.SID),
+                        FullName = adUser.FullName
+                    };
+                    AssignedToSID.Disable();
+
+                    BindSecondAssignedUser();
+                }
+                LoadInfo();
+                txtCreatedBy.Value = string.Format("{0} | {1}", SarsUser.GetADUser(CurrentIncidentDetails.CreatedBySID).FullName, SarsUser.GetADUser(CurrentIncidentDetails.CreatedBySID).SID);
+
+                UCAttachDocuments.LoadDocuments();
+                if (!String.IsNullOrEmpty(Request["cpd"]) && ViewState["emailSent"] == null)
+                {
+                    ViewState["emailSent"] = true;
+                    SendFirstNotification(CurrentIncidentDetails);
+                }
+                if (CurrentIncidentDetails.IncidentStatusId >= 2)
+                {
+                    drpStatuses.Visible = true;
+                    drpStatuses.SelectedValue = CurrentIncidentDetails.IncidentStatus;
+                }
             }
         }
     }
@@ -184,7 +196,8 @@ public partial class Admin_RegisterUserIncident : IncidentTrackingPage
             }
 
             var userRole = this.Page.User.GetRole();
-            Guid roleId = new Guid(drpRoles.SelectedValue);           
+            Guid roleId = new Guid(drpRoles.SelectedValue);
+            var slaDate = !string.IsNullOrEmpty(txtSLAUpdated.Text) ? txtSLAUpdated.Text : null;
             if (CurrentIncidentDetails.IncidentStatusId == 1)
             {
                 SarsUser.SaveUser(AssignedToSID.SID);
@@ -194,7 +207,9 @@ public partial class Admin_RegisterUserIncident : IncidentTrackingPage
                             Convert.ToDateTime(txtIncidentDueDate.Text),
                             AssignedToSID.SID.Trim(),
                             IncidentID,
-                            roleId
+                            roleId,
+                            slaDate,
+                            txtSLAUpdateReason.Text
                 );
 
                 var user = string.Format("{0}\\{1}", Sars.Systems.Data.SARSDataSettings.Settings.DomainName,
@@ -242,7 +257,9 @@ public partial class Admin_RegisterUserIncident : IncidentTrackingPage
                                     Convert.ToDateTime(txtIncidentDueDate.Text),
                                     AssignedToSID.SID.Trim(),
                                     IncidentID,
-                                    roleId
+                                    roleId,
+                                    slaDate,
+                                     txtSLAUpdateReason.Text
                                 );
                         const int statusId = 3;
                         IncidentTrackingManager.UpdateIncidentStatus(statusId, IncidentID);
@@ -364,7 +381,7 @@ public partial class Admin_RegisterUserIncident : IncidentTrackingPage
                     }
                     if (string.IsNullOrEmpty(AssignedToSID.SID))
                     {
-                        MessageBox.Show("Assigned To is required.");
+                        MessageBox.Show("Primary Action person is required.");
                         return;
                     }
                     if (!DisplaySurvey2.SaveQuestions())
@@ -405,7 +422,7 @@ public partial class Admin_RegisterUserIncident : IncidentTrackingPage
                     }
                     if (string.IsNullOrEmpty(AssignedToSID.SID))
                     {
-                        MessageBox.Show("Assigned To is required.");
+                        MessageBox.Show("Primary Action person is required.");
                         return;
                     }
 
@@ -490,7 +507,7 @@ public partial class Admin_RegisterUserIncident : IncidentTrackingPage
                     }
                     if (string.IsNullOrEmpty(AssignedToSID.SID))
                     {
-                        MessageBox.Show("Assigned To is required.");
+                        MessageBox.Show("Primary Action person is required.");
                         return;
                     }
                     if (CurrentIncidentDetails.DueDate == null)
@@ -540,14 +557,14 @@ public partial class Admin_RegisterUserIncident : IncidentTrackingPage
             case "3":
                 break;
             case "4":
-                var saved = IncidentTrackingManager.CompleteIncident(IncidentID);
+                var saved = IncidentTrackingManager.CompleteIncident(IncidentID,DateTime.Now);
                 if (saved > 0)
                 {
                     SendCompletedNotification();
                 }
                 break;
             case "5":
-                saved = IncidentTrackingManager.CloseIncident(IncidentID);
+                saved = IncidentTrackingManager.CloseIncident(IncidentID, DateTime.Now);
                 if (saved > 0)
                 {
                     SendCompletedNotification();
@@ -560,13 +577,13 @@ public partial class Admin_RegisterUserIncident : IncidentTrackingPage
                     SendCompletedNotification();
                 }
                 break;
-            case "Return to originator":
-                saved = IncidentTrackingManager.ReturnToOriginator(IncidentID);
-                if (saved > 0)
-                {
-                    SendCompletedNotification();
-                }
-                break;
+            //case "Return to originator":
+            //    saved = IncidentTrackingManager.ReturnToOriginator(IncidentID);
+            //    if (saved > 0)
+            //    {
+            //        SendCompletedNotification();
+            //    }
+            //    break;
         }
     }
 
@@ -1006,5 +1023,14 @@ public partial class Admin_RegisterUserIncident : IncidentTrackingPage
         //    treeNotes.SelectedNode.Expanded = false;
         //}
 
+    }
+
+    protected void drpStatuses_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        trDateAction.Visible = false;
+        if (drpStatuses.SelectedIndex > 0)
+        {
+            trDateAction.Visible = true;
+        }
     }
 }

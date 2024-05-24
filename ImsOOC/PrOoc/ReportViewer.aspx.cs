@@ -49,23 +49,45 @@ public partial class PrOoc_ReportViewer : System.Web.UI.Page
             }
 
              string path = "/IMS/" + reportName;
-
+            
             ReportViewer1.ServerReport.ReportServerUrl =
                 new Uri(System.Configuration.ConfigurationManager.AppSettings["reports-url"]);
             ReportViewer1.ServerReport.ReportPath = path;
             DateTime date = DateTime.Today;
-            var firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
-            var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
-            _DateFrom = firstDayOfMonth.ToString("dd-MMM-yyyy");
-            _DateTo = DateTime.Now.ToString("dd-MMM-yyyy");
-            ReportParameter[] reportParam = new ReportParameter[4];
-            //reportParam[0] = new ReportParameter("ProcessId", "96");
-            reportParam[0] = new ReportParameter("startDate", firstDayOfMonth.ToString());
-            reportParam[1] = new ReportParameter("EndDate", _DateTo.ToString());
-            reportParam[2] = new ReportParameter("roleId", roleId.ToString());
-            reportParam[3] = new ReportParameter("SID", SarsUser.SID);
+            _DateFrom = new DateTime(date.Year - 1, 04, 01).ToString("dd-MMM-yyyy");
+            _DateTo = new DateTime(date.Year, 03, 31).ToString("dd-MMM-yyyy");
+            if (date.Month > 4)
+            {
+                _DateFrom = new DateTime(date.Year, 04, 01).ToString("dd-MMM-yyyy");
+                _DateTo = new DateTime(date.Year + 1, 03, 31).ToString("dd-MMM-yyyy");
+            }
 
-            ReportViewer1.ServerReport.SetParameters(reportParam);
+            if (reportName.Equals("oocstatstaxescmng"))
+            {
+                ReportParameter[] reportParam = new ReportParameter[3];
+                reportParam[0] = new ReportParameter("processId", "120");
+                reportParam[1] = new ReportParameter("startDate", _DateFrom.ToString());
+                reportParam[2] = new ReportParameter("EndDate", _DateTo.ToString());                
+                ReportViewer1.ServerReport.SetParameters(reportParam);
+            }
+            else if (reportName.Equals("OocNewDashboard")) 
+            {
+                ReportParameter[] reportParam = new ReportParameter[3];
+                reportParam[0] = new ReportParameter("processId", "96");
+                reportParam[1] = new ReportParameter("startDate", _DateFrom.ToString());
+                reportParam[2] = new ReportParameter("EndDate", _DateTo.ToString());
+                ReportViewer1.ServerReport.SetParameters(reportParam);
+            }
+            else
+            {
+                ReportParameter[] reportParam = new ReportParameter[4];
+                //reportParam[0] = new ReportParameter("ProcessId", "96");
+                reportParam[0] = new ReportParameter("startDate", _DateFrom.ToString());
+                reportParam[1] = new ReportParameter("EndDate", _DateTo.ToString());
+                reportParam[2] = new ReportParameter("roleId", roleId.ToString());
+                reportParam[3] = new ReportParameter("SID", SarsUser.SID);
+                ReportViewer1.ServerReport.SetParameters(reportParam);
+            }
             ReportViewer1.ServerReport.Refresh();
             ReportViewer1.Visible = true;
         }

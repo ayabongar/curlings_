@@ -1,0 +1,87 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="NormalUser.master.cs" Inherits="NormalUserMaster"  %>
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head id="Head1" runat="server">
+    <title>OFFICE OF THE COMMISSIONER(IMS)</title>
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/survey.css" rel="stylesheet" type="text/css" />
+    <link href="~/Styles/toolBars.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Styles/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/boxover.js"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1 {
+            width: 8px;
+            height: 8px;
+        }
+
+        .style2 {
+            height: 8px;
+        }
+    </style>
+
+</head>
+<body>
+    <form id="Form1" runat="server" autocomplete="off">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="550" EnablePartialRendering="true" >
+            <Services>
+                <asp:ServiceReference Path="~/Services/IncidentTrackingService.asmx" />
+            </Services>
+             <Scripts>
+                <asp:ScriptReference Path="~/Scripts/boxover.js" />
+                <asp:ScriptReference Path="~/Scripts/_validation.js" />
+                <asp:ScriptReference Path="~/Scripts/jquery-1.9.1.js" />
+                <asp:ScriptReference Path="~/Scripts/webservices.js" />
+                <%--     <asp:ScriptReference Path="~/Scripts/jquery.maskedinput.min.js"/>
+            <asp:ScriptReference Path="~/Scripts/jquery-ui.js"/>
+            <asp:ScriptReference Path="~/Scripts/fusioncharts/fusioncharts.js"/>--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <table class="page">
+            <tr>
+                <td>
+                    <div class="header">
+                        <table width="100%" style="text-align: right; font-size: 12px; color: #FFFFFF; vertical-align: top;">
+                            <tr>
+                                <td align="left">
+                                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Default.aspx">
+                                        <asp:Image runat="server" ID="logo" ImageUrl="~/Images/logo-sars.png" BorderStyle="None"
+                                            ImageAlign="Left" />
+                                    </asp:HyperLink>
+                                </td>
+                                <td align="center" style="padding-right: 10px;">
+                                    <span style="float: right; font-size: x-large; font-family: Century;">
+                                        <%=ConfigurationManager.AppSettings["oocVersion"] %></span>
+                                    <br />
+                                    <br />
+                                    <span runat="server" id="welcome" style="font-size: small; float: right; padding-top: 20px; text-align: right;"></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td valign="top">
+                                            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                                            </asp:ContentPlaceHolder>
+                                        </td>
+                                    </tr>
+                                </table>
+                            
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

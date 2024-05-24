@@ -84,7 +84,7 @@
                                     <table style="width: 100%; float: right;">
                                         <tr>
                                             <td><span style="float: right; font-size: x-large; font-family: Century; color: #ffffff;">
-                                                <%=ConfigurationManager.AppSettings["version"] %></span></td>
+                                             <%=ConfigurationManager.AppSettings["version"] %>   </span></td>
                                         </tr>
                                         <tr>
                                             <td>

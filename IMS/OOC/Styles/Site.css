@@ -1,0 +1,372 @@
+﻿/* DEFAULTS
+----------------------------------------------------------*/
+. {
+    border: 1px solid gray;
+    border-style: ridge;
+}
+
+    .question-block {
+        font-size: 12px;
+        color: black;
+        font-family: Tahoma, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+
+body {
+    background:  #696969;
+    font-size: 12px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0px;
+    color: black;
+    font-family: verdana;
+    margin-top: 0px;
+}
+
+
+a:hover {
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active {
+    color: #034af3;
+}
+
+p {
+    margin-bottom: 10px;
+    line-height: 1.6em;
+}
+
+
+/* HEADINGS   
+----------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1em;
+    color: #666666;
+    font-variant: small-caps;
+    text-transform: none;
+    font-weight: 200;
+    margin-bottom: 0px;
+}
+
+h1 {
+    font-size: .60em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+h2 {
+    font-size: .60em;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: .60em;
+}
+
+h4 {
+    font-size: .60em;
+}
+
+h5, h6 {
+    font-size: .60em;
+}
+
+h7 {
+    padding: 15px;
+    font-size: 16px;
+    border-bottom: 1px solid gray;
+    min-width: 100%;
+}
+/* this rule styles <h1> and <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2 {
+    margin-top: 0px;
+}
+
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+.page {
+}
+
+.header {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    background: #4b6c9e;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+    .header h1 {
+        font-weight: 700;
+        margin: 0px;
+        padding: 0px 0px 0px 20px;
+        color: #f9f9f9;
+        border: none;
+        line-height: 2em;
+        font-size: 1em;
+    }
+
+.main {
+    width: 100%;
+    padding: 0px 12px;
+    min-height: 500px;
+}
+
+.leftCol {
+    padding: 6px 0px;
+    /*margin: 12px 8px 8px 8px;*/
+    width: 200px;
+    min-height: 200px;
+}
+
+.footer {
+    color: #4e5766;
+    padding: 8px 0px 0px 0px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: normal;
+}
+
+
+/* TAB MENU   
+----------------------------------------------------------*/
+
+div.hideSkiplink {
+    background-color: #3a4f63;
+    width: 100%;
+}
+
+div.menu {
+    padding: 4px 0px 4px 8px;
+}
+
+    div.menu ul {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        width: auto;
+    }
+
+        div.menu ul li a, div.menu ul li a:visited {
+            background-color: #465c71;
+            border: 1px #4e667d solid;
+            color: #dde4ec;
+            display: block;
+            line-height: 1.35em;
+            padding: 4px 20px;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+            div.menu ul li a:hover {
+                background-color: #bfcbd6;
+                color: #465c71;
+                text-decoration: none;
+            }
+
+            div.menu ul li a:active {
+                background-color: #465c71;
+                color: #cfdbe6;
+                text-decoration: none;
+            }
+
+
+.new-buttons {
+    border: 1px solid #ccc;
+}
+
+
+/* MISC  
+----------------------------------------------------------*/
+
+.clear {
+    clear: both;
+}
+
+.title {
+    display: block;
+    float: left;
+    text-align: left;
+    width: 100%;
+}
+
+
+
+.failureNotification {
+    font-size: 1.2em;
+    color: Red;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+
+
+
+input[type=text] {
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border: 2px solid rgb(173, 204, 204);
+    height: 31px;
+    width: 223px;
+
+    padding: 3px 3px 3px 3px;
+}
+
+
+.dd {
+    width: 100%;
+}
+
+.documents {
+    width: 99%;
+    border-collapse: collapse;
+    border: 1px solid silver;
+    background-color: ghostwhite;
+    font-family: tahoma;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    font-size: 12px;
+}
+
+    .documents td, th {
+        text-align: left;
+        padding-left: 10px;
+    }
+
+    .documents td {
+        padding: 10px;
+        border: 1px solid silver;
+    }
+
+    .documents th {
+        background-color: silver;
+        padding: 10px;
+        border: 1px solid silver;
+    }
+
+    .documents tr:hover {
+        background-color: gray;
+        border-top: blue 1px dot-dash;
+        border-bottom: blue 1px dot-dash;
+        color: #fff;
+        cursor: pointer;
+    }
+
+table.documents {
+    border-radius: 10px;
+}
+
+fieldset {
+    border: 1px solid silver;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+
+.rounded {
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+
+select {
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border: 2px solid rgb(173, 204, 204);
+    height: 31px;
+    width: 223px;
+    box-shadow: 0px 0px 27px rgb(204, 204, 204) inset;
+    transition: 500ms all ease;
+    padding: 3px 3px 3px 3px;
+}
+
+textarea {
+    border-radius: 1px solid black;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    padding: 3px;
+       border: 2px solid rgb(173, 204, 204);
+    
+    box-shadow: 0px 0px 27px rgb(204, 204, 204) inset;
+    transition: 500ms all ease;
+    padding: 3px 3px 3px 3px;
+}
+
+
+input[type="radio"] {
+    border: 1px solid black;
+}
+
+.submitButton {
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    height: 30px;
+    width: 200px;
+}
+
+.selectedRow {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #428bca;
+    border-color: #428bca;
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+}
+
+.grid-paging {
+}
+
+    .grid-paging td {
+        color: #fff;
+        text-transform: uppercase;
+        background-color: #428bca;
+        border-color: #428bca;
+        padding: 10px 15px;
+        border-bottom: 1px solid transparent;
+    }
+
+td {
+    vertical-align: top;
+    margin-left: 240px;
+}
+
+.page {
+    -webkit-box-shadow: 1px 0px 0px 0px #CCC;
+    -moz-box-shadow: 1px 0px 0px 0px #CCC;
+    box-shadow: 1px 0px 0px 0px #CCC;
+    margin-top: 5px;
+    width: 100%;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background-color: lightgrey;
+}
+
+.pageBody {
+    -webkit-box-shadow: 1px 0px 0px 0px #CCC;
+    -moz-box-shadow: 1px 0px 0px 0px #CCC;
+    box-shadow: 1px 0px 0px 0px #CCC;
+    margin-top: 5px;
+    width: 99.3%;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background-color: white;
+    padding:5px;
+}
+input {
+    color:black;
+}

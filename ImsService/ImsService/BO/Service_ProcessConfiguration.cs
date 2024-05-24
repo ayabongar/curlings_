@@ -272,5 +272,8 @@ public class Service_OOCProcessConfiguration
 
     [Column(Name = "TestEmailsGoTo")]
     public string TestEmailsGoTo { get; set; }
+
+    [Column(Name = "ReminderInterval")]
+    public int ReminderInterval { get; set; }
 }
 

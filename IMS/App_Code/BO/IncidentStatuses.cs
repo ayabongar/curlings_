@@ -27,3 +27,30 @@ public partial class IncidentStatus: DataAccessObject
 	public bool IsActive {get; set;}
 
 }
+
+
+
+[Table]
+public partial class UserRoles : DataAccessObject
+{
+    public UserRoles(string procedure, Dictionary<string, object> parameters)
+        : base(procedure, parameters)
+    {
+    }
+    public UserRoles()
+    {
+    }
+
+    [Column(Name = "RoleId")]
+    public Guid RoleId { get; set; }
+
+    [Column(Name = "Description")]
+    public string Description { get; set; }
+
+    [Column(Name = "Timestamp")]
+    public DateTime Timestamp { get; set; }
+
+    [Column(Name = "Active")]
+    public bool Active { get; set; }
+
+}

@@ -63,7 +63,7 @@ public partial class PrOoc_CompleteIncident : IncidentTrackingPage
                         MessageBox.Show("Note is required.");
                         return;
                     }
-                    var saved = IncidentTrackingManager.CompleteIncident(IncidentID);
+                    var saved = IncidentTrackingManager.CompleteIncident(IncidentID, DateTime.Now);
                     if (saved > 0)
                     {
                         AddNote();

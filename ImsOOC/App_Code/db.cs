@@ -16,7 +16,14 @@ public class db
           //return SecureConfig.DecryptString(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString, "P@ssw0rd");
         }
     }
-
+    public static string OocDbConnectionString
+    {
+        get
+        {
+            return System.Configuration.ConfigurationManager.ConnectionStrings["OocDb"].ConnectionString;
+            //return SecureConfig.DecryptString(System.Configuration.ConfigurationManager.ConnectionStrings["db"].ConnectionString, "P@ssw0rd");
+        }
+    }
     public static string SapConnectionString
     {
         get

@@ -35,3 +35,29 @@ public class WorkInfoDetails: DataAccessObject
     [Column(Name = "CreatedBy")]
     public string CreatedBy { get; set; }
 }
+[Table]
+public class IncidentAllocation : DataAccessObject
+{
+    public IncidentAllocation(string procedure, Dictionary<string, object> parameters)
+        : base(procedure, parameters)
+    {
+    }
+    public IncidentAllocation()
+    {
+    }
+
+
+
+    [Column(Name = "IncidentId")]
+    public decimal IncidentId { get; set; }
+
+    [Column(Name = "AssisgnedToSID")]
+    public string AssisgnedToSID { get; set; }
+
+    [Column(Name = "CreatedDate")]
+    public DateTime CreatedDate { get; set; }
+
+    [Column(Name = "CreatedBy")]
+    public string CreatedBy { get; set; }
+
+}
