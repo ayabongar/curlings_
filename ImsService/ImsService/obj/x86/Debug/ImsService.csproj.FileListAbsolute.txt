@@ -60,3 +60,13 @@ C:\_TFS_Development\IncidentTrackingSystem_OOC\ImsService\ImsService\obj\x86\Deb
 C:\_TFS_Development\IncidentTrackingSystem_OOC\ImsService\ImsService\obj\x86\Debug\ImsService.csproj.CopyComplete
 C:\_TFS_Development\IncidentTrackingSystem_OOC\ImsService\ImsService\obj\x86\Debug\ImsService.exe
 C:\_TFS_Development\IncidentTrackingSystem_OOC\ImsService\ImsService\obj\x86\Debug\ImsService.pdb
+C:\SARS SYTEMS\NTQR\IncidentTrackingSystem_OOC\ImsService\ImsService\bin\Debug\ImsService.exe.config
+C:\SARS SYTEMS\NTQR\IncidentTrackingSystem_OOC\ImsService\ImsService\bin\Debug\ImsService.exe
+C:\SARS SYTEMS\NTQR\IncidentTrackingSystem_OOC\ImsService\ImsService\bin\Debug\ImsService.pdb
+C:\SARS SYTEMS\NTQR\IncidentTrackingSystem_OOC\ImsService\ImsService\obj\x86\Debug\ImsService.csproj.AssemblyReference.cache
+C:\SARS SYTEMS\NTQR\IncidentTrackingSystem_OOC\ImsService\ImsService\obj\x86\Debug\ImsService.ProjectInstaller.resources
+C:\SARS SYTEMS\NTQR\IncidentTrackingSystem_OOC\ImsService\ImsService\obj\x86\Debug\ImsService.csproj.GenerateResource.cache
+C:\SARS SYTEMS\NTQR\IncidentTrackingSystem_OOC\ImsService\ImsService\obj\x86\Debug\ImsService.csproj.CoreCompileInputs.cache
+C:\SARS SYTEMS\NTQR\IncidentTrackingSystem_OOC\ImsService\ImsService\obj\x86\Debug\ImsService.csproj.CopyComplete
+C:\SARS SYTEMS\NTQR\IncidentTrackingSystem_OOC\ImsService\ImsService\obj\x86\Debug\ImsService.exe
+C:\SARS SYTEMS\NTQR\IncidentTrackingSystem_OOC\ImsService\ImsService\obj\x86\Debug\ImsService.pdb
