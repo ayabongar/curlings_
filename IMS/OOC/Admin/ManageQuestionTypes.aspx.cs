@@ -15,7 +15,14 @@ public partial class Admin_ManageQuestionTypes : Page
         }
         if(!IsPostBack)
         {
-            dgQuestionTypes.Bind(IncidentTrackingManager.GetFieldTypes());
+            var userList = IncidentTrackingManager.GetFieldTypes();
+
+            // Sort userList by surname
+            userList = userList.OrderBy(u => u.Description).ToList();
+
+            // dgQuestionTypes.Bind(userList);
+            dgQuestionTypes.DataSource = userList;
+            dgQuestionTypes.DataBind();
         }
     }
 
