@@ -46,6 +46,44 @@ public partial class Admin_CompleteIncident : IncidentTrackingPage
         }
     }
 
+
+
+    private void LockPreviousYearSubmissions()
+    {
+        var currentYear = DateTime.Now.Year;
+        var previousYear = currentYear - 1;
+
+        //  retrieves submissions for the given year
+        var submissions = GetSubmissionsForYear(previousYear); 
+
+        foreach (var submission in submissions)
+        {
+            // Check if submission is already locked
+            if (!submission.IsLocked)
+            {
+                submission.IsLocked = true;
+                UpdateSubmission(submission); // Persist the lock to  db
+            }
+        }
+    }
+
+    // get submissions based on  year
+    public IEnumerable<Submission> GetSubmissionsForYear(int year)
+    {
+        // Implementation to fetch submissions for the specified year
+        return submissionList;
+    }
+
+
+
+    //update a submission's locked status
+    private void UpdateSubmission(Submission submission)
+    {
+        // update the submission in database
+    }
+
+
+
     protected void Toolbar1_ButtonClicked(object sender, SCS.Web.UI.WebControls.ButtonEventArgs e)
     {
         switch (e.CommandName)
@@ -145,119 +183,64 @@ public partial class Admin_CompleteIncident : IncidentTrackingPage
 
         return ccsUsers;
     }
-    //private void SendCompletedNotification()
-    //{
-    //    try
-    //    {
-
-    //        var incidentURL = string.Format(System.Configuration.ConfigurationManager.AppSettings["incident-details-url"],
-    //                                        Request.ServerVariables["HTTP_HOST"],
-    //                                        String.Format("procId={0}&incId={1}", ProcessID, IncidentID));
-    //        CurrentIncidentDetails = CurrentIncident;
-       
-    //        List<string> ccsUsers = GetPeopleToBeEmailed();
-    //        var process = CurrentProcess;
-    //        var userAssigned = SarsUser.GetADUser(CurrentIncidentDetails.AssignedToSID.Trim());
-    //        var createdby = SarsUser.GetADUser(CurrentIncidentDetails.CreatedBySID);
-    //        var subject = string.Format("{0} Ref : {1}", process.Description, CurrentIncidentDetails.IncidentNumber);
-
-    //        if (Request.PhysicalApplicationPath != null)
-    //        {
-    //            var templateDir = Path.Combine(Request.PhysicalApplicationPath, "emails", "incident-completed.htm");
-    //            var tempate = File.ReadAllText(templateDir);
-
-    //            if (CurrentIncidentDetails.DueDate != null)
-    //            {
-    //                var body = string.Format(tempate,
-    //                                         userAssigned.FullName,
-    //                                         CurrentIncidentDetails.IncidentNumber,
-    //                                         CurrentIncidentDetails.DueDate.Value.ToString("yyyy-MM-dd hh:mm"),
-    //                                         CurrentIncidentDetails.Summary,
-    //                                         CurrentIncidentDetails.IncidentStatus,
-    //                                         incidentURL,
-    //                                         txtNotes.Text, string.Format("{0} | {1}", createdby.FullName, createdby.SID));
-
-    //                using (var client = new Sars.Systems.Mail.SmtpServiceClient("basicHttpEndPoint"))
-    //                {
-    //                      ccsUsers.Add(userAssigned.Mail);
-                       
-    //                    var oMessage = new Sars.Systems.Mail.SmtpMessage
-    //                    {
-    //                        From = "IncidentTracking@sars.gov.za",
-    //                        Body = body,
-    //                        IsBodyHtml = true,
-    //                        Subject = subject,
-    //                        To = new[] { createdby.Mail },
-    //                        CC = ccsUsers.ToArray(),
-
-    //                    };
-    //                    client.Send2(oMessage);
-    //                    IncidentTrackingManager.SaveIncidentEmailLog(body, subject, createdby.SID, createdby.Mail, IncidentID, ProcessID);
-
-    //                    foreach (var processOwner in CurrentProcess.Owners)
-    //                    {
-    //                        var owner = SarsUser.GetADUser(processOwner.OwnerSID);
-    //                        client.Send1("IncidentTracking@sars.gov.za", owner.Mail, subject, body);
-    //                        IncidentTrackingManager.SaveIncidentEmailLog(body, subject, owner.SID, owner.Mail, IncidentID, ProcessID);
-
-    //                    }
-    //                }
-
-    //            }
-    //        }
-    //    }
-    //    catch (Exception)
-    //    {
-
-
-    //    }
-    //}
-
     private void SendCompletedNotification()
     {
         try
         {
 
-
-
             var incidentURL = string.Format(System.Configuration.ConfigurationManager.AppSettings["incident-details-url"],
                                             Request.ServerVariables["HTTP_HOST"],
                                             String.Format("procId={0}&incId={1}", ProcessID, IncidentID));
             CurrentIncidentDetails = CurrentIncident;
+
+            List<string> ccsUsers = GetPeopleToBeEmailed();
             var process = CurrentProcess;
             var userAssigned = SarsUser.GetADUser(CurrentIncidentDetails.AssignedToSID.Trim());
             var createdby = SarsUser.GetADUser(CurrentIncidentDetails.CreatedBySID);
-            var subject = string.Format("{0} Ref : {1}", process.Description, CurrentIncidentDetails.ReferenceNumber);
+            var subject = string.Format("{0} Ref : {1}", process.Description, CurrentIncidentDetails.IncidentNumber);
 
             if (Request.PhysicalApplicationPath != null)
             {
-                var templateDir = Path.Combine(Request.PhysicalApplicationPath, "emails", "incident-closed.htm");
+                var templateDir = Path.Combine(Request.PhysicalApplicationPath, "emails", "incident-completed.htm");
                 var tempate = File.ReadAllText(templateDir);
 
                 if (CurrentIncidentDetails.DueDate != null)
                 {
                     var body = string.Format(tempate,
                                              userAssigned.FullName,
-                                             CurrentIncidentDetails.ReferenceNumber,
-                                             CurrentIncidentDetails.DueDate.Value.ToString("yyyy-MM-dd"),
+                                             CurrentIncidentDetails.IncidentNumber,
+                                             CurrentIncidentDetails.DueDate.Value.ToString("yyyy-MM-dd hh:mm"),
                                              CurrentIncidentDetails.Summary,
                                              CurrentIncidentDetails.IncidentStatus,
                                              incidentURL,
-                                             txtNotes.Text,
-                                             string.Format("{0} | {1}", createdby.FullName, createdby.SID));
+                                             txtNotes.Text, string.Format("{0} | {1}", createdby.FullName, createdby.SID));
 
                     using (var client = new Sars.Systems.Mail.SmtpServiceClient("basicHttpEndPoint"))
                     {
-                        var newUser = SarsUser.GetADUser(UserSelector1.SID);
-                        client.Send1("IncidentTracking@sars.gov.za", newUser.Mail, subject, body);
-                        IncidentTrackingManager.SaveIncidentEmailLog(body, subject, newUser.SID, newUser.Mail, IncidentID, ProcessID);
+                        ccsUsers.Add(userAssigned.Mail);
+
+                        var oMessage = new Sars.Systems.Mail.SmtpMessage
+                        {
+                            From = "IncidentTracking@sars.gov.za",
+                            Body = body,
+                            IsBodyHtml = true,
+                            Subject = subject,
+                            To = new[] { createdby.Mail },
+                            CC = ccsUsers.ToArray(),
+
+                        };
+                        client.Send2(oMessage);
+                        IncidentTrackingManager.SaveIncidentEmailLog(body, subject, createdby.SID, createdby.Mail, IncidentID, ProcessID);
+
                         foreach (var processOwner in CurrentProcess.Owners)
                         {
                             var owner = SarsUser.GetADUser(processOwner.OwnerSID);
                             client.Send1("IncidentTracking@sars.gov.za", owner.Mail, subject, body);
                             IncidentTrackingManager.SaveIncidentEmailLog(body, subject, owner.SID, owner.Mail, IncidentID, ProcessID);
+
                         }
                     }
+
                 }
             }
         }
@@ -267,5 +250,60 @@ public partial class Admin_CompleteIncident : IncidentTrackingPage
 
         }
     }
+
+    //private void SendCompletedNotification()
+    //{
+    //    try
+    //    {
+
+
+
+    //        var incidentURL = string.Format(System.Configuration.ConfigurationManager.AppSettings["incident-details-url"],
+    //                                        Request.ServerVariables["HTTP_HOST"],
+    //                                        String.Format("procId={0}&incId={1}", ProcessID, IncidentID));
+    //        CurrentIncidentDetails = CurrentIncident;
+    //        var process = CurrentProcess;
+    //        var userAssigned = SarsUser.GetADUser(CurrentIncidentDetails.AssignedToSID.Trim());
+    //        var createdby = SarsUser.GetADUser(CurrentIncidentDetails.CreatedBySID);
+    //        var subject = string.Format("{0} Ref : {1}", process.Description, CurrentIncidentDetails.ReferenceNumber);
+
+    //        if (Request.PhysicalApplicationPath != null)
+    //        {
+    //            var templateDir = Path.Combine(Request.PhysicalApplicationPath, "emails", "incident-closed.htm");
+    //            var tempate = File.ReadAllText(templateDir);
+
+    //            if (CurrentIncidentDetails.DueDate != null)
+    //            {
+    //                var body = string.Format(tempate,
+    //                                         userAssigned.FullName,
+    //                                         CurrentIncidentDetails.ReferenceNumber,
+    //                                         CurrentIncidentDetails.DueDate.Value.ToString("yyyy-MM-dd"),
+    //                                         CurrentIncidentDetails.Summary,
+    //                                         CurrentIncidentDetails.IncidentStatus,
+    //                                         incidentURL,
+    //                                         txtNotes.Text,
+    //                                         string.Format("{0} | {1}", createdby.FullName, createdby.SID));
+
+    //                using (var client = new Sars.Systems.Mail.SmtpServiceClient("basicHttpEndPoint"))
+    //                {
+    //                    var newUser = SarsUser.GetADUser(UserSelector1.SID);
+    //                    client.Send1("IncidentTracking@sars.gov.za", newUser.Mail, subject, body);
+    //                    IncidentTrackingManager.SaveIncidentEmailLog(body, subject, newUser.SID, newUser.Mail, IncidentID, ProcessID);
+    //                    foreach (var processOwner in CurrentProcess.Owners)
+    //                    {
+    //                        var owner = SarsUser.GetADUser(processOwner.OwnerSID);
+    //                        client.Send1("IncidentTracking@sars.gov.za", owner.Mail, subject, body);
+    //                        IncidentTrackingManager.SaveIncidentEmailLog(body, subject, owner.SID, owner.Mail, IncidentID, ProcessID);
+    //                    }
+    //                }
+    //            }
+    //        }
+    //    }
+    //    catch (Exception)
+    //    {
+
+
+    //    }
+    //}
 
 }

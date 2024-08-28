@@ -18,17 +18,27 @@ public partial class Reports_RenderReport : System.Web.UI.Page
             tblReport.Visible = true;
             string path = "Reports/ooc.rdlc";
             ReportViewer1.LocalReport.ReportPath = path;
-            ReportParameter[] parameters = new ReportParameter[1];
+
+            var validNames = GetValidNames(processId);
+
+            ReportParameter[] parameters = new ReportParameter[2];
             parameters[0] = new ReportParameter("ProcessId", processId);
+            parameters[1] = new ReportParameter("ValidNames", string.Join(",", validNames));
+
+            // ReportViewer1.LocalReport.SetParameters(parameters);
+            // parameters[0] = new ReportParameter("ProcessId", processId);
+
+
 
             ReportViewer1.LocalReport.DataSources.Clear();
             ReportDataSource rds = new ReportDataSource();
             rds.Name = "IMSDataSet";
-
+            rds.Value = validNames; // To be binding correcct / VAlid names
             ReportViewer1.LocalReport.DataSources.Add(rds); 
 
 
            // ReportViewer1.ServerReport.SetParameters(parameters);
+            ReportViewer1.LocalReport.SetParameters(parameters);
             ReportViewer1.LocalReport.Refresh();
             ReportViewer1.Visible = true;
 
@@ -37,5 +47,12 @@ public partial class Reports_RenderReport : System.Web.UI.Page
         {
             MessageBox.Show(ex.Message);
         }
+    }
+
+    private IEnumerable<string> GetValidNames(string processId)
+    {
+        // retrieve and filter valid names based on processId
+
+        return filteredNames;
     }
 }
